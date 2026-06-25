@@ -1,0 +1,270 @@
+[gd_scene format=3 uid="uid://ca3p42kvatog6"]
+
+[ext_resource type="Script" uid="uid://u63xat5kxfss" path="res://scenes_and_scripts/what_the_horse/what_the_horse.gd" id="1_er5a0"]
+[ext_resource type="Texture2D" uid="uid://bjegvobb4fj0e" path="res://game_data/what_the_horse_game_data/images/What the Horse Background.png" id="1_yfmih"]
+[ext_resource type="Script" uid="uid://crkkdeh05mop0" path="res://scenes_and_scripts/what_the_horse/video_stream_player.gd" id="2_nnjbc"]
+[ext_resource type="PackedScene" uid="uid://ceeaktiin1l8p" path="res://scenes_and_scripts/what_the_horse/what_the_horse_answer_choice.tscn" id="3_e0vtq"]
+[ext_resource type="VideoStream" uid="uid://d225xn6jwadmc" path="res://game_data/what_the_horse_game_data/videos/two_boys_bike.ogv" id="3_er5a0"]
+[ext_resource type="Script" uid="uid://cm6tx11yjtb4k" path="res://scenes_and_scripts/what_the_horse/pause_title.gd" id="3_yxex6"]
+[ext_resource type="Texture2D" uid="uid://cppkjo72ylg0h" path="res://game_data/what_the_horse_game_data/images/play_button.png" id="6_2cw8u"]
+[ext_resource type="Shader" uid="uid://b2tbj55gq54e5" path="res://scenes_and_scripts/what_the_horse/what_the_horse.gdshader" id="6_12yvi"]
+[ext_resource type="Texture2D" uid="uid://bohwtagj7owle" path="res://game_data/what_the_horse_game_data/images/pause_button.png" id="8_gj6mx"]
+[ext_resource type="AudioStream" uid="uid://cr5q5k2dmjfda" path="res://game_data/what_the_horse_game_data/audio/what_the_horse_shoot_sound_effect.mp3" id="9_3ryye"]
+[ext_resource type="Script" uid="uid://c8dugt7tt4rp4" path="res://scenes_and_scripts/what_the_horse/finish_title.gd" id="10_1faya"]
+[ext_resource type="Script" uid="uid://bec5va5mepaxe" path="res://scenes_and_scripts/what_the_horse/crown_icon.gd" id="11_mh4bu"]
+[ext_resource type="Texture2D" uid="uid://d16y73kv5p5f" path="res://game_data/what_the_horse_game_data/images/horse_crown.jpg" id="11_nfjc0"]
+[ext_resource type="AudioStream" uid="uid://d134u523ajr03" path="res://game_data/what_the_horse_game_data/audio/what_the_horse_theme_music.mp3" id="11_ul6cn"]
+[ext_resource type="AudioStream" uid="uid://gx15m7hoelei" path="res://game_data/what_the_horse_game_data/audio/pop sound effect.mp3" id="15_a18r0"]
+[ext_resource type="PackedScene" uid="uid://cukey0lbtxs8u" path="res://scenes_and_scripts/what_the_horse/horse_reward_screen.tscn" id="16_dkuxn"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_gj6mx"]
+shader = ExtResource("6_12yvi")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_a18r0"]
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 50
+corner_radius_top_right = 50
+corner_radius_bottom_right = 50
+corner_radius_bottom_left = 50
+
+[sub_resource type="LabelSettings" id="LabelSettings_mh4bu"]
+font_size = 128
+outline_size = 30
+outline_color = Color(0.0018410678, 0.0018410682, 0.0018410678, 1)
+
+[node name="WhatTheHorse" type="Control" unique_id=1384399128]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_er5a0")
+
+[node name="VideoScreen" type="TextureRect" parent="." unique_id=1980027982]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_yfmih")
+
+[node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="VideoScreen" unique_id=1165103558]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(562.5, 1000)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -281.25
+offset_top = -500.0
+offset_right = 281.25
+offset_bottom = 500.0
+grow_horizontal = 2
+grow_vertical = 2
+stream = ExtResource("3_er5a0")
+expand = true
+script = ExtResource("2_nnjbc")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VideoScreen" unique_id=1062435459]
+custom_minimum_size = Vector2(1050, 400)
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -525.0
+offset_top = -400.0
+offset_right = 525.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_constants/separation = 50
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VideoScreen/VBoxContainer" unique_id=1705760287]
+layout_mode = 2
+theme_override_constants/separation = 50
+
+[node name="Button" parent="VideoScreen/VBoxContainer/HBoxContainer" unique_id=644572914 instance=ExtResource("3_e0vtq")]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+number = 1
+
+[node name="Button2" parent="VideoScreen/VBoxContainer/HBoxContainer" unique_id=384352794 instance=ExtResource("3_e0vtq")]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+number = 2
+
+[node name="HBoxContainer3" type="HBoxContainer" parent="VideoScreen/VBoxContainer" unique_id=2104680787]
+layout_mode = 2
+theme_override_constants/separation = 50
+
+[node name="Button3" parent="VideoScreen/VBoxContainer/HBoxContainer3" unique_id=952943954 instance=ExtResource("3_e0vtq")]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+number = 3
+
+[node name="Button4" parent="VideoScreen/VBoxContainer/HBoxContainer3" unique_id=1449112935 instance=ExtResource("3_e0vtq")]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+number = 4
+
+[node name="PlayButton" type="TextureButton" parent="VideoScreen" unique_id=869664534]
+unique_name_in_owner = true
+visible = false
+material = SubResource("ShaderMaterial_gj6mx")
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -128.0
+offset_top = -103.5
+offset_right = 128.0
+offset_bottom = 103.5
+grow_horizontal = 2
+grow_vertical = 2
+texture_normal = ExtResource("6_2cw8u")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="PauseButton" type="TextureButton" parent="VideoScreen" unique_id=1527267268]
+unique_name_in_owner = true
+visible = false
+material = SubResource("ShaderMaterial_gj6mx")
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -142.5
+offset_top = -123.75
+offset_right = 142.5
+offset_bottom = 123.75
+grow_horizontal = 2
+grow_vertical = 2
+disabled = true
+texture_normal = ExtResource("8_gj6mx")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="PauseTitle" type="RichTextLabel" parent="VideoScreen" unique_id=371828070]
+unique_name_in_owner = true
+visible = false
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -607.5
+offset_right = 607.5
+offset_bottom = 224.0
+grow_horizontal = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.9098039)
+theme_override_constants/shadow_outline_size = 20
+theme_override_constants/shadow_offset_x = 20
+theme_override_constants/shadow_offset_y = 20
+theme_override_font_sizes/normal_font_size = 128
+bbcode_enabled = true
+text = "[wave amp=100 freq=3]What the Horse?[/wave]"
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("3_yxex6")
+
+[node name="FinishTitle" type="RichTextLabel" parent="VideoScreen" unique_id=1575456586]
+unique_name_in_owner = true
+visible = false
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -607.5
+offset_right = 607.5
+offset_bottom = 224.0
+grow_horizontal = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.9098039)
+theme_override_constants/shadow_outline_size = 20
+theme_override_constants/shadow_offset_x = 20
+theme_override_constants/shadow_offset_y = 20
+theme_override_font_sizes/normal_font_size = 128
+bbcode_enabled = true
+text = "[wave amp=100 freq=3][rainbow freq=0.5 sat=0.8 val=0.8 speed=1.0]What the Horse!?![/rainbow][/wave]"
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("10_1faya")
+
+[node name="CrownIcon" type="PanelContainer" parent="VideoScreen" unique_id=1434852524]
+unique_name_in_owner = true
+visible = false
+clip_children = 1
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -175.0
+offset_top = -240.0
+offset_right = 175.0
+offset_bottom = 110.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_a18r0")
+script = ExtResource("11_mh4bu")
+
+[node name="TextureRect" type="TextureRect" parent="VideoScreen/CrownIcon" unique_id=1570841732]
+layout_mode = 2
+texture = ExtResource("11_nfjc0")
+expand_mode = 5
+stretch_mode = 5
+
+[node name="RoundLabel" type="Label" parent="VideoScreen" unique_id=1781116238]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -254.0
+offset_right = 254.0
+offset_bottom = 175.0
+grow_horizontal = 2
+text = "Round 1"
+label_settings = SubResource("LabelSettings_mh4bu")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ShootSound" type="AudioStreamPlayer" parent="VideoScreen" unique_id=1320862572]
+unique_name_in_owner = true
+stream = ExtResource("9_3ryye")
+
+[node name="WaitingSound" type="AudioStreamPlayer" parent="VideoScreen" unique_id=1321475480]
+unique_name_in_owner = true
+stream = ExtResource("11_ul6cn")
+parameters/looping = true
+
+[node name="AnswerChoiceSound" type="AudioStreamPlayer" parent="VideoScreen" unique_id=1295464207]
+unique_name_in_owner = true
+stream = ExtResource("15_a18r0")
+volume_db = 20.0
+
+[node name="HorseRewardScreen" parent="." unique_id=1675126857 instance=ExtResource("16_dkuxn")]
+unique_name_in_owner = true
+visible = false
+layout_mode = 1
+
+[connection signal="on_finish" from="VideoScreen/VideoStreamPlayer" to="." method="_on_video_stream_player_on_finish"]
+[connection signal="on_pause" from="VideoScreen/VideoStreamPlayer" to="." method="_on_video_stream_player_on_pause"]
+[connection signal="on_answer_choice_selected" from="VideoScreen/VBoxContainer/HBoxContainer/Button" to="." method="_on_button_on_answer_choice_selected"]
+[connection signal="on_answer_choice_selected" from="VideoScreen/VBoxContainer/HBoxContainer/Button2" to="." method="_on_button_2_on_answer_choice_selected"]
+[connection signal="on_answer_choice_selected" from="VideoScreen/VBoxContainer/HBoxContainer3/Button3" to="." method="_on_button_3_on_answer_choice_selected"]
+[connection signal="on_answer_choice_selected" from="VideoScreen/VBoxContainer/HBoxContainer3/Button4" to="." method="_on_button_4_on_answer_choice_selected"]
+[connection signal="pressed" from="VideoScreen/PlayButton" to="." method="_on_play_button_pressed"]
+[connection signal="on_next_video" from="HorseRewardScreen" to="." method="_on_horse_reward_screen_on_next_video"]

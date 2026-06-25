@@ -1,0 +1,114 @@
+{
+	"Two Boys and a Bike": {
+		"file": "two_boys_bike.ogv",
+		"answer_choices": [
+			"The boy on the back unlocks flight for one glorious second and lands in the bushes.",
+			"Everything works out fine. The boy simply lands on the shoulders of the biker and they ride off happily.",
+			"A Car enters at the worst moment and the boy lands gently on the roof. The biker is less fortunate.",
+            "None of the above."
+		],
+		"correct_answer": 2,
+		"settings": {
+			"window_type": "square",
+			"video_start": 0,
+			"video_pause": 4,
+			"video_end": null
+		}
+	},
+	"Yeast Bottle Girl": {
+		"file": "yeast_bottle_girl.ogv",
+		"answer_choices": [
+			"Tuperware was completely useless. Liquid erupts and takes half the room with it.",
+			"The bottle explodes before she even gets the top open.",
+			"No big eruption. But the mystery liquid spills out and somehow starts a small fire.",
+            "Everything works out perfectly. Lady thought of everything. Very smart."
+		],
+		"correct_answer": 4,
+		"settings": {
+			"window_type": "portrait",
+			"video_start": 71,
+			"video_pause": 96,
+			"video_end": 107
+		}
+	},
+	"The Dangerous Road": {
+		"file": "the_dangerous_road.ogv",
+		"answer_choices": [
+			"A Ford F-150 driver does what F-150 drivers do and rear ends someone.",
+			"A Car does a sick donut into a streetlight.",
+			"The road itself gains sentience and decides to swallow two cars whole.",
+            "A flock of geese claims the crosswalk and traffic just accepts it."
+		],
+		"correct_answer": 3,
+		"settings": {
+			"window_type": "portrait",
+			"video_start": 0,
+			"video_pause": 12.5,
+			"video_end": 21
+		}
+	},
+	"Flip a Bottle for a Pint": {
+		"file": "flip_bottle_for_pint.ogv",
+		"answer_choices": [
+			"Guy flips the pint glass for some reason. Is he stupid?",
+			"Guy nails the bottle flip. Then proceeds to flip the pint glass anyways. Is this guy crazy?",
+			"Guy nails the bottle flip. Gets a free pint. Everyone leaves happy.",
+            "None of the above."
+		],
+		"correct_answer": 4,
+		"settings": {
+			"window_type": "portrait",
+			"video_start": 0,
+			"video_pause": 9.10,
+			"video_end": null
+		}
+	},
+	"Ice Fireworks": {
+		"file": "ice_fireworks.ogv",
+		"answer_choices": [
+			"Firecracker gets sent back to the kid somehow. Uno Reverse Card.",
+			"The fireworks cause the ice to form a major crack that reaches all the way to the kid. Kid takes a swim.",
+			"Fireworks are much bigger than anyone expected and even the cameraman gets hit.",
+            "Nothing happens. Small spark and that's it. Disappointing"
+		],
+		"correct_answer": 1,
+		"settings": {
+			"window_type": "portrait",
+			"video_start": 0,
+			"video_pause": 6,
+			"video_end": 12
+		}
+	},
+	"Cop and Batman": {
+		"file": "cop_batman.ogv",
+		"answer_choices": [
+			"White car stops, doors open, and an impossible number of clowns begin exiting.",
+			"Geese Attack.",
+			"The cop just starts dancing. I have no idea why and I'm scared.",
+            "BATMAANNN!!!!!!!!!"
+		],
+		"correct_answer": 4,
+		"settings": {
+			"window_type": "portrait",
+			"video_start": 0,
+			"video_pause": 17.75,
+			"video_end": 26
+		}
+	},
+	"Boat Guy": {
+		"file": "boat_guy.ogv",
+		"answer_choices": [
+			"Man nails the landing. Everyone cheers.",
+			"He hits his shin on the boat and falls into the water. Everyone laughs.",
+			"Dude is much heavier than he thought and he capsizes that poor boat. Everyone swims.",
+            "Guide successfully lands on the boat but with just a bit too much momentum and falls on the poor passengers. Everyone flattens."
+		],
+		"correct_answer": 1,
+		"settings": {
+			"window_type": "portrait",
+			"video_start": 0,
+			"video_pause": 47.6,
+			"video_end": null
+		}
+	}
+}

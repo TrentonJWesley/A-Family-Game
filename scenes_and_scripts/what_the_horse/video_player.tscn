@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://dsymve1dkc5g"]
+
+[ext_resource type="VideoStream" uid="uid://4sih28n0l30g" path="res://game_data/what_the_heck_game_data/videos/dumplings.ogv" id="1_k6rvk"]
+
+[node name="VideoStreamPlayer" type="VideoStreamPlayer" unique_id=601586563]
+custom_minimum_size = Vector2(562.5, 1000)
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -281.25
+offset_top = -500.0
+offset_right = 281.25
+offset_bottom = 500.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 4
+stream = ExtResource("1_k6rvk")
+autoplay = true

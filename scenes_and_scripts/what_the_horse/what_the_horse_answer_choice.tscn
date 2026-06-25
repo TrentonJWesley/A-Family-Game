@@ -1,0 +1,59 @@
+[gd_scene format=3 uid="uid://ceeaktiin1l8p"]
+
+[ext_resource type="StyleBox" uid="uid://buhawtsimuhlv" path="res://game_data/what_the_horse_game_data/styles/default_disabled_style.tres" id="1_8l2og"]
+[ext_resource type="Script" uid="uid://cc6racxtgpja" path="res://scenes_and_scripts/what_the_horse/what_the_horse_answer_choice.gd" id="1_k7j1m"]
+[ext_resource type="StyleBox" uid="uid://c5qoypdj48s3e" path="res://game_data/what_the_horse_game_data/styles/team_1_answer_choice_pressed_style.tres" id="1_lj0ks"]
+[ext_resource type="StyleBox" uid="uid://b67oigl7lx3ml" path="res://game_data/what_the_horse_game_data/styles/team_1_answer_choice_hover_disabled_style.tres" id="2_8l2og"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_3p3bw"]
+font_size = 24
+
+[sub_resource type="LabelSettings" id="LabelSettings_k7j1m"]
+font_size = 64
+outline_size = 15
+outline_color = Color(0, 0, 0, 1)
+
+[node name="Button" type="Button" unique_id=644572914]
+custom_minimum_size = Vector2(500, 150)
+offset_right = 400.0
+offset_bottom = 100.0
+theme_override_styles/normal = ExtResource("1_8l2og")
+theme_override_styles/pressed = ExtResource("1_lj0ks")
+theme_override_styles/hover = ExtResource("2_8l2og")
+theme_override_styles/disabled = ExtResource("1_8l2og")
+disabled = true
+script = ExtResource("1_k7j1m")
+
+[node name="Answer" type="Label" parent="." unique_id=2061654484]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "No big eruption. But liquid pours out of the bottle and catches fire. Fire alarm is activated and fire department is called in."
+label_settings = SubResource("LabelSettings_3p3bw")
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+clip_text = true
+
+[node name="AnswerNumber" type="Label" parent="." unique_id=2058520606]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -21.0
+offset_top = -39.0
+offset_right = 19.0
+offset_bottom = 49.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "1"
+label_settings = SubResource("LabelSettings_k7j1m")
+
+[connection signal="pressed" from="." to="." method="_on_pressed"]

@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://dkh55n37jaqmn"]
+
+[ext_resource type="VideoStream" uid="uid://66qvobehatle" path="res://game_data/what_the_horse_game_data/horse_heads/dancing_horse_head.ogv" id="1_p3wmq"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_p3wmq"]
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 25
+corner_radius_top_right = 25
+corner_radius_bottom_right = 25
+corner_radius_bottom_left = 25
+
+[node name="HorseHead" type="PanelContainer" unique_id=21336978]
+clip_children = 2
+offset_right = 40.0
+offset_bottom = 40.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_p3wmq")
+
+[node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="." unique_id=277462925]
+layout_mode = 2
+stream = ExtResource("1_p3wmq")
+autoplay = true
+loop = true

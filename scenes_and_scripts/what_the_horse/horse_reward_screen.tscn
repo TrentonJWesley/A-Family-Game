@@ -1,0 +1,251 @@
+[gd_scene format=3 uid="uid://cukey0lbtxs8u"]
+
+[ext_resource type="Script" uid="uid://bs3geta1bwkp4" path="res://scenes_and_scripts/what_the_horse/horse_reward_screen.gd" id="1_71l1t"]
+[ext_resource type="AudioStream" uid="uid://8koqhdh3d05n" path="res://game_data/what_the_horse_game_data/audio/Applause Crowd Cheering sound effect.mp3" id="2_6888h"]
+[ext_resource type="AudioStream" uid="uid://ceyc7qwo8odis" path="res://game_data/what_the_horse_game_data/audio/Crowd Booing Sound Effect.mp3" id="3_g6edu"]
+[ext_resource type="AudioStream" uid="uid://t3v3pfw0n6ys" path="res://game_data/what_the_horse_game_data/audio/dr steve brule happy horse sounds.mp3" id="5_g6rnq"]
+[ext_resource type="Texture2D" uid="uid://doxwj2yom6m3s" path="res://game_data/what_the_horse_game_data/images/sad_horse_head.jpg" id="5_tlyx1"]
+[ext_resource type="AudioStream" uid="uid://dc18wddm34xpi" path="res://game_data/what_the_horse_game_data/audio/get a horse sound.mp3" id="6_cjn4p"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_jijqd"]
+font_size = 48
+
+[sub_resource type="LabelSettings" id="LabelSettings_6888h"]
+font_size = 64
+font_color = Color(0.23137255, 0.6039216, 1, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_mih1h"]
+font_size = 64
+font_color = Color(1, 0.32941177, 0.32941177, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_g6rnq"]
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_71l1t"]
+bg_color = Color(0, 0, 0, 0)
+border_width_left = 10
+border_width_top = 10
+border_width_right = 10
+border_width_bottom = 10
+border_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+shadow_color = Color(0, 0, 0, 0.3137255)
+shadow_size = 10
+shadow_offset = Vector2(15, 15)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_cjn4p"]
+bg_color = Color(0, 0, 0, 0)
+border_width_left = 10
+border_width_top = 10
+border_width_right = 10
+border_width_bottom = 10
+border_color = Color(0.14406255, 0.14406255, 0.14406249, 1)
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+shadow_color = Color(0, 0, 0, 0.3137255)
+shadow_size = 10
+shadow_offset = Vector2(15, 15)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tlyx1"]
+bg_color = Color(0, 0, 0, 0)
+border_width_left = 10
+border_width_top = 10
+border_width_right = 10
+border_width_bottom = 10
+border_color = Color(0.5370113, 0.5370113, 0.5370113, 1)
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+shadow_color = Color(0, 0, 0, 0.3137255)
+shadow_size = 10
+shadow_offset = Vector2(15, 15)
+
+[sub_resource type="LabelSettings" id="LabelSettings_tlyx1"]
+font_size = 64
+
+[node name="HorseRewardScreen" type="Panel" unique_id=1675126857]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_71l1t")
+
+[node name="InitialHorseHeadPosition2" type="Control" parent="." unique_id=99988619]
+unique_name_in_owner = true
+anchors_preset = 0
+offset_left = 1632.0
+offset_top = 330.0
+offset_right = 1632.0
+offset_bottom = 330.0
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="InitialHorseHeadPosition1" type="Control" parent="." unique_id=204214108]
+unique_name_in_owner = true
+anchors_preset = 0
+offset_left = 287.0
+offset_top = 330.0
+offset_right = 287.0
+offset_bottom = 330.0
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="Title" type="RichTextLabel" parent="." unique_id=1265416502]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -504.625
+offset_right = 504.625
+offset_bottom = 221.0
+grow_horizontal = 2
+theme_override_font_sizes/normal_font_size = 108
+bbcode_enabled = true
+text = "[pulse freq=5.0 color=#ffffff40 ease=-2.0][rainbow freq=0.5 sat=0.8 val=0.8 speed=1.0]What the Horse?![/rainbow][/pulse]"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="WinLoseLabel" type="Label" parent="." unique_id=1675498233]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -375.5
+offset_top = -315.0
+offset_right = 375.5
+offset_bottom = -227.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "A team won a Horse Head!!!"
+label_settings = SubResource("LabelSettings_jijqd")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Team1Title" type="VBoxContainer" parent="." unique_id=1788342559]
+layout_mode = 0
+offset_left = 175.0
+offset_top = 200.0
+offset_right = 400.0
+offset_bottom = 326.0
+
+[node name="Label" type="Label" parent="Team1Title" unique_id=536331761]
+layout_mode = 2
+text = "Team 1"
+label_settings = SubResource("LabelSettings_6888h")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ColorRect" type="ColorRect" parent="Team1Title" unique_id=1292685963]
+custom_minimum_size = Vector2(0, 10)
+layout_mode = 2
+color = Color(0.23137255, 0.6039216, 1, 1)
+
+[node name="Space" type="ColorRect" parent="Team1Title" unique_id=1125699043]
+self_modulate = Color(1, 1, 1, 0)
+custom_minimum_size = Vector2(0, 20)
+layout_mode = 2
+color = Color(0.23137255, 0.6039216, 1, 1)
+
+[node name="Team2Title" type="VBoxContainer" parent="." unique_id=295658718]
+layout_mode = 0
+offset_left = 1520.0
+offset_top = 200.0
+offset_right = 1745.0
+offset_bottom = 326.0
+
+[node name="Label" type="Label" parent="Team2Title" unique_id=1896526471]
+layout_mode = 2
+text = "Team 2"
+label_settings = SubResource("LabelSettings_mih1h")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ColorRect" type="ColorRect" parent="Team2Title" unique_id=860807653]
+custom_minimum_size = Vector2(0, 10)
+layout_mode = 2
+color = Color(1, 0.32941177, 0.32941177, 1)
+
+[node name="Space" type="ColorRect" parent="Team2Title" unique_id=814004977]
+self_modulate = Color(1, 1, 1, 0)
+custom_minimum_size = Vector2(0, 20)
+layout_mode = 2
+color = Color(0.23137255, 0.6039216, 1, 1)
+
+[node name="WinSoundEffect" type="AudioStreamPlayer" parent="." unique_id=1661957104]
+unique_name_in_owner = true
+stream = ExtResource("2_6888h")
+volume_db = -10.0
+
+[node name="LoseSoundEffect" type="AudioStreamPlayer" parent="." unique_id=2052269654]
+unique_name_in_owner = true
+stream = ExtResource("3_g6edu")
+volume_db = -10.0
+
+[node name="DefeatHorseHead" type="PanelContainer" parent="." unique_id=836304741]
+unique_name_in_owner = true
+clip_children = 2
+layout_mode = 0
+offset_left = 771.0
+offset_top = 350.0
+offset_right = 1137.7102
+offset_bottom = 876.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_g6rnq")
+
+[node name="TextureRect" type="TextureRect" parent="DefeatHorseHead" unique_id=118562235]
+layout_mode = 2
+texture = ExtResource("5_tlyx1")
+expand_mode = 3
+stretch_mode = 5
+
+[node name="NextVideoButton" type="Button" parent="." unique_id=1967778246]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -194.5
+offset_top = -180.0
+offset_right = 194.5
+offset_bottom = -47.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_styles/normal = SubResource("StyleBoxFlat_71l1t")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_cjn4p")
+theme_override_styles/hover = SubResource("StyleBoxFlat_tlyx1")
+
+[node name="Label" type="Label" parent="NextVideoButton" unique_id=456038507]
+layout_mode = 0
+offset_left = 15.5
+offset_top = 25.0
+offset_right = 373.5
+offset_bottom = 113.0
+text = "Next Video"
+label_settings = SubResource("LabelSettings_tlyx1")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HappyHorseNoises" type="AudioStreamPlayer" parent="." unique_id=380792628]
+unique_name_in_owner = true
+stream = ExtResource("5_g6rnq")
+volume_db = 7.5
+
+[node name="GetAHorseSound" type="AudioStreamPlayer" parent="." unique_id=976827114]
+unique_name_in_owner = true
+stream = ExtResource("6_cjn4p")
+volume_db = 7.5
+
+[connection signal="pressed" from="NextVideoButton" to="." method="_on_next_video_button_pressed"]

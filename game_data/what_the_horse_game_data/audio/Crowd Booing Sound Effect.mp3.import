@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://ceyc7qwo8odis"
+path="res://.godot/imported/Crowd Booing Sound Effect.mp3-1b88dde8f176b9f4cb84da80c0ab0454.mp3str"
+
+[deps]
+
+source_file="res://game_data/what_the_horse_game_data/audio/Crowd Booing Sound Effect.mp3"
+dest_files=["res://.godot/imported/Crowd Booing Sound Effect.mp3-1b88dde8f176b9f4cb84da80c0ab0454.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
