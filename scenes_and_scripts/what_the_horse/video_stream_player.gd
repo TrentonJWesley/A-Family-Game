@@ -35,9 +35,10 @@ var video_end = INF
 
 func initialize(video: WhatTheHorseVideo) -> void:
 	current_state = states.START
+	
 	# Set Video file
-	var video_resource = load(video.file_path)
-	self.stream = video_resource
+	self.stream = load(video.file_path)
+	
 	# Set video window type
 	if video.window_type == "square":
 		window = window_type.SQUARE
@@ -45,7 +46,9 @@ func initialize(video: WhatTheHorseVideo) -> void:
 		window = window_type.PORTRAIT
 	elif video.window_type == "landscape":
 		window = window_type.LANDSCAPE
+	
 	set_window_size()
+	
 	# Set video settings
 	video_start = video.video_start
 	video_pause = video.video_pause
@@ -54,7 +57,12 @@ func initialize(video: WhatTheHorseVideo) -> void:
 func set_window_size() -> void:
 	var x = window_type_dimensions[window]["width"]
 	var y = window_type_dimensions[window]["length"]
-	self.size = Vector2(x, y)
+	
+	var desired_size = Vector2(x, y)
+	
+	self.expand = true
+	self.custom_minimum_size = desired_size
+	self.size = desired_size
 
 func start_video() -> void:
 	current_state = states.STARTING

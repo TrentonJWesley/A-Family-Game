@@ -145,12 +145,13 @@ func load_videos_from_json(path: String) -> void:
 func _on_play_button_pressed() -> void:
 	round_label.set_visible(false)
 	play_button.set_visible(false)
-	# Change video position
-	var video_size = video_stream_player.get_size()
-	var viewport_size = get_viewport().get_size()
-	var new_position = Vector2(viewport_size / 2) - Vector2(video_size / 2)
 	
-	video_stream_player.set_position(new_position)
+	## Change video position
+	#var video_size = video_stream_player.get_size()
+	#var viewport_size = get_viewport().get_size()
+	#var new_position = Vector2(viewport_size / 2) - Vector2(video_size / 2)
+	#video_stream_player.set_position(new_position)
+	
 	# Start video
 	video_stream_player.start_video()
 

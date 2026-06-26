@@ -50,21 +50,18 @@ grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("1_yfmih")
 
-[node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="VideoScreen" unique_id=1165103558]
-unique_name_in_owner = true
-custom_minimum_size = Vector2(562.5, 1000)
+[node name="CenterContainer" type="CenterContainer" parent="VideoScreen" unique_id=219854002]
 layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -281.25
-offset_top = -500.0
-offset_right = 281.25
-offset_bottom = 500.0
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+
+[node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="VideoScreen/CenterContainer" unique_id=1165103558]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(562.5, 1000)
+layout_mode = 2
 stream = ExtResource("3_er5a0")
 expand = true
 script = ExtResource("2_nnjbc")
@@ -260,8 +257,8 @@ unique_name_in_owner = true
 visible = false
 layout_mode = 1
 
-[connection signal="on_finish" from="VideoScreen/VideoStreamPlayer" to="." method="_on_video_stream_player_on_finish"]
-[connection signal="on_pause" from="VideoScreen/VideoStreamPlayer" to="." method="_on_video_stream_player_on_pause"]
+[connection signal="on_finish" from="VideoScreen/CenterContainer/VideoStreamPlayer" to="." method="_on_video_stream_player_on_finish"]
+[connection signal="on_pause" from="VideoScreen/CenterContainer/VideoStreamPlayer" to="." method="_on_video_stream_player_on_pause"]
 [connection signal="on_answer_choice_selected" from="VideoScreen/VBoxContainer/HBoxContainer/Button" to="." method="_on_button_on_answer_choice_selected"]
 [connection signal="on_answer_choice_selected" from="VideoScreen/VBoxContainer/HBoxContainer/Button2" to="." method="_on_button_2_on_answer_choice_selected"]
 [connection signal="on_answer_choice_selected" from="VideoScreen/VBoxContainer/HBoxContainer3/Button3" to="." method="_on_button_3_on_answer_choice_selected"]
