@@ -32,6 +32,18 @@ font_size = 128
 outline_size = 30
 outline_color = Color(0.0018410678, 0.0018410682, 0.0018410678, 1)
 
+[sub_resource type="LabelSettings" id="LabelSettings_dkuxn"]
+font_size = 64
+font_color = Color(0.23137255, 0.6039216, 1, 1)
+outline_size = 5
+outline_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_rwyxg"]
+font_size = 64
+font_color = Color(1, 0.32941177, 0.32941177, 1)
+outline_size = 5
+outline_color = Color(0, 0, 0, 1)
+
 [node name="WhatTheHorse" type="Control" unique_id=1384399128]
 layout_mode = 3
 anchors_preset = 15
@@ -251,6 +263,34 @@ parameters/looping = true
 unique_name_in_owner = true
 stream = ExtResource("15_a18r0")
 volume_db = 20.0
+
+[node name="Team1TurnLabel" type="Label" parent="VideoScreen" unique_id=684098037]
+unique_name_in_owner = true
+visible = false
+layout_mode = 0
+offset_left = 54.99996
+offset_top = 596.0
+offset_right = 676.99994
+offset_bottom = 684.0
+rotation = -0.594279
+text = "Team one goes first!"
+label_settings = SubResource("LabelSettings_dkuxn")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Team2TurnLabel" type="Label" parent="VideoScreen" unique_id=230600299]
+unique_name_in_owner = true
+visible = false
+layout_mode = 0
+offset_left = 1359.0
+offset_top = 234.0
+offset_right = 1981.0
+offset_bottom = 322.0
+rotation = 0.5934119
+text = "Team two goes first!"
+label_settings = SubResource("LabelSettings_rwyxg")
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="HorseRewardScreen" parent="." unique_id=1675126857 instance=ExtResource("16_dkuxn")]
 unique_name_in_owner = true

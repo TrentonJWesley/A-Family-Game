@@ -11,6 +11,9 @@ extends Control
 @onready var pause_title: RichTextLabel = %PauseTitle
 @onready var finish_title: RichTextLabel = %FinishTitle
 
+@onready var team_1_turn_label: Label = %Team1TurnLabel
+@onready var team_2_turn_label: Label = %Team2TurnLabel
+
 @onready var shoot_sound: AudioStreamPlayer = %ShootSound
 @onready var waiting_sound: AudioStreamPlayer = %WaitingSound
 @onready var answer_choice_sound: AudioStreamPlayer = %AnswerChoiceSound
@@ -63,6 +66,9 @@ func change_button_teams(new_team: int) -> void:
 		button_3.change_team(new_team)
 	if button_4.disabled == false:
 		button_4.change_team(new_team)
+		
+	if (team_1_choice != 0 and team_2_choice == 0) or (team_2_choice != 0 and team_1_choice == 0):
+		show_whose_turn_it_is()
 
 var correct_answer = null
 func start_random_video() -> void:
@@ -198,6 +204,7 @@ func show_next_button() -> void:
 		_:
 			showing_answers = false
 			activate_buttons()
+			show_whose_turn_it_is()
 			waiting_sound.play()
 	current_answer_to_show += 1
 
@@ -216,6 +223,8 @@ func set_answer(answer_number: int, team: int) -> void:
 		team_2_choice = answer_number
 	if team_1_choice != 0 and team_2_choice != 0:
 		freeze_answers()
+		team_1_turn_label.set_visible(false)
+		team_2_turn_label.set_visible(false)
 		time_to_reveal = true
 
 func finish_video() -> void:
@@ -321,3 +330,17 @@ func _on_horse_reward_screen_on_next_video() -> void:
 	video_stream_player.set_visible(true)
 	current_team = 1 if current_team == 2 else 2
 	start_random_video()
+
+func show_whose_turn_it_is() -> void:
+	team_1_turn_label.set_visible(current_team == 1)
+	team_2_turn_label.set_visible(current_team == 2)
+	if team_1_choice == 0 and team_2_choice == 0:
+		if current_team == 1:
+			team_1_turn_label.text = "Team 1 goes first!"
+		else:
+			team_2_turn_label.text = "Team 2 goes first!"
+	else:
+		if current_team == 1:
+			team_1_turn_label.text = "Now it's Team 1's turn!"
+		else:
+			team_2_turn_label.text = "Now it's Team 2's turn!"
