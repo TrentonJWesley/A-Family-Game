@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://b747tnji7kib8"
+path="res://.godot/imported/applause sound short.mp3-721f733228bc060b7640b87fc52ef375.mp3str"
+
+[deps]
+
+source_file="res://game_data/what_the_horse_game_data/audio/applause sound short.mp3"
+dest_files=["res://.godot/imported/applause sound short.mp3-721f733228bc060b7640b87fc52ef375.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

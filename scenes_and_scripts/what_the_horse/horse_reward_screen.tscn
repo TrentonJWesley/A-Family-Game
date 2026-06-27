@@ -1,9 +1,9 @@
 [gd_scene format=3 uid="uid://cukey0lbtxs8u"]
 
 [ext_resource type="Script" uid="uid://bs3geta1bwkp4" path="res://scenes_and_scripts/what_the_horse/horse_reward_screen.gd" id="1_71l1t"]
-[ext_resource type="AudioStream" uid="uid://8koqhdh3d05n" path="res://game_data/what_the_horse_game_data/audio/Applause Crowd Cheering sound effect.mp3" id="2_6888h"]
+[ext_resource type="AudioStream" uid="uid://b747tnji7kib8" path="res://game_data/what_the_horse_game_data/audio/applause sound short.mp3" id="2_g6rnq"]
 [ext_resource type="AudioStream" uid="uid://ceyc7qwo8odis" path="res://game_data/what_the_horse_game_data/audio/Crowd Booing Sound Effect.mp3" id="3_g6edu"]
-[ext_resource type="AudioStream" uid="uid://t3v3pfw0n6ys" path="res://game_data/what_the_horse_game_data/audio/dr steve brule happy horse sounds.mp3" id="5_g6rnq"]
+[ext_resource type="AudioStream" uid="uid://m3tv1hfb5oq4" path="res://game_data/what_the_horse_game_data/audio/happy-horse-sounds short.mp3" id="5_g6rnq"]
 [ext_resource type="Texture2D" uid="uid://doxwj2yom6m3s" path="res://game_data/what_the_horse_game_data/images/sad_horse_head.jpg" id="5_tlyx1"]
 [ext_resource type="AudioStream" uid="uid://dc18wddm34xpi" path="res://game_data/what_the_horse_game_data/audio/get a horse sound.mp3" id="6_cjn4p"]
 
@@ -73,6 +73,7 @@ shadow_offset = Vector2(15, 15)
 font_size = 64
 
 [node name="HorseRewardScreen" type="Panel" unique_id=1675126857]
+custom_minimum_size = Vector2(1920, 1080)
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -186,7 +187,7 @@ color = Color(0.23137255, 0.6039216, 1, 1)
 
 [node name="WinSoundEffect" type="AudioStreamPlayer" parent="." unique_id=1661957104]
 unique_name_in_owner = true
-stream = ExtResource("2_6888h")
+stream = ExtResource("2_g6rnq")
 volume_db = -10.0
 
 [node name="LoseSoundEffect" type="AudioStreamPlayer" parent="." unique_id=2052269654]

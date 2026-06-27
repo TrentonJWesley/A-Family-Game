@@ -1,12 +1,13 @@
 [gd_scene format=3 uid="uid://cap6sshxjsoxk"]
 
-[ext_resource type="Texture2D" uid="uid://ctnlg1m7v6d3s" path="res://images/cartoon styled wooden background.jpg" id="1_o57ds"]
+[ext_resource type="Texture2D" uid="uid://ctnlg1m7v6d3s" path="res://images/cartoon styled wooden background.jpg" id="1_bjngk"]
 
 [node name="GameSelectionScreen" type="TextureRect" unique_id=2143750929]
+custom_minimum_size = Vector2(1920, 0)
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("1_o57ds")
+texture = ExtResource("1_bjngk")
 expand_mode = 1

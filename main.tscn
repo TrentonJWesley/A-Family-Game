@@ -1,9 +1,27 @@
 [gd_scene format=3 uid="uid://c8fusthq5314b"]
 
+[ext_resource type="Script" uid="uid://dnq187g6a21nv" path="res://main.gd" id="1_0xm2m"]
+[ext_resource type="PackedScene" uid="uid://cwop346et61ks" path="res://scenes_and_scripts/menus/menu_screen.tscn" id="1_ig7tw"]
+[ext_resource type="PackedScene" uid="uid://cdii4ybcbi6xm" path="res://scenes_and_scripts/menus/team_selection_screen.tscn" id="2_h2yge"]
+
 [node name="Main" type="Control" unique_id=1366229311]
+custom_minimum_size = Vector2(1920, 1080)
 layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
+anchors_preset = 0
+offset_right = 1920.0
+offset_bottom = 1080.0
+script = ExtResource("1_0xm2m")
+team_selection_scene = ExtResource("2_h2yge")
+
+[node name="MenuScreen" parent="." unique_id=1935448416 instance=ExtResource("1_ig7tw")]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_right = 1920.0
+offset_bottom = 1080.0
+grow_horizontal = 1
+grow_vertical = 1
+
+[connection signal="on_start_arrow_pressed" from="MenuScreen" to="." method="_on_menu_screen_on_start_arrow_pressed"]
