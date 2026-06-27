@@ -2,7 +2,9 @@
 
 [ext_resource type="Texture2D" uid="uid://dk8442an46xab" path="res://images/room background.png" id="1_subqg"]
 [ext_resource type="FontFile" uid="uid://bhuq2cmgh30xw" path="res://fonts/LoveDays-2v7Oe.ttf" id="2_lsd10"]
-[ext_resource type="AudioStream" uid="uid://clji83ka6ujpa" path="res://audio/Tyler, The Creator – SAG HARBOR (Instrumental).mp3" id="3_opiqs"]
+[ext_resource type="AudioStream" uid="uid://b47d4q10aea8p" path="res://audio/Tyler, The Creator – SAG HARBOR (Instrumental).mp3" id="3_opiqs"]
+[ext_resource type="Texture2D" uid="uid://dfy1cyym7451v" path="res://images/White Down Arrow.png" id="4_5g4gv"]
+[ext_resource type="Script" uid="uid://br0hka5d3bu3i" path="res://scenes_and_scripts/menus/start_arrow.gd" id="5_x0nsj"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_subqg"]
 font = ExtResource("2_lsd10")
@@ -64,3 +66,23 @@ bbcode_enabled = true
 text = "[rainbow freq=.3 sat=.7 val=0.8 speed=1.0]A Family Game[/rainbow]"
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="StartArrow" type="TextureButton" parent="." unique_id=566682615]
+self_modulate = Color(0.06053035, 0.06053035, 0.060530342, 0.84705883)
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -100.0
+offset_top = -180.0
+offset_right = 100.0
+offset_bottom = -80.0
+grow_horizontal = 2
+grow_vertical = 0
+texture_normal = ExtResource("4_5g4gv")
+ignore_texture_size = true
+stretch_mode = 0
+script = ExtResource("5_x0nsj")
+hover_color = Color(0, 0, 0, 0.92941177)
