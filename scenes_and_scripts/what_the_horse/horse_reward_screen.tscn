@@ -1,8 +1,11 @@
 [gd_scene format=3 uid="uid://cukey0lbtxs8u"]
 
 [ext_resource type="Script" uid="uid://bs3geta1bwkp4" path="res://scenes_and_scripts/what_the_horse/horse_reward_screen.gd" id="1_71l1t"]
+[ext_resource type="FontFile" uid="uid://c3cojw58n10nm" path="res://fonts/ShortBaby-Mg2w.ttf" id="2_cjn4p"]
 [ext_resource type="AudioStream" uid="uid://b747tnji7kib8" path="res://game_data/what_the_horse_game_data/audio/applause sound short.mp3" id="2_g6rnq"]
 [ext_resource type="AudioStream" uid="uid://ceyc7qwo8odis" path="res://game_data/what_the_horse_game_data/audio/Crowd Booing Sound Effect.mp3" id="3_g6edu"]
+[ext_resource type="Script" uid="uid://o3k7tynhcqta" path="res://scenes_and_scripts/what_the_horse/team_one_label.gd" id="3_sdify"]
+[ext_resource type="Script" uid="uid://cawc3mnyypukh" path="res://scenes_and_scripts/what_the_horse/team_two_label.gd" id="4_ofk3j"]
 [ext_resource type="AudioStream" uid="uid://m3tv1hfb5oq4" path="res://game_data/what_the_horse_game_data/audio/happy-horse-sounds short.mp3" id="5_g6rnq"]
 [ext_resource type="Texture2D" uid="uid://doxwj2yom6m3s" path="res://game_data/what_the_horse_game_data/images/sad_horse_head.jpg" id="5_tlyx1"]
 [ext_resource type="AudioStream" uid="uid://dc18wddm34xpi" path="res://game_data/what_the_horse_game_data/audio/get a horse sound.mp3" id="6_cjn4p"]
@@ -11,11 +14,13 @@
 font_size = 48
 
 [sub_resource type="LabelSettings" id="LabelSettings_6888h"]
-font_size = 64
+font = ExtResource("2_cjn4p")
+font_size = 56
 font_color = Color(0.23137255, 0.6039216, 1, 1)
 
 [sub_resource type="LabelSettings" id="LabelSettings_mih1h"]
-font_size = 64
+font = ExtResource("2_cjn4p")
+font_size = 56
 font_color = Color(1, 0.32941177, 0.32941177, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_g6rnq"]
@@ -81,26 +86,6 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_71l1t")
 
-[node name="InitialHorseHeadPosition2" type="Control" parent="." unique_id=99988619]
-unique_name_in_owner = true
-anchors_preset = 0
-offset_left = 1632.0
-offset_top = 330.0
-offset_right = 1632.0
-offset_bottom = 330.0
-size_flags_horizontal = 4
-size_flags_vertical = 4
-
-[node name="InitialHorseHeadPosition1" type="Control" parent="." unique_id=204214108]
-unique_name_in_owner = true
-anchors_preset = 0
-offset_left = 287.0
-offset_top = 330.0
-offset_right = 287.0
-offset_bottom = 330.0
-size_flags_horizontal = 4
-size_flags_vertical = 4
-
 [node name="Title" type="RichTextLabel" parent="." unique_id=1265416502]
 layout_mode = 1
 anchors_preset = 5
@@ -135,55 +120,71 @@ label_settings = SubResource("LabelSettings_jijqd")
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Team1Title" type="VBoxContainer" parent="." unique_id=1788342559]
+[node name="TeamOneTitle" type="VBoxContainer" parent="." unique_id=1788342559]
 layout_mode = 0
-offset_left = 175.0
+offset_left = 50.0
 offset_top = 200.0
-offset_right = 400.0
+offset_right = 550.0
 offset_bottom = 326.0
 
-[node name="Label" type="Label" parent="Team1Title" unique_id=536331761]
+[node name="TeamOneLabel" type="Label" parent="TeamOneTitle" unique_id=536331761]
+custom_minimum_size = Vector2(500, 0)
 layout_mode = 2
-text = "Team 1"
+text = "Team One"
 label_settings = SubResource("LabelSettings_6888h")
 horizontal_alignment = 1
 vertical_alignment = 1
+script = ExtResource("3_sdify")
 
-[node name="ColorRect" type="ColorRect" parent="Team1Title" unique_id=1292685963]
+[node name="ColorRect" type="ColorRect" parent="TeamOneTitle" unique_id=1292685963]
 custom_minimum_size = Vector2(0, 10)
 layout_mode = 2
 color = Color(0.23137255, 0.6039216, 1, 1)
 
-[node name="Space" type="ColorRect" parent="Team1Title" unique_id=1125699043]
+[node name="Space" type="ColorRect" parent="TeamOneTitle" unique_id=1125699043]
 self_modulate = Color(1, 1, 1, 0)
-custom_minimum_size = Vector2(0, 20)
+custom_minimum_size = Vector2(0, 40)
 layout_mode = 2
 color = Color(0.23137255, 0.6039216, 1, 1)
 
-[node name="Team2Title" type="VBoxContainer" parent="." unique_id=295658718]
+[node name="InitialHorseHeadPosition1" type="Control" parent="TeamOneTitle" unique_id=204214108]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="TeamTwoTitle" type="VBoxContainer" parent="." unique_id=295658718]
 layout_mode = 0
-offset_left = 1520.0
+offset_left = 1370.0
 offset_top = 200.0
-offset_right = 1745.0
+offset_right = 1870.0
 offset_bottom = 326.0
 
-[node name="Label" type="Label" parent="Team2Title" unique_id=1896526471]
+[node name="TeamTwoLabel" type="Label" parent="TeamTwoTitle" unique_id=1896526471]
+custom_minimum_size = Vector2(500, 0)
 layout_mode = 2
-text = "Team 2"
+text = "Team Two"
 label_settings = SubResource("LabelSettings_mih1h")
 horizontal_alignment = 1
 vertical_alignment = 1
+script = ExtResource("4_ofk3j")
 
-[node name="ColorRect" type="ColorRect" parent="Team2Title" unique_id=860807653]
+[node name="ColorRect" type="ColorRect" parent="TeamTwoTitle" unique_id=860807653]
 custom_minimum_size = Vector2(0, 10)
 layout_mode = 2
 color = Color(1, 0.32941177, 0.32941177, 1)
 
-[node name="Space" type="ColorRect" parent="Team2Title" unique_id=814004977]
+[node name="Space" type="ColorRect" parent="TeamTwoTitle" unique_id=814004977]
 self_modulate = Color(1, 1, 1, 0)
-custom_minimum_size = Vector2(0, 20)
+custom_minimum_size = Vector2(0, 40)
 layout_mode = 2
 color = Color(0.23137255, 0.6039216, 1, 1)
+
+[node name="InitialHorseHeadPosition2" type="Control" parent="TeamTwoTitle" unique_id=99988619]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
 
 [node name="WinSoundEffect" type="AudioStreamPlayer" parent="." unique_id=1661957104]
 unique_name_in_owner = true

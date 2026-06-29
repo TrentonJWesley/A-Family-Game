@@ -11,7 +11,16 @@ config_version=5
 [application]
 
 config/name="Family Game"
+run/main_scene="uid://c8fusthq5314b"
 config/features=PackedStringArray("4.6", "GL Compatibility")
+
+[audio]
+
+buses/default_bus_layout="uid://bfs860b8u8kpt"
+
+[autoload]
+
+GameData="*uid://co4bj13o680ym"
 
 [display]
 

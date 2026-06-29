@@ -72,6 +72,9 @@ func add_horse_head(team):
 	# Resize horse video
 	var video_size = await resize_horse_head_to_max_height(new_horse_head, horse_head_path)
 	
+	# Wait for entire tree to load
+	await get_tree().process_frame
+	
 	# Set initial horse head position
 	var viewport_size = get_viewport().get_size()
 	new_horse_head.global_position = Vector2(viewport_size / 2) - Vector2(video_size / 2)
@@ -80,11 +83,13 @@ func add_horse_head(team):
 	match team:
 		1:
 			var start_pos = initial_horse_head_position_1.get_global_rect().position
+			print("start_pos", start_pos)
 			var offset_pos = start_pos + Vector2(0, HORSE_HEAD_SEPARATION*team_1_horse_head_num)
 			new_pos = offset_pos - Vector2(video_size.x/2, 0)
 			team_1_horse_head_num += 1
 		2: 
 			var start_pos = initial_horse_head_position_2.get_global_rect().position
+			print("start_pos", start_pos)
 			var offset_pos = start_pos + Vector2(0, HORSE_HEAD_SEPARATION*team_2_horse_head_num)
 			new_pos = offset_pos - Vector2(video_size.x/2, 0)
 			team_2_horse_head_num += 1

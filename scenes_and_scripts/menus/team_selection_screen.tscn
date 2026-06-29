@@ -1,6 +1,19 @@
 [gd_scene format=3 uid="uid://cdii4ybcbi6xm"]
 
 [ext_resource type="Script" uid="uid://pnb2wkyfj01b" path="res://scenes_and_scripts/menus/team_selection_screen.gd" id="1_ylods"]
+[ext_resource type="Script" uid="uid://b302h45bouejx" path="res://scenes_and_scripts/menus/ready_button.gd" id="2_k2q1x"]
+[ext_resource type="AudioStream" uid="uid://bv7shajqptsgx" path="res://audio/the-marias-only-in-my-dreams intro.mp3" id="2_rfsdx"]
+[ext_resource type="Texture2D" uid="uid://c2f2nw1f0tmnd" path="res://images/faint_minimal_stars_3840x2160_transparent.png" id="3_ruwkl"]
+[ext_resource type="FontFile" uid="uid://c3cojw58n10nm" path="res://fonts/ShortBaby-Mg2w.ttf" id="5_oxqif"]
+[ext_resource type="Script" uid="uid://bxe8pk2cms05v" path="res://scenes_and_scripts/menus/team_one_name.gd" id="6_gnk5i"]
+[ext_resource type="Texture2D" uid="uid://dfy1cyym7451v" path="res://images/White Down Arrow.png" id="7_2m08k"]
+[ext_resource type="Script" uid="uid://bvty6oome3w56" path="res://scenes_and_scripts/menus/team_one_decrease_players_button.gd" id="8_nv4ei"]
+[ext_resource type="Script" uid="uid://briu4b8xhqpwx" path="res://scenes_and_scripts/menus/team_one_player_count.gd" id="9_ipkpt"]
+[ext_resource type="Script" uid="uid://cv2tcw5t0fwvo" path="res://scenes_and_scripts/menus/team_one_increase_players_button.gd" id="10_y7d7d"]
+[ext_resource type="Script" uid="uid://qmb506jnpd2s" path="res://scenes_and_scripts/menus/team_two_player_count.gd" id="11_5ii8k"]
+[ext_resource type="Script" uid="uid://bjbjqxkovwq6r" path="res://scenes_and_scripts/menus/team_two_name.gd" id="11_a6daf"]
+[ext_resource type="Script" uid="uid://3q7od73wiral" path="res://scenes_and_scripts/menus/team_two_decrease_players_button.gd" id="12_q0cih"]
+[ext_resource type="Script" uid="uid://dnhdahuya7ofq" path="res://scenes_and_scripts/menus/team_two_increase_players_button.gd" id="14_5csvd"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_p6nt3"]
 bg_color = Color(0.06469653, 0.064696535, 0.06469648, 1)
@@ -12,12 +25,49 @@ corner_radius_top_right = 50
 corner_radius_bottom_right = 50
 corner_radius_bottom_left = 50
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ruwkl"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+border_width_left = 10
+border_width_top = 10
+border_width_right = 10
+border_width_bottom = 10
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_oxqif"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gnk5i"]
+bg_color = Color(1, 1, 1, 0)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[sub_resource type="LabelSettings" id="LabelSettings_2m08k"]
+font_size = 120
+
 [node name="TeamSelectionScreen" type="Panel" unique_id=969382465]
 custom_minimum_size = Vector2(1920, 1080)
 offset_right = 1920.0
 offset_bottom = 1080.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_p6nt3")
 script = ExtResource("1_ylods")
+
+[node name="Stars" type="TextureRect" parent="." unique_id=679856676]
+custom_minimum_size = Vector2(1920, 1080)
+layout_mode = 0
+offset_right = 1920.0
+offset_bottom = 1080.0
+texture = ExtResource("3_ruwkl")
+expand_mode = 1
 
 [node name="Bubbles" type="Control" parent="." unique_id=294853469]
 anchors_preset = 0
@@ -277,18 +327,165 @@ offset_bottom = 63.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_ylods")
 
 [node name="ReadyButton" type="Button" parent="." unique_id=1016475129]
+self_modulate = Color(1, 1, 1, 0.6745098)
+custom_minimum_size = Vector2(320, 140)
 layout_mode = 1
 anchors_preset = 7
 anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-offset_left = -147.0
-offset_top = -123.0
-offset_right = 147.0
+offset_left = -153.0
+offset_top = -180.0
+offset_right = 153.0
+offset_bottom = -45.0
 grow_horizontal = 2
 grow_vertical = 0
 theme_override_font_sizes/font_size = 84
-text = "Ready?"
+theme_override_styles/normal = SubResource("StyleBoxFlat_ruwkl")
+theme_override_styles/hover = SubResource("StyleBoxFlat_ruwkl")
+text = "Ready"
+script = ExtResource("2_k2q1x")
+hover_color = Color(0.48570347, 0.48570353, 0.48570347, 0.8509804)
+
+[node name="IntroSound" type="AudioStreamPlayer" parent="." unique_id=466224329]
+unique_name_in_owner = true
+stream = ExtResource("2_rfsdx")
+
+[node name="TeamOne" type="Control" parent="." unique_id=1663960668]
+anchors_preset = 0
+offset_left = 50.0
+offset_top = 100.0
+offset_right = 90.0
+offset_bottom = 140.0
+
+[node name="TeamOneName" type="LineEdit" parent="TeamOne" unique_id=554296859]
+self_modulate = Color(0.23137255, 0.6039216, 1, 1)
+custom_minimum_size = Vector2(600, 100)
+layout_mode = 0
+offset_right = 600.0
+offset_bottom = 100.0
+theme_override_fonts/font = ExtResource("5_oxqif")
+theme_override_font_sizes/font_size = 64
+theme_override_styles/normal = SubResource("StyleBoxFlat_oxqif")
+theme_override_styles/focus = SubResource("StyleBoxFlat_gnk5i")
+text = "Team One"
+alignment = 1
+max_length = 16
+script = ExtResource("6_gnk5i")
+
+[node name="TeamOneDecreasePlayersButton" type="TextureButton" parent="TeamOne" unique_id=1041310432]
+self_modulate = Color(0.23137255, 0.6039216, 1, 1)
+custom_minimum_size = Vector2(100, 50)
+layout_mode = 0
+offset_left = 191.0
+offset_top = 148.0
+offset_right = 291.0
+offset_bottom = 198.0
+rotation = 1.5707964
+texture_normal = ExtResource("7_2m08k")
+ignore_texture_size = true
+stretch_mode = 0
+script = ExtResource("8_nv4ei")
+hover_color = Color(0.45396584, 0.70721084, 1, 1)
+
+[node name="TeamOnePlayerCount" type="Label" parent="TeamOne" unique_id=253595162]
+self_modulate = Color(0.23137255, 0.6039216, 1, 1)
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 0
+offset_left = 191.0
+offset_top = 108.0
+offset_right = 391.0
+offset_bottom = 273.0
+text = "1"
+label_settings = SubResource("LabelSettings_2m08k")
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("9_ipkpt")
+
+[node name="TeamOneIncreasePlayersButton" type="TextureButton" parent="TeamOne" unique_id=2095202234]
+self_modulate = Color(0.23137255, 0.6039216, 1, 1)
+custom_minimum_size = Vector2(100, 50)
+layout_mode = 0
+offset_left = 391.0
+offset_top = 248.0
+offset_right = 491.0
+offset_bottom = 298.0
+rotation = -1.5707964
+texture_normal = ExtResource("7_2m08k")
+ignore_texture_size = true
+stretch_mode = 0
+script = ExtResource("10_y7d7d")
+hover_color = Color(0.45396584, 0.70721084, 1, 1)
+
+[node name="TeamTwo" type="Control" parent="." unique_id=1488742359]
+anchors_preset = 0
+offset_left = 1270.0
+offset_top = 100.0
+offset_right = 1310.0
+offset_bottom = 140.0
+
+[node name="TeamTwoName" type="LineEdit" parent="TeamTwo" unique_id=2139844690]
+self_modulate = Color(1, 0.32941177, 0.32941177, 1)
+custom_minimum_size = Vector2(600, 100)
+layout_mode = 0
+offset_right = 600.0
+offset_bottom = 100.0
+theme_override_fonts/font = ExtResource("5_oxqif")
+theme_override_font_sizes/font_size = 64
+theme_override_styles/normal = SubResource("StyleBoxFlat_oxqif")
+theme_override_styles/focus = SubResource("StyleBoxFlat_gnk5i")
+text = "Team Two"
+alignment = 1
+max_length = 16
+script = ExtResource("11_a6daf")
+
+[node name="TeamTwoDecreasePlayersButton" type="TextureButton" parent="TeamTwo" unique_id=487875478]
+self_modulate = Color(1, 0.32941177, 0.32941177, 1)
+custom_minimum_size = Vector2(100, 50)
+layout_mode = 0
+offset_left = 191.0
+offset_top = 148.0
+offset_right = 291.0
+offset_bottom = 198.0
+rotation = 1.5707964
+texture_normal = ExtResource("7_2m08k")
+ignore_texture_size = true
+stretch_mode = 0
+script = ExtResource("12_q0cih")
+hover_color = Color(1, 0.58179754, 0.55399615, 1)
+
+[node name="TeamTwoPlayerCount" type="Label" parent="TeamTwo" unique_id=197185807]
+self_modulate = Color(1, 0.32941177, 0.32941177, 1)
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 0
+offset_left = 191.0
+offset_top = 108.0
+offset_right = 391.0
+offset_bottom = 273.0
+text = "1"
+label_settings = SubResource("LabelSettings_2m08k")
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("11_5ii8k")
+
+[node name="TeamTwoIncreasePlayersButton" type="TextureButton" parent="TeamTwo" unique_id=2068894606]
+self_modulate = Color(1, 0.32941177, 0.32941177, 1)
+custom_minimum_size = Vector2(100, 50)
+layout_mode = 0
+offset_left = 391.0
+offset_top = 248.0
+offset_right = 491.0
+offset_bottom = 298.0
+rotation = -1.5707964
+texture_normal = ExtResource("7_2m08k")
+ignore_texture_size = true
+stretch_mode = 0
+script = ExtResource("14_5csvd")
+hover_color = Color(1, 0.58179754, 0.55399615, 1)
 
 [connection signal="pressed" from="ReadyButton" to="." method="_on_ready_button_pressed"]
+[connection signal="pressed" from="TeamOne/TeamOneDecreasePlayersButton" to="TeamOne/TeamOnePlayerCount" method="_on_team_one_decrease_players_button_pressed"]
+[connection signal="pressed" from="TeamOne/TeamOneIncreasePlayersButton" to="TeamOne/TeamOnePlayerCount" method="_on_team_one_increase_players_button_pressed"]
+[connection signal="pressed" from="TeamTwo/TeamTwoDecreasePlayersButton" to="TeamTwo/TeamTwoPlayerCount" method="_on_team_two_decrease_players_button_pressed"]
+[connection signal="pressed" from="TeamTwo/TeamTwoIncreasePlayersButton" to="TeamTwo/TeamTwoPlayerCount" method="_on_team_two_increase_players_button_pressed"]

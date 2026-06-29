@@ -7,6 +7,8 @@ extends Control
 
 var team_selection_screen: Panel
 
+var TEAM_SELECTION_TRANSITION_TIME = 12
+
 func _ready() -> void:
 	# Spawn Scene 2 initially but position it right below the screen so it is hidden
 	team_selection_screen = team_selection_scene.instantiate() as Panel
@@ -15,17 +17,23 @@ func _ready() -> void:
 	
 	team_selection_screen.on_ready_pressed.connect(_on_ready_pressed)
 
-func transition_scenes() -> void:
+func transition_to_team_select() -> void:
+	# Play transiton sound for team selection screen
+	team_selection_screen.play_intro_sound()
+	
+	# Set up tween to transition scenes
 	var tween = create_tween()
 	# Optional: Set the transition easing for a smoother slide
-	tween.set_trans(Tween.TRANS_SINE)
-	tween.set_ease(Tween.EASE_IN_OUT)
+	tween.set_trans(Tween.TRANS_QUAD)
+	tween.set_ease(Tween.EASE_IN)
 	tween.set_parallel(true)
 	
 	# Slide both scenes upwards at the same time
 	var screen_height = get_viewport_rect().size.y
-	tween.tween_property(menu_screen, "position:y", -screen_height, 4.0)
-	tween.tween_property(team_selection_screen, "position:y", 0, 4.0)
+	tween.tween_property(menu_screen, "position:y", -screen_height, 
+						 TEAM_SELECTION_TRANSITION_TIME)
+	tween.tween_property(team_selection_screen, "position:y", 0, 
+						 TEAM_SELECTION_TRANSITION_TIME)
 	
 	# Clean up the first scene from memory when the transition finishes
 	await tween.finished
@@ -33,7 +41,7 @@ func transition_scenes() -> void:
 
 
 func _on_menu_screen_on_start_arrow_pressed() -> void:
-	transition_scenes()
+	transition_to_team_select()
 
 func _on_ready_pressed() -> void:
 	print("yup!")

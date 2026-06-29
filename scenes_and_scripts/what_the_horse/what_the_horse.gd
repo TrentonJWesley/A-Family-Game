@@ -336,11 +336,11 @@ func show_whose_turn_it_is() -> void:
 	team_2_turn_label.set_visible(current_team == 2)
 	if team_1_choice == 0 and team_2_choice == 0:
 		if current_team == 1:
-			team_1_turn_label.text = "Team 1 goes first!"
+			team_1_turn_label.text = "%s goes first!" % GameData.team_one_name
 		else:
-			team_2_turn_label.text = "Team 2 goes first!"
+			team_2_turn_label.text = "%s goes first!" % GameData.team_two_name
 	else:
 		if current_team == 1:
-			team_1_turn_label.text = "Now it's Team 1's turn!"
+			team_1_turn_label.text = "Now it's %s's turn!" % GameData.team_one_name
 		else:
-			team_2_turn_label.text = "Now it's Team 2's turn!"
+			team_2_turn_label.text = "Now it's %s's turn!" % GameData.team_two_name

@@ -33,13 +33,13 @@ outline_size = 30
 outline_color = Color(0.0018410678, 0.0018410682, 0.0018410678, 1)
 
 [sub_resource type="LabelSettings" id="LabelSettings_dkuxn"]
-font_size = 64
+font_size = 48
 font_color = Color(0.23137255, 0.6039216, 1, 1)
 outline_size = 5
 outline_color = Color(0, 0, 0, 1)
 
 [sub_resource type="LabelSettings" id="LabelSettings_rwyxg"]
-font_size = 64
+font_size = 48
 font_color = Color(1, 0.32941177, 0.32941177, 1)
 outline_size = 5
 outline_color = Color(0, 0, 0, 1)
@@ -178,7 +178,7 @@ offset_right = 607.5
 offset_bottom = 224.0
 grow_horizontal = 2
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.9098039)
-theme_override_constants/shadow_outline_size = 20
+theme_override_constants/shadow_outline_size = 0
 theme_override_constants/shadow_offset_x = 20
 theme_override_constants/shadow_offset_y = 20
 theme_override_font_sizes/normal_font_size = 128
@@ -200,7 +200,7 @@ offset_right = 607.5
 offset_bottom = 224.0
 grow_horizontal = 2
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.9098039)
-theme_override_constants/shadow_outline_size = 20
+theme_override_constants/shadow_outline_size = 0
 theme_override_constants/shadow_offset_x = 20
 theme_override_constants/shadow_offset_y = 20
 theme_override_font_sizes/normal_font_size = 128
