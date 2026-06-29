@@ -1,0 +1,58 @@
+[gd_scene format=3 uid="uid://f62f18pr2wpk"]
+
+[ext_resource type="Texture2D" uid="uid://wrkrjec5r8mg" path="res://images/family_portraits/family_portrait_frame.png" id="1_rg5eo"]
+[ext_resource type="Script" uid="uid://d15qqasodktn7" path="res://scenes_and_scripts/menus/family_portrait.gd" id="2_8374n"]
+[ext_resource type="Texture2D" uid="uid://bo426lfxsmb45" path="res://images/family_portraits/family_portrait_2.png" id="3_8374n"]
+[ext_resource type="PackedScene" uid="uid://cefi6x25vm0tj" path="res://scenes_and_scripts/menus/player_pic.tscn" id="4_8374n"]
+
+[node name="FamilyPortrait" type="TextureRect" unique_id=713759484]
+custom_minimum_size = Vector2(1462, 1028)
+offset_right = 1462.0
+offset_bottom = 1028.0
+scale = Vector2(0.6400003, 0.60000074)
+texture = ExtResource("1_rg5eo")
+expand_mode = 1
+script = ExtResource("2_8374n")
+
+[node name="Photo" type="TextureRect" parent="." unique_id=1665083330]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(1066, 600)
+layout_mode = 0
+offset_left = 196.0
+offset_top = 223.0
+offset_right = 1262.0
+offset_bottom = 823.0
+texture = ExtResource("3_8374n")
+expand_mode = 1
+
+[node name="PlayerCount1" type="Control" parent="." unique_id=1510419886]
+anchors_preset = 0
+
+[node name="PlayerPic" parent="PlayerCount1" unique_id=2022359803 instance=ExtResource("4_8374n")]
+layout_mode = 0
+offset_left = 688.0
+offset_top = 356.666
+offset_right = 764.0
+offset_bottom = 448.666
+
+[node name="PlayerCount2" type="Control" parent="." unique_id=1636388133]
+anchors_preset = 0
+
+[node name="PlayerPic" parent="PlayerCount2" unique_id=313991983 instance=ExtResource("4_8374n")]
+layout_mode = 0
+offset_left = 602.0
+offset_top = 373.333
+offset_right = 689.0
+offset_bottom = 454.333
+rotation = -0.050614547
+
+[node name="PlayerPic2" parent="PlayerCount2" unique_id=1583427105 instance=ExtResource("4_8374n")]
+layout_mode = 0
+offset_left = 760.5
+offset_top = 350.0
+offset_right = 844.5
+offset_bottom = 431.0
+rotation = -0.02617994
+
+[node name="PlayerCount3" type="Control" parent="." unique_id=1575553084]
+anchors_preset = 0

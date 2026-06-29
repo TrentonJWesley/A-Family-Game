@@ -35,3 +35,7 @@ func _on_mouse_entered() -> void:
 
 func _on_mouse_exited() -> void:
 	self_modulate = ORIGINAL_COLOR # Resets to the original texture colors
+
+
+func _on_pressed() -> void:
+	self.set_disabled(true)

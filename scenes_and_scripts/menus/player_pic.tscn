@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://cefi6x25vm0tj"]
+
+[ext_resource type="Script" uid="uid://dnrrnrd50p4ft" path="res://scenes_and_scripts/menus/player_pic.gd" id="1_chte2"]
+
+[node name="PlayerPic" type="TextureRect" unique_id=2022359803]
+offset_right = 76.0
+offset_bottom = 92.0
+expand_mode = 1
+script = ExtResource("1_chte2")

@@ -1,0 +1,26 @@
+[gd_scene format=3 uid="uid://bva5deyhe44ad"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2n5el"]
+bg_color = Color(0.12225222, 0.12225225, 0.12225217, 1)
+border_width_left = 10
+border_width_top = 10
+border_width_right = 10
+border_width_bottom = 10
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[node name="WhatTheHorseCard" type="Panel" unique_id=2121426954]
+custom_minimum_size = Vector2(350, 450)
+offset_left = 116.0
+offset_top = 97.0
+offset_right = 466.0
+offset_bottom = 547.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_2n5el")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="." unique_id=1762895443]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0

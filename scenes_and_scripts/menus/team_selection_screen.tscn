@@ -10,10 +10,12 @@
 [ext_resource type="Script" uid="uid://bvty6oome3w56" path="res://scenes_and_scripts/menus/team_one_decrease_players_button.gd" id="8_nv4ei"]
 [ext_resource type="Script" uid="uid://briu4b8xhqpwx" path="res://scenes_and_scripts/menus/team_one_player_count.gd" id="9_ipkpt"]
 [ext_resource type="Script" uid="uid://cv2tcw5t0fwvo" path="res://scenes_and_scripts/menus/team_one_increase_players_button.gd" id="10_y7d7d"]
+[ext_resource type="PackedScene" uid="uid://n3r6e6t2cy02" path="res://scenes_and_scripts/menus/person_selection_frame.tscn" id="11_5csvd"]
 [ext_resource type="Script" uid="uid://qmb506jnpd2s" path="res://scenes_and_scripts/menus/team_two_player_count.gd" id="11_5ii8k"]
 [ext_resource type="Script" uid="uid://bjbjqxkovwq6r" path="res://scenes_and_scripts/menus/team_two_name.gd" id="11_a6daf"]
 [ext_resource type="Script" uid="uid://3q7od73wiral" path="res://scenes_and_scripts/menus/team_two_decrease_players_button.gd" id="12_q0cih"]
 [ext_resource type="Script" uid="uid://dnhdahuya7ofq" path="res://scenes_and_scripts/menus/team_two_increase_players_button.gd" id="14_5csvd"]
+[ext_resource type="AudioStream" uid="uid://cucmr5ggqqtlx" path="res://audio/click sound.mp3" id="16_g5c4u"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_p6nt3"]
 bg_color = Color(0.06469653, 0.064696535, 0.06469648, 1)
@@ -326,6 +328,266 @@ offset_right = 1940.0
 offset_bottom = 63.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_ylods")
 
+[node name="Bubbles2" type="Control" parent="." unique_id=671867617]
+anchors_preset = 0
+offset_left = 1920.0
+offset_top = 1080.0
+offset_right = 1960.0
+offset_bottom = 1120.0
+rotation = 3.1415927
+
+[node name="Panel" type="Panel" parent="Bubbles2" unique_id=1036397109]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 0
+offset_left = -7.0
+offset_top = -42.0
+offset_right = 93.0
+offset_bottom = 58.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_ylods")
+
+[node name="Panel2" type="Panel" parent="Bubbles2" unique_id=1573321144]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 0
+offset_left = 70.0
+offset_top = -22.0
+offset_right = 170.0
+offset_bottom = 78.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_ylods")
+
+[node name="Panel3" type="Panel" parent="Bubbles2" unique_id=767840037]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 0
+offset_left = 142.0
+offset_top = -39.0
+offset_right = 242.0
+offset_bottom = 61.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_ylods")
+
+[node name="Panel4" type="Panel" parent="Bubbles2" unique_id=863593265]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 0
+offset_left = 229.0
+offset_top = -19.0
+offset_right = 329.0
+offset_bottom = 81.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_ylods")
+
+[node name="Panel5" type="Panel" parent="Bubbles2" unique_id=1123285659]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 0
+offset_left = 304.0
+offset_top = -30.0
+offset_right = 404.0
+offset_bottom = 70.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_ylods")
+
+[node name="Panel6" type="Panel" parent="Bubbles2" unique_id=1372651095]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 0
+offset_left = 372.0
+offset_top = -23.0
+offset_right = 472.0
+offset_bottom = 77.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_ylods")
+
+[node name="Panel7" type="Panel" parent="Bubbles2" unique_id=488728050]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 0
+offset_left = 450.0
+offset_top = -34.0
+offset_right = 550.0
+offset_bottom = 66.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_ylods")
+
+[node name="Panel8" type="Panel" parent="Bubbles2" unique_id=280605045]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 0
+offset_left = 520.0
+offset_top = -11.0
+offset_right = 620.0
+offset_bottom = 89.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_ylods")
+
+[node name="Panel9" type="Panel" parent="Bubbles2" unique_id=1352522533]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 0
+offset_left = 572.0
+offset_top = -22.0
+offset_right = 672.0
+offset_bottom = 78.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_ylods")
+
+[node name="Panel10" type="Panel" parent="Bubbles2" unique_id=1412967216]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 0
+offset_left = 634.0
+offset_top = -18.0
+offset_right = 734.0
+offset_bottom = 82.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_ylods")
+
+[node name="Panel11" type="Panel" parent="Bubbles2" unique_id=682440464]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 0
+offset_left = 696.0
+offset_top = -26.0
+offset_right = 796.0
+offset_bottom = 74.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_ylods")
+
+[node name="Panel12" type="Panel" parent="Bubbles2" unique_id=1220118655]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 0
+offset_left = 760.0
+offset_top = -22.0
+offset_right = 860.0
+offset_bottom = 78.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_ylods")
+
+[node name="Panel13" type="Panel" parent="Bubbles2" unique_id=2110561980]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 0
+offset_left = 819.0
+offset_top = -34.0
+offset_right = 919.0
+offset_bottom = 66.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_ylods")
+
+[node name="Panel14" type="Panel" parent="Bubbles2" unique_id=140621468]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 0
+offset_left = 898.0
+offset_top = -15.0
+offset_right = 998.0
+offset_bottom = 85.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_ylods")
+
+[node name="Panel15" type="Panel" parent="Bubbles2" unique_id=1691894108]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 0
+offset_left = 966.0
+offset_top = -21.0
+offset_right = 1066.0
+offset_bottom = 79.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_ylods")
+
+[node name="Panel16" type="Panel" parent="Bubbles2" unique_id=1156793506]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 0
+offset_left = 1036.0
+offset_top = -17.0
+offset_right = 1136.0
+offset_bottom = 83.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_ylods")
+
+[node name="Panel17" type="Panel" parent="Bubbles2" unique_id=1167325751]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 0
+offset_left = 1098.0
+offset_top = -39.0
+offset_right = 1198.0
+offset_bottom = 61.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_ylods")
+
+[node name="Panel18" type="Panel" parent="Bubbles2" unique_id=2055753258]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 0
+offset_left = 1155.0
+offset_top = -43.0
+offset_right = 1255.0
+offset_bottom = 57.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_ylods")
+
+[node name="Panel19" type="Panel" parent="Bubbles2" unique_id=1209158613]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 0
+offset_left = 1228.0
+offset_top = -25.0
+offset_right = 1328.0
+offset_bottom = 75.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_ylods")
+
+[node name="Panel20" type="Panel" parent="Bubbles2" unique_id=836196687]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 0
+offset_left = 1297.0
+offset_top = -40.0
+offset_right = 1397.0
+offset_bottom = 60.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_ylods")
+
+[node name="Panel21" type="Panel" parent="Bubbles2" unique_id=2116103365]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 0
+offset_left = 1380.0
+offset_top = -33.0
+offset_right = 1480.0
+offset_bottom = 67.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_ylods")
+
+[node name="Panel22" type="Panel" parent="Bubbles2" unique_id=2116242712]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 0
+offset_left = 1455.0
+offset_top = -38.0
+offset_right = 1555.0
+offset_bottom = 62.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_ylods")
+
+[node name="Panel23" type="Panel" parent="Bubbles2" unique_id=1459248192]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 0
+offset_left = 1530.0
+offset_top = -15.0
+offset_right = 1630.0
+offset_bottom = 85.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_ylods")
+
+[node name="Panel24" type="Panel" parent="Bubbles2" unique_id=1004870969]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 0
+offset_left = 1576.0
+offset_top = -16.0
+offset_right = 1676.0
+offset_bottom = 84.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_ylods")
+
+[node name="Panel25" type="Panel" parent="Bubbles2" unique_id=1467200597]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 0
+offset_left = 1643.0
+offset_top = -26.0
+offset_right = 1743.0
+offset_bottom = 74.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_ylods")
+
+[node name="Panel26" type="Panel" parent="Bubbles2" unique_id=1598097323]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 0
+offset_left = 1719.0
+offset_top = -32.0
+offset_right = 1819.0
+offset_bottom = 68.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_ylods")
+
+[node name="Panel27" type="Panel" parent="Bubbles2" unique_id=358176068]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 0
+offset_left = 1776.0
+offset_top = -16.0
+offset_right = 1876.0
+offset_bottom = 84.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_ylods")
+
+[node name="Panel28" type="Panel" parent="Bubbles2" unique_id=637758449]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 0
+offset_left = 1840.0
+offset_top = -37.0
+offset_right = 1940.0
+offset_bottom = 63.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_ylods")
+
 [node name="ReadyButton" type="Button" parent="." unique_id=1016475129]
 self_modulate = Color(1, 1, 1, 0.6745098)
 custom_minimum_size = Vector2(320, 140)
@@ -353,15 +615,16 @@ unique_name_in_owner = true
 stream = ExtResource("2_rfsdx")
 
 [node name="TeamOne" type="Control" parent="." unique_id=1663960668]
+custom_minimum_size = Vector2(900, 0)
 anchors_preset = 0
-offset_left = 50.0
-offset_top = 100.0
-offset_right = 90.0
-offset_bottom = 140.0
+offset_left = 60.0
+offset_top = 50.0
+offset_right = 960.0
+offset_bottom = 90.0
 
 [node name="TeamOneName" type="LineEdit" parent="TeamOne" unique_id=554296859]
 self_modulate = Color(0.23137255, 0.6039216, 1, 1)
-custom_minimum_size = Vector2(600, 100)
+custom_minimum_size = Vector2(900, 100)
 layout_mode = 0
 offset_right = 600.0
 offset_bottom = 100.0
@@ -378,10 +641,10 @@ script = ExtResource("6_gnk5i")
 self_modulate = Color(0.23137255, 0.6039216, 1, 1)
 custom_minimum_size = Vector2(100, 50)
 layout_mode = 0
-offset_left = 191.0
-offset_top = 148.0
-offset_right = 291.0
-offset_bottom = 198.0
+offset_left = 400.0
+offset_top = 137.5
+offset_right = 500.0
+offset_bottom = 187.5
 rotation = 1.5707964
 texture_normal = ExtResource("7_2m08k")
 ignore_texture_size = true
@@ -393,10 +656,10 @@ hover_color = Color(0.45396584, 0.70721084, 1, 1)
 self_modulate = Color(0.23137255, 0.6039216, 1, 1)
 custom_minimum_size = Vector2(200, 0)
 layout_mode = 0
-offset_left = 191.0
-offset_top = 108.0
-offset_right = 391.0
-offset_bottom = 273.0
+offset_left = 350.0
+offset_top = 100.0
+offset_right = 550.0
+offset_bottom = 265.0
 text = "1"
 label_settings = SubResource("LabelSettings_2m08k")
 horizontal_alignment = 1
@@ -407,10 +670,10 @@ script = ExtResource("9_ipkpt")
 self_modulate = Color(0.23137255, 0.6039216, 1, 1)
 custom_minimum_size = Vector2(100, 50)
 layout_mode = 0
-offset_left = 391.0
-offset_top = 248.0
-offset_right = 491.0
-offset_bottom = 298.0
+offset_left = 500.0
+offset_top = 237.5
+offset_right = 600.0
+offset_bottom = 287.5
 rotation = -1.5707964
 texture_normal = ExtResource("7_2m08k")
 ignore_texture_size = true
@@ -418,16 +681,64 @@ stretch_mode = 0
 script = ExtResource("10_y7d7d")
 hover_color = Color(0.45396584, 0.70721084, 1, 1)
 
+[node name="HFlowContainer" type="HFlowContainer" parent="TeamOne" unique_id=1734981691]
+custom_minimum_size = Vector2(900, 0)
+layout_mode = 0
+offset_top = 250.0
+offset_right = 900.0
+offset_bottom = 290.0
+alignment = 1
+
+[node name="PersonSelectionFrame" parent="TeamOne/HFlowContainer" unique_id=1228538936 instance=ExtResource("11_5csvd")]
+layout_mode = 2
+
+[node name="PersonSelectionFrame2" parent="TeamOne/HFlowContainer" unique_id=1273200610 instance=ExtResource("11_5csvd")]
+layout_mode = 2
+picture_frame_num = 2
+
+[node name="HFlowContainer2" type="HFlowContainer" parent="TeamOne" unique_id=641219539]
+custom_minimum_size = Vector2(900, 0)
+layout_mode = 0
+offset_top = 450.0
+offset_right = 900.0
+offset_bottom = 650.0
+alignment = 1
+
+[node name="PersonSelectionFrame" parent="TeamOne/HFlowContainer2" unique_id=821403938 instance=ExtResource("11_5csvd")]
+layout_mode = 2
+picture_frame_num = 3
+
+[node name="PersonSelectionFrame2" parent="TeamOne/HFlowContainer2" unique_id=484078918 instance=ExtResource("11_5csvd")]
+layout_mode = 2
+picture_frame_num = 4
+
+[node name="HFlowContainer3" type="HFlowContainer" parent="TeamOne" unique_id=1197118346]
+custom_minimum_size = Vector2(900, 0)
+layout_mode = 0
+offset_top = 650.0
+offset_right = 900.0
+offset_bottom = 850.0
+alignment = 1
+
+[node name="PersonSelectionFrame" parent="TeamOne/HFlowContainer3" unique_id=2106146319 instance=ExtResource("11_5csvd")]
+layout_mode = 2
+picture_frame_num = 5
+
+[node name="PersonSelectionFrame2" parent="TeamOne/HFlowContainer3" unique_id=984398920 instance=ExtResource("11_5csvd")]
+layout_mode = 2
+picture_frame_num = 6
+
 [node name="TeamTwo" type="Control" parent="." unique_id=1488742359]
+custom_minimum_size = Vector2(900, 0)
 anchors_preset = 0
-offset_left = 1270.0
-offset_top = 100.0
-offset_right = 1310.0
-offset_bottom = 140.0
+offset_left = 960.0
+offset_top = 50.0
+offset_right = 1860.0
+offset_bottom = 90.0
 
 [node name="TeamTwoName" type="LineEdit" parent="TeamTwo" unique_id=2139844690]
 self_modulate = Color(1, 0.32941177, 0.32941177, 1)
-custom_minimum_size = Vector2(600, 100)
+custom_minimum_size = Vector2(900, 100)
 layout_mode = 0
 offset_right = 600.0
 offset_bottom = 100.0
@@ -444,10 +755,10 @@ script = ExtResource("11_a6daf")
 self_modulate = Color(1, 0.32941177, 0.32941177, 1)
 custom_minimum_size = Vector2(100, 50)
 layout_mode = 0
-offset_left = 191.0
-offset_top = 148.0
-offset_right = 291.0
-offset_bottom = 198.0
+offset_left = 400.0
+offset_top = 137.5
+offset_right = 500.0
+offset_bottom = 187.5
 rotation = 1.5707964
 texture_normal = ExtResource("7_2m08k")
 ignore_texture_size = true
@@ -459,10 +770,10 @@ hover_color = Color(1, 0.58179754, 0.55399615, 1)
 self_modulate = Color(1, 0.32941177, 0.32941177, 1)
 custom_minimum_size = Vector2(200, 0)
 layout_mode = 0
-offset_left = 191.0
-offset_top = 108.0
-offset_right = 391.0
-offset_bottom = 273.0
+offset_left = 350.0
+offset_top = 100.0
+offset_right = 550.0
+offset_bottom = 265.0
 text = "1"
 label_settings = SubResource("LabelSettings_2m08k")
 horizontal_alignment = 1
@@ -473,16 +784,74 @@ script = ExtResource("11_5ii8k")
 self_modulate = Color(1, 0.32941177, 0.32941177, 1)
 custom_minimum_size = Vector2(100, 50)
 layout_mode = 0
-offset_left = 391.0
-offset_top = 248.0
-offset_right = 491.0
-offset_bottom = 298.0
+offset_left = 500.0
+offset_top = 237.5
+offset_right = 600.0
+offset_bottom = 287.5
 rotation = -1.5707964
 texture_normal = ExtResource("7_2m08k")
 ignore_texture_size = true
 stretch_mode = 0
 script = ExtResource("14_5csvd")
 hover_color = Color(1, 0.58179754, 0.55399615, 1)
+
+[node name="HFlowContainer" type="HFlowContainer" parent="TeamTwo" unique_id=1053605269]
+custom_minimum_size = Vector2(900, 0)
+layout_mode = 0
+offset_top = 250.0
+offset_right = 900.0
+offset_bottom = 290.0
+alignment = 1
+
+[node name="PersonSelectionFrame" parent="TeamTwo/HFlowContainer" unique_id=790583095 instance=ExtResource("11_5csvd")]
+layout_mode = 2
+team_num = 2
+
+[node name="PersonSelectionFrame2" parent="TeamTwo/HFlowContainer" unique_id=1133376457 instance=ExtResource("11_5csvd")]
+layout_mode = 2
+team_num = 2
+picture_frame_num = 2
+
+[node name="HFlowContainer2" type="HFlowContainer" parent="TeamTwo" unique_id=1370140524]
+custom_minimum_size = Vector2(900, 0)
+layout_mode = 0
+offset_top = 450.0
+offset_right = 900.0
+offset_bottom = 650.0
+alignment = 1
+
+[node name="PersonSelectionFrame" parent="TeamTwo/HFlowContainer2" unique_id=1891258015 instance=ExtResource("11_5csvd")]
+layout_mode = 2
+team_num = 2
+picture_frame_num = 3
+
+[node name="PersonSelectionFrame2" parent="TeamTwo/HFlowContainer2" unique_id=509324680 instance=ExtResource("11_5csvd")]
+layout_mode = 2
+team_num = 2
+picture_frame_num = 4
+
+[node name="HFlowContainer3" type="HFlowContainer" parent="TeamTwo" unique_id=1110379098]
+custom_minimum_size = Vector2(900, 0)
+layout_mode = 0
+offset_top = 650.0
+offset_right = 900.0
+offset_bottom = 850.0
+alignment = 1
+
+[node name="PersonSelectionFrame" parent="TeamTwo/HFlowContainer3" unique_id=1034300328 instance=ExtResource("11_5csvd")]
+layout_mode = 2
+team_num = 2
+picture_frame_num = 5
+
+[node name="PersonSelectionFrame2" parent="TeamTwo/HFlowContainer3" unique_id=548960564 instance=ExtResource("11_5csvd")]
+layout_mode = 2
+team_num = 2
+picture_frame_num = 6
+
+[node name="ReadyPressedSound" type="AudioStreamPlayer" parent="." unique_id=732064467]
+unique_name_in_owner = true
+stream = ExtResource("16_g5c4u")
+volume_db = 10.0
 
 [connection signal="pressed" from="ReadyButton" to="." method="_on_ready_button_pressed"]
 [connection signal="pressed" from="TeamOne/TeamOneDecreasePlayersButton" to="TeamOne/TeamOnePlayerCount" method="_on_team_one_decrease_players_button_pressed"]

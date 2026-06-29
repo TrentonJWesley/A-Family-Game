@@ -70,3 +70,4 @@ script = ExtResource("5_x0nsj")
 hover_color = Color(0, 0, 0, 0.92941177)
 
 [connection signal="pressed" from="StartArrow" to="." method="_on_start_arrow_pressed"]
+[connection signal="pressed" from="StartArrow" to="StartArrow" method="_on_pressed"]
