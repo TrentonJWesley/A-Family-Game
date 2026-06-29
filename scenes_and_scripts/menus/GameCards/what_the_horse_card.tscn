@@ -1,12 +1,14 @@
 [gd_scene format=3 uid="uid://bva5deyhe44ad"]
 
+[ext_resource type="VideoStream" uid="uid://meq11rqj8es1" path="res://game_data/what_the_horse_game_data/horse_heads/black_and_white_horse_head.ogv" id="1_ntbs3"]
+
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2n5el"]
 bg_color = Color(0.12225222, 0.12225225, 0.12225217, 1)
-border_width_left = 10
-border_width_top = 10
-border_width_right = 10
-border_width_bottom = 10
-border_color = Color(0, 0, 0, 1)
+border_width_left = 15
+border_width_top = 15
+border_width_right = 15
+border_width_bottom = 15
+border_color = Color(0.096204825, 0.09620472, 0.09620472, 1)
 corner_radius_top_left = 8
 corner_radius_top_right = 8
 corner_radius_bottom_right = 8
@@ -20,7 +22,27 @@ offset_right = 466.0
 offset_bottom = 547.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_2n5el")
 
-[node name="RichTextLabel" type="RichTextLabel" parent="." unique_id=1762895443]
+[node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="." unique_id=775366029]
+custom_minimum_size = Vector2(320, 174.5)
 layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
+offset_left = 15.0
+offset_top = 15.0
+offset_right = 315.0
+offset_bottom = 195.0
+stream = ExtResource("1_ntbs3")
+autoplay = true
+expand = true
+
+[node name="RichTextLabel" type="RichTextLabel" parent="." unique_id=1762895443]
+custom_minimum_size = Vector2(450, 200)
+layout_mode = 0
+offset_left = -50.0
+offset_top = -100.0
+offset_right = 400.0
+offset_bottom = 100.0
+theme_override_constants/outline_size = 10
+theme_override_font_sizes/normal_font_size = 76
+bbcode_enabled = true
+text = "[wave amp=100 freq=3][rainbow freq=0.5 sat=0.8 val=0.8 speed=1.0]What the Horse!?![/rainbow][/wave]"
+horizontal_alignment = 1
+vertical_alignment = 1
