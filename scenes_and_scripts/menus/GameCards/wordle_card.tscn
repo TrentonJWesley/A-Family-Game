@@ -1,9 +1,9 @@
-[gd_scene format=3 uid="uid://bva5deyhe44ad"]
+[gd_scene format=3 uid="uid://mqsu1rwin6tb"]
 
-[ext_resource type="VideoStream" uid="uid://meq11rqj8es1" path="res://game_data/what_the_horse_game_data/horse_heads/black_and_white_horse_head.ogv" id="1_ntbs3"]
-[ext_resource type="Script" uid="uid://d4l5ym5tktdxb" path="res://scenes_and_scripts/menus/GameCards/what_the_horse_card.gd" id="1_xsuuf"]
+[ext_resource type="Script" uid="uid://brqjnqo55tfxj" path="res://scenes_and_scripts/menus/GameCards/wordle_card.gd" id="1_ksec1"]
+[ext_resource type="Texture2D" uid="uid://c0w6qyhsy1r8j" path="res://images/Wordle Diagram.png" id="1_nwctt"]
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2n5el"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7mivw"]
 bg_color = Color(0.12225222, 0.12225225, 0.12225217, 1)
 border_width_left = 15
 border_width_top = 15
@@ -15,35 +15,33 @@ corner_radius_top_right = 8
 corner_radius_bottom_right = 8
 corner_radius_bottom_left = 8
 
-[node name="WhatTheHorseCard" type="Button" unique_id=685451248]
+[node name="WordleCard" type="Button" unique_id=828545869]
 custom_minimum_size = Vector2(350, 450)
 offset_right = 8.0
 offset_bottom = 8.0
 pivot_offset = Vector2(175, 225)
-script = ExtResource("1_xsuuf")
+script = ExtResource("1_ksec1")
 
-[node name="CardBackground" type="Panel" parent="." unique_id=2121426954]
+[node name="CardBackground" type="Panel" parent="." unique_id=1247168555]
 custom_minimum_size = Vector2(350, 450)
 layout_mode = 0
 offset_right = 350.0
 offset_bottom = 450.0
 mouse_filter = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_2n5el")
+theme_override_styles/panel = SubResource("StyleBoxFlat_7mivw")
 
-[node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="." unique_id=775366029]
-custom_minimum_size = Vector2(320, 174.5)
+[node name="TextureRect" type="TextureRect" parent="." unique_id=639762208]
+custom_minimum_size = Vector2(320, 180)
 layout_mode = 0
 offset_left = 15.0
 offset_top = 15.0
 offset_right = 335.0
 offset_bottom = 195.0
 mouse_filter = 2
-stream = ExtResource("1_ntbs3")
-autoplay = true
-expand = true
-loop = true
+texture = ExtResource("1_nwctt")
+expand_mode = 1
 
-[node name="CardTitle" type="RichTextLabel" parent="." unique_id=1762895443]
+[node name="CardTitle" type="RichTextLabel" parent="." unique_id=1150639015]
 custom_minimum_size = Vector2(450, 250)
 layout_mode = 0
 offset_left = -50.0
@@ -52,14 +50,14 @@ offset_right = 400.0
 offset_bottom = 125.0
 mouse_filter = 2
 theme_override_constants/outline_size = 10
-theme_override_font_sizes/normal_font_size = 76
+theme_override_font_sizes/normal_font_size = 72
 bbcode_enabled = true
-text = "[wave amp=100 freq=3][rainbow freq=0.5 sat=0.8 val=0.8 speed=1.0]What the Horse!?![/rainbow][/wave]"
+text = "[pulse freq=3.0 color=#ffffff40 ease=-2.0]Wordle[/pulse]"
 scroll_active = false
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Separator" type="ColorRect" parent="." unique_id=275132551]
+[node name="Separator" type="ColorRect" parent="." unique_id=2012021376]
 custom_minimum_size = Vector2(320, 20)
 layout_mode = 0
 offset_left = 15.0
@@ -69,7 +67,7 @@ offset_bottom = 215.0
 mouse_filter = 2
 color = Color(0.09411765, 0.09411765, 0.09411765, 1)
 
-[node name="MarginContainer" type="MarginContainer" parent="." unique_id=1342750440]
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=636908370]
 custom_minimum_size = Vector2(320, 0)
 layout_mode = 0
 offset_left = 15.0
@@ -82,14 +80,13 @@ theme_override_constants/margin_top = 5
 theme_override_constants/margin_right = 10
 theme_override_constants/margin_bottom = 5
 
-[node name="RichTextLabel" type="RichTextLabel" parent="MarginContainer" unique_id=1192576418]
+[node name="RichTextLabel" type="RichTextLabel" parent="MarginContainer" unique_id=1128460381]
 custom_minimum_size = Vector2(0, 225)
 layout_mode = 2
 mouse_filter = 2
-theme_override_font_sizes/normal_font_size = 30
+theme_override_font_sizes/normal_font_size = 28
 bbcode_enabled = true
-text = "Randoms videos are played. You have to guess what the [rainbow freq=0.5 sat=0.8 val=0.8 speed=1.0]horse[/rainbow] happens next?!? (6 Rounds)
-
+text = "Wordle, except each team takes turns making a guess. First to get the word wins. (4 Rounds)
 "
 scroll_active = false
 horizontal_alignment = 1
