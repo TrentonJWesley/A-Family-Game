@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dxi61647jl2va"
-path="res://.godot/imported/What the Horse Background.png-c7c73a8a0dccf00bfad980f5f108355d.ctex"
+uid="uid://u7wks7iwmefe"
+path="res://.godot/imported/random_picture_frames.png-774dd4782e9bc4fce881198731c986ec.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://game_data/what_the_horse_game_data/images/What the Horse Background.png"
-dest_files=["res://.godot/imported/What the Horse Background.png-c7c73a8a0dccf00bfad980f5f108355d.ctex"]
+source_file="res://images/random_picture_frames.png"
+dest_files=["res://.godot/imported/random_picture_frames.png-774dd4782e9bc4fce881198731c986ec.ctex"]
 
 [params]
 

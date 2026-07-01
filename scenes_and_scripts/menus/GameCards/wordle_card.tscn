@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://brqjnqo55tfxj" path="res://scenes_and_scripts/menus/GameCards/wordle_card.gd" id="1_ksec1"]
 [ext_resource type="Texture2D" uid="uid://c0w6qyhsy1r8j" path="res://images/Wordle Diagram.png" id="1_nwctt"]
+[ext_resource type="AudioStream" uid="uid://qve4vhbcctii" path="res://audio/card sound.mp3" id="3_6f83p"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7mivw"]
 bg_color = Color(0.12225222, 0.12225225, 0.12225217, 1)
@@ -90,3 +91,8 @@ text = "Wordle, except each team takes turns making a guess. First to get the wo
 "
 scroll_active = false
 horizontal_alignment = 1
+
+[node name="HoverSound" type="AudioStreamPlayer" parent="." unique_id=945118292]
+unique_name_in_owner = true
+stream = ExtResource("3_6f83p")
+volume_db = 10.0

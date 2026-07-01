@@ -11,6 +11,7 @@ func _ready() -> void:
 	# Connect the mouse signals to our functions
 	mouse_entered.connect(_on_mouse_entered)
 	mouse_exited.connect(_on_mouse_exited)
+	pressed.connect(_on_pressed)
 	
 	# Fade arrow in after a little delay
 	self.modulate.a = 0

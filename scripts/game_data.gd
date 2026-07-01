@@ -24,3 +24,5 @@ var team_two_player_pictures: Dictionary = {
 	5: null,
 	6: null,
 }
+
+var horse_game_max_rounds = 2

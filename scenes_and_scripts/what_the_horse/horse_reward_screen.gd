@@ -45,10 +45,10 @@ func show_result(winning_team: int) -> void:
 	reset_scene()
 	match winning_team:
 		1:
-			win_lose_label.text = "Team 1 won a Horse Head!!!"
+			win_lose_label.text = "%s won a Horse Head!!!" % GameData.team_one_name
 			add_horse_head(winning_team)
 		2:
-			win_lose_label.text = "Team 2 won a Horse Head!!!"
+			win_lose_label.text = "%s won a Horse Head!!!" % GameData.team_two_name
 			add_horse_head(winning_team)
 		_:
 			win_lose_label.text = "You are both losers :(\nNo Horse Heads for you."
@@ -159,3 +159,17 @@ func play_sad_noises() -> void:
 func _on_next_video_button_pressed() -> void:
 	stop_all_sounds()
 	on_next_video.emit()
+
+func clear_horse_heads() -> void:
+	# 1. Reset team score counters
+	team_1_horse_head_num = 0
+	team_2_horse_head_num = 0
+	
+	# 2. Find and free instantiated horse head nodes
+	for child in get_children():
+		if child.scene_file_path == HORSE_HEAD.resource_path:
+			child.queue_free()
+
+func reset_fully() -> void:
+	defeat_horse_head.set_visible(false)
+	clear_horse_heads() # <-- Add this line here

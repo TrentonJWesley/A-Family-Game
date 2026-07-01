@@ -2,6 +2,10 @@ extends Control
 
 @onready var horse_reward_screen: Panel = %HorseRewardScreen
 @onready var video_stream_player: VideoStreamPlayer = %VideoStreamPlayer
+@onready var end_screen: Control = %EndScreen
+@onready var start_screen: Control = %StartScreen
+@onready var video_screen: TextureRect = %VideoScreen
+@onready var end_label: Label = %EndLabel
 @onready var play_button: TextureButton = %PlayButton
 @onready var pause_button: TextureButton = %PauseButton
 @onready var button: Button = %Button
@@ -21,19 +25,21 @@ extends Control
 @onready var crown_icon: PanelContainer = %CrownIcon
 @onready var round_label: Label = %RoundLabel
 
+signal end(who_won: int)
 
 
 var video_playlist: Array[WhatTheHorseVideo] = []
 
 var current_team = 1
 var current_round = 0
+var MAX_ROUNDS = GameData.horse_game_max_rounds
+var team_1_horse_num = 0
+var team_2_horse_num = 0
 
 
 
 func _ready() -> void:
 	load_videos_from_json("res://game_data/what_the_horse_game_data/video_data.json")
-	#pick_video_by_name("Flip a Bottle for a Pint")
-	start_random_video()
 
 func _on_button_on_answer_choice_selected(answer_number: int, team: int) -> void:
 	set_answer(answer_number, team)
@@ -314,22 +320,29 @@ func reset_scene() -> void:
 
 var winning_team = 0
 func show_reward_screen() -> void:
-	print("huh?")
 	horse_reward_screen.set_visible(true)
 	horse_reward_screen.show_result(winning_team)
 
 func determine_winner() -> void:
 	if team_1_choice == correct_answer:
 		winning_team = 1
+		team_1_horse_num += 1
 	elif team_2_choice == correct_answer:
 		winning_team = 2
+		team_2_horse_num += 1
 
 
 func _on_horse_reward_screen_on_next_video() -> void:
 	horse_reward_screen.set_visible(false)
-	video_stream_player.set_visible(true)
-	current_team = 1 if current_team == 2 else 2
-	start_random_video()
+	
+	if current_round < MAX_ROUNDS:
+		print("current_round: ", current_round)
+		print("MAX_ROUNDS: ", MAX_ROUNDS)
+		video_stream_player.set_visible(true)
+		current_team = 1 if current_team == 2 else 2
+		start_random_video()
+	else:
+		show_end_screen()
 
 func show_whose_turn_it_is() -> void:
 	team_1_turn_label.set_visible(current_team == 1)
@@ -344,3 +357,42 @@ func show_whose_turn_it_is() -> void:
 			team_1_turn_label.text = "Now it's %s's turn!" % GameData.team_one_name
 		else:
 			team_2_turn_label.text = "Now it's %s's turn!" % GameData.team_two_name
+
+func setup_start_screen(team: int = 1) -> void:
+	# Reset variables
+	team_1_choice = 0
+	team_2_choice = 0
+	winning_team = 0
+	current_round = 0
+	current_answer_to_show = 0
+	team_1_horse_num = 0
+	team_2_horse_num = 0
+	time_to_reveal = false
+	answer_revealed = false
+	showing_answers = false
+	current_team = team
+	play_button.visible = false
+	horse_reward_screen.visible = false
+	round_label.visible = false
+	start_screen.visible = true
+	end_screen.visible = false
+
+
+func start_music() -> void:
+	waiting_sound.play()
+
+
+func _on_start_button_pressed() -> void:
+	round_label.visible = true
+	play_button.visible = true
+	start_screen.visible = false
+	waiting_sound.stop()
+	start_random_video()
+	
+func show_end_screen() -> void:
+	if team_1_horse_num > team_2_horse_num:
+		end.emit(1)
+	elif team_2_horse_num > team_1_horse_num:
+		end.emit(2)
+	else:
+		end.emit(0)

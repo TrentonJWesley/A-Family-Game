@@ -1,8 +1,9 @@
 [gd_scene format=3 uid="uid://ca3p42kvatog6"]
 
 [ext_resource type="Script" uid="uid://u63xat5kxfss" path="res://scenes_and_scripts/what_the_horse/what_the_horse.gd" id="1_er5a0"]
-[ext_resource type="Texture2D" uid="uid://bjegvobb4fj0e" path="res://game_data/what_the_horse_game_data/images/What the Horse Background.png" id="1_yfmih"]
+[ext_resource type="Texture2D" uid="uid://dxi61647jl2va" path="res://game_data/what_the_horse_game_data/images/What the Horse Background.png" id="1_yfmih"]
 [ext_resource type="Script" uid="uid://crkkdeh05mop0" path="res://scenes_and_scripts/what_the_horse/video_stream_player.gd" id="2_nnjbc"]
+[ext_resource type="Shader" uid="uid://bnmvvjlu5lgsa" path="res://scenes_and_scripts/what_the_horse/what_the_horse_background.gdshader" id="2_rwyxg"]
 [ext_resource type="PackedScene" uid="uid://ceeaktiin1l8p" path="res://scenes_and_scripts/what_the_horse/what_the_horse_answer_choice.tscn" id="3_e0vtq"]
 [ext_resource type="VideoStream" uid="uid://d225xn6jwadmc" path="res://game_data/what_the_horse_game_data/videos/two_boys_bike.ogv" id="3_er5a0"]
 [ext_resource type="Script" uid="uid://cm6tx11yjtb4k" path="res://scenes_and_scripts/what_the_horse/pause_title.gd" id="3_yxex6"]
@@ -16,6 +17,11 @@
 [ext_resource type="AudioStream" uid="uid://d134u523ajr03" path="res://game_data/what_the_horse_game_data/audio/what_the_horse_theme_music.mp3" id="11_ul6cn"]
 [ext_resource type="AudioStream" uid="uid://gx15m7hoelei" path="res://game_data/what_the_horse_game_data/audio/pop sound effect.mp3" id="15_a18r0"]
 [ext_resource type="PackedScene" uid="uid://cukey0lbtxs8u" path="res://scenes_and_scripts/what_the_horse/horse_reward_screen.tscn" id="16_dkuxn"]
+[ext_resource type="FontFile" uid="uid://c3cojw58n10nm" path="res://fonts/ShortBaby-Mg2w.ttf" id="18_6k5vo"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_6k5vo"]
+shader = ExtResource("2_rwyxg")
+shader_parameter/scroll_speed = 0.010000237975000381
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_gj6mx"]
 shader = ExtResource("6_12yvi")
@@ -44,7 +50,21 @@ font_color = Color(1, 0.32941177, 0.32941177, 1)
 outline_size = 5
 outline_color = Color(0, 0, 0, 1)
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dkuxn"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_w70qq"]
+bg_color = Color(0.60038817, 0.60038817, 0.60038817, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6k5vo"]
+bg_color = Color(0.60038817, 0.60038817, 0.60038817, 0)
+
+[sub_resource type="LabelSettings" id="LabelSettings_w70qq"]
+font = ExtResource("18_6k5vo")
+font_size = 128
+
 [node name="WhatTheHorse" type="Control" unique_id=1384399128]
+custom_minimum_size = Vector2(1920, 1080)
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -54,6 +74,9 @@ grow_vertical = 2
 script = ExtResource("1_er5a0")
 
 [node name="VideoScreen" type="TextureRect" parent="." unique_id=1980027982]
+unique_name_in_owner = true
+texture_repeat = 2
+material = SubResource("ShaderMaterial_6k5vo")
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -237,6 +260,7 @@ stretch_mode = 5
 
 [node name="RoundLabel" type="Label" parent="VideoScreen" unique_id=1781116238]
 unique_name_in_owner = true
+visible = false
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
@@ -297,6 +321,83 @@ unique_name_in_owner = true
 visible = false
 layout_mode = 1
 
+[node name="StartScreen" type="Control" parent="." unique_id=236724802]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(1920, 1080)
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="StartButton" type="Button" parent="StartScreen" unique_id=1814600850]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -150.5
+offset_top = -230.0
+offset_right = 150.5
+offset_bottom = -55.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_constants/outline_size = 40
+theme_override_font_sizes/font_size = 128
+theme_override_styles/normal = SubResource("StyleBoxFlat_dkuxn")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_w70qq")
+theme_override_styles/hover = SubResource("StyleBoxFlat_6k5vo")
+text = "Start"
+
+[node name="FinishTitle" type="RichTextLabel" parent="StartScreen" unique_id=1439480824]
+custom_minimum_size = Vector2(900, 500)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -607.5
+offset_top = -112.0
+offset_right = 607.5
+offset_bottom = 112.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.9098039)
+theme_override_constants/shadow_outline_size = 0
+theme_override_constants/shadow_offset_x = 20
+theme_override_constants/shadow_offset_y = 20
+theme_override_font_sizes/normal_font_size = 156
+bbcode_enabled = true
+text = "[wave amp=100 freq=3][rainbow freq=0.5 sat=0.8 val=0.8 speed=1.0]What the Horse!?![/rainbow][/wave]"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="EndScreen" type="Control" parent="." unique_id=52850459]
+unique_name_in_owner = true
+visible = false
+custom_minimum_size = Vector2(1920, 1080)
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="EndLabel" type="Label" parent="EndScreen" unique_id=146639220]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -434.5
+offset_top = -86.0
+offset_right = 434.5
+offset_bottom = 86.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Team One Wins!"
+label_settings = SubResource("LabelSettings_w70qq")
+
 [connection signal="on_finish" from="VideoScreen/CenterContainer/VideoStreamPlayer" to="." method="_on_video_stream_player_on_finish"]
 [connection signal="on_pause" from="VideoScreen/CenterContainer/VideoStreamPlayer" to="." method="_on_video_stream_player_on_pause"]
 [connection signal="on_answer_choice_selected" from="VideoScreen/VBoxContainer/HBoxContainer/Button" to="." method="_on_button_on_answer_choice_selected"]
@@ -305,3 +406,4 @@ layout_mode = 1
 [connection signal="on_answer_choice_selected" from="VideoScreen/VBoxContainer/HBoxContainer3/Button4" to="." method="_on_button_4_on_answer_choice_selected"]
 [connection signal="pressed" from="VideoScreen/PlayButton" to="." method="_on_play_button_pressed"]
 [connection signal="on_next_video" from="HorseRewardScreen" to="." method="_on_horse_reward_screen_on_next_video"]
+[connection signal="pressed" from="StartScreen/StartButton" to="." method="_on_start_button_pressed"]

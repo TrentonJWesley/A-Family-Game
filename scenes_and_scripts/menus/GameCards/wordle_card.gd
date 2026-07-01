@@ -1,5 +1,6 @@
 extends Button
 
+@onready var hover_sound: AudioStreamPlayer = %HoverSound
 
 func _ready() -> void:
 	# Connect the mouse signals to our functions
@@ -7,9 +8,9 @@ func _ready() -> void:
 	mouse_exited.connect(_on_mouse_exited)
 
 func _on_mouse_entered() -> void:
-	print("huh")
 	var tween = create_tween()
 	tween.tween_property(self, "rotation_degrees", 5, 0.2)
+	hover_sound.play()
 
 func _on_mouse_exited() -> void:
 	var tween = create_tween()

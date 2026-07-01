@@ -7,6 +7,20 @@
 [ext_resource type="AudioStream" uid="uid://cc2wukkik3upe" path="res://audio/Clairo - Second Nature (Instrumental).mp3" id="4_xyo3e"]
 [ext_resource type="Script" uid="uid://dh037q42hrbfn" path="res://scenes_and_scripts/menus/portrait_team_one_name.gd" id="5_0lk3c"]
 [ext_resource type="Script" uid="uid://dagqyv6jl1l47" path="res://scenes_and_scripts/menus/portrait_team_two_name.gd" id="6_qiv2j"]
+[ext_resource type="Script" uid="uid://bty77cg6jrhar" path="res://scenes_and_scripts/menus/mini_game_screen.gd" id="8_guyxk"]
+[ext_resource type="Texture2D" uid="uid://cprmstcmboowp" path="res://images/arrow_right_variant_1.png" id="8_o4x6c"]
+[ext_resource type="Texture2D" uid="uid://ceitwptr866c0" path="res://images/arrow_right_variant_2.png" id="9_eya86"]
+[ext_resource type="Script" uid="uid://2udwtfp4o516" path="res://scenes_and_scripts/menus/go_to_games_arrow.gd" id="10_eya86"]
+[ext_resource type="PackedScene" uid="uid://bva5deyhe44ad" path="res://scenes_and_scripts/menus/GameCards/what_the_horse_card.tscn" id="11_jbmg5"]
+[ext_resource type="PackedScene" uid="uid://mqsu1rwin6tb" path="res://scenes_and_scripts/menus/GameCards/wordle_card.tscn" id="12_b7u2v"]
+[ext_resource type="Script" uid="uid://b6piuhco1b62w" path="res://scenes_and_scripts/menus/go_to_portraits_arrow.gd" id="13_b7u2v"]
+[ext_resource type="Texture2D" uid="uid://um1sktq4w3r7" path="res://images/arrow_left_variant_1.png" id="13_y2yss"]
+[ext_resource type="Texture2D" uid="uid://c1uwqc5exdalg" path="res://images/arrow_left_variant_2.png" id="14_guyxk"]
+[ext_resource type="AudioStream" uid="uid://capu32fbbnrdl" path="res://audio/new-looney-tunes-intro-breakdown-sound-effect-1_QCbRnYkl.mp3" id="17_vx017"]
+[ext_resource type="PackedScene" uid="uid://ca3p42kvatog6" path="res://scenes_and_scripts/what_the_horse/what_the_horse.tscn" id="18_2ldwp"]
+[ext_resource type="Texture2D" uid="uid://u7wks7iwmefe" path="res://images/random_picture_frames.png" id="19_i624y"]
+[ext_resource type="Shader" uid="uid://owtdl02rjpg7" path="res://scenes_and_scripts/menus/game_transition.gdshader" id="19_p3lws"]
+[ext_resource type="Script" uid="uid://dvbb13nm3qtoo" path="res://scenes_and_scripts/menus/mini_game_transition_screen.gd" id="21_1v3wo"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_xyo3e"]
 font = ExtResource("3_wvaqc")
@@ -22,6 +36,18 @@ font_color = Color(1, 0.32941177, 0.32941177, 1)
 outline_size = 10
 outline_color = Color(0, 0, 0, 1)
 
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_1v3wo"]
+shader = ExtResource("19_p3lws")
+shader_parameter/circle_size = 0.0
+shader_parameter/screen_width = 0.0
+shader_parameter/screen_height = 0.0
+
+[sub_resource type="LabelSettings" id="LabelSettings_1v3wo"]
+font = ExtResource("3_wvaqc")
+font_size = 128
+outline_size = 25
+outline_color = Color(0, 0, 0, 1)
+
 [node name="GameScreen" type="TextureRect" unique_id=140781227]
 custom_minimum_size = Vector2(1920, 1080)
 offset_right = 40.0
@@ -30,12 +56,19 @@ texture = ExtResource("1_5rk2p")
 expand_mode = 1
 script = ExtResource("2_g0b0f")
 
-[node name="FamilyPortrait" parent="." unique_id=713759484 instance=ExtResource("2_dgqku")]
+[node name="PortraitScreen" type="Control" parent="." unique_id=2078605753]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(1920, 1080)
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="FamilyPortrait" parent="PortraitScreen" unique_id=713759484 instance=ExtResource("2_dgqku")]
 layout_mode = 0
 offset_top = 211.0
 offset_bottom = 1239.0
 
-[node name="FamilyPortrait2" parent="." unique_id=293639835 instance=ExtResource("2_dgqku")]
+[node name="FamilyPortrait2" parent="PortraitScreen" unique_id=293639835 instance=ExtResource("2_dgqku")]
 layout_mode = 0
 offset_left = 984.0
 offset_top = 211.0
@@ -43,7 +76,7 @@ offset_right = 2446.0
 offset_bottom = 1239.0
 team_num = 2
 
-[node name="PortraitTeamOneName" type="Label" parent="." unique_id=1531393914]
+[node name="PortraitTeamOneName" type="Label" parent="PortraitScreen" unique_id=1531393914]
 custom_minimum_size = Vector2(935.68, 0)
 layout_mode = 0
 offset_top = 106.0
@@ -55,7 +88,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 script = ExtResource("5_0lk3c")
 
-[node name="PortraitTeamTwoName" type="Label" parent="." unique_id=375391703]
+[node name="PortraitTeamTwoName" type="Label" parent="PortraitScreen" unique_id=375391703]
 custom_minimum_size = Vector2(935.68, 0)
 layout_mode = 0
 offset_left = 984.0
@@ -73,3 +106,125 @@ unique_name_in_owner = true
 stream = ExtResource("4_xyo3e")
 autoplay = true
 parameters/looping = true
+
+[node name="MiniGameScreen" type="Control" parent="." unique_id=1013707499]
+unique_name_in_owner = true
+visible = false
+custom_minimum_size = Vector2(1920, 1080)
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("8_guyxk")
+
+[node name="WhatTheHorseCard" parent="MiniGameScreen" unique_id=685451248 instance=ExtResource("11_jbmg5")]
+layout_mode = 0
+offset_left = 276.0
+offset_top = 132.0
+offset_right = 626.0
+offset_bottom = 582.0
+
+[node name="WordleCard" parent="MiniGameScreen" unique_id=828545869 instance=ExtResource("12_b7u2v")]
+layout_mode = 0
+offset_left = 756.0
+offset_top = 132.0
+offset_right = 1106.0
+offset_bottom = 582.0
+
+[node name="GoToGamesArrow" type="TextureButton" parent="." unique_id=767242089]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(200, 200)
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -100.0
+offset_top = -200.0
+offset_right = 100.0
+grow_horizontal = 2
+grow_vertical = 0
+texture_normal = ExtResource("8_o4x6c")
+texture_hover = ExtResource("9_eya86")
+ignore_texture_size = true
+stretch_mode = 0
+script = ExtResource("10_eya86")
+
+[node name="GoToPortraitsArrow" type="TextureButton" parent="." unique_id=1030303155]
+unique_name_in_owner = true
+visible = false
+custom_minimum_size = Vector2(200, 200)
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -100.0
+offset_top = -200.0
+offset_right = 100.0
+grow_horizontal = 2
+grow_vertical = 0
+texture_normal = ExtResource("13_y2yss")
+texture_hover = ExtResource("14_guyxk")
+ignore_texture_size = true
+stretch_mode = 0
+script = ExtResource("13_b7u2v")
+
+[node name="GameTransitionSound" type="AudioStreamPlayer" parent="." unique_id=939549205]
+unique_name_in_owner = true
+stream = ExtResource("17_vx017")
+
+[node name="MiniGames" type="Control" parent="." unique_id=959372817]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="WhatTheHorse" parent="MiniGames" unique_id=1384399128 instance=ExtResource("18_2ldwp")]
+unique_name_in_owner = true
+visible = false
+layout_mode = 1
+offset_right = 1880.0
+offset_bottom = 1040.0
+
+[node name="MiniGameTransitionScreen" type="TextureRect" parent="." unique_id=752657527]
+unique_name_in_owner = true
+visible = false
+material = SubResource("ShaderMaterial_1v3wo")
+custom_minimum_size = Vector2(1920, 1080)
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("19_i624y")
+script = ExtResource("21_1v3wo")
+
+[node name="EndScreen" type="Control" parent="." unique_id=1898194201]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(1920, 1080)
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="EndLabel" type="Label" parent="EndScreen" unique_id=1496523016]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(1000, 400)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -434.5
+offset_top = -86.0
+offset_right = 434.5
+offset_bottom = 86.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Team One Wins!"
+label_settings = SubResource("LabelSettings_1v3wo")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="pressed" from="MiniGameScreen/WhatTheHorseCard" to="MiniGameScreen" method="_on_what_the_horse_card_pressed"]
+[connection signal="pressed" from="MiniGameScreen/WordleCard" to="MiniGameScreen" method="_on_wordle_card_pressed"]
+[connection signal="end" from="MiniGames/WhatTheHorse" to="MiniGameScreen" method="_on_what_the_horse_end"]

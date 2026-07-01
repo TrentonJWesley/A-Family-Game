@@ -1,0 +1,103 @@
+[gd_scene format=3 uid="uid://cc70jor5dgxmb"]
+
+[ext_resource type="Texture2D" uid="uid://ctnlg1m7v6d3s" path="res://images/cartoon styled wooden background.jpg" id="1_5rk2p"]
+[ext_resource type="PackedScene" uid="uid://f62f18pr2wpk" path="res://scenes_and_scripts/menus/family_portrait.tscn" id="2_dgqku"]
+[ext_resource type="Script" uid="uid://dobd8hwy4l2st" path="res://scenes_and_scripts/menus/game_screen.gd" id="2_g0b0f"]
+[ext_resource type="FontFile" uid="uid://c3cojw58n10nm" path="res://fonts/ShortBaby-Mg2w.ttf" id="3_wvaqc"]
+[ext_resource type="AudioStream" uid="uid://cc2wukkik3upe" path="res://audio/Clairo - Second Nature (Instrumental).mp3" id="4_xyo3e"]
+[ext_resource type="Script" uid="uid://dh037q42hrbfn" path="res://scenes_and_scripts/menus/portrait_team_one_name.gd" id="5_0lk3c"]
+[ext_resource type="Script" uid="uid://dagqyv6jl1l47" path="res://scenes_and_scripts/menus/portrait_team_two_name.gd" id="6_qiv2j"]
+[ext_resource type="Texture2D" uid="uid://cprmstcmboowp" path="res://images/arrow_right_variant_1.png" id="8_o4x6c"]
+[ext_resource type="Texture2D" uid="uid://ceitwptr866c0" path="res://images/arrow_right_variant_2.png" id="9_eya86"]
+[ext_resource type="Script" uid="uid://2udwtfp4o516" path="res://scenes_and_scripts/menus/go_to_games_arrow.gd" id="10_eya86"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_xyo3e"]
+font = ExtResource("3_wvaqc")
+font_size = 128
+font_color = Color(0.23137255, 0.6039216, 1, 1)
+outline_size = 10
+outline_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_wvaqc"]
+font = ExtResource("3_wvaqc")
+font_size = 128
+font_color = Color(1, 0.32941177, 0.32941177, 1)
+outline_size = 10
+outline_color = Color(0, 0, 0, 1)
+
+[node name="GameScreen" type="TextureRect" unique_id=140781227]
+custom_minimum_size = Vector2(1920, 1080)
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("1_5rk2p")
+expand_mode = 1
+script = ExtResource("2_g0b0f")
+
+[node name="PortraitScreen" type="Control" parent="." unique_id=2078605753]
+custom_minimum_size = Vector2(1920, 1080)
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="FamilyPortrait" parent="PortraitScreen" unique_id=713759484 instance=ExtResource("2_dgqku")]
+layout_mode = 0
+offset_top = 211.0
+offset_bottom = 1239.0
+
+[node name="FamilyPortrait2" parent="PortraitScreen" unique_id=293639835 instance=ExtResource("2_dgqku")]
+layout_mode = 0
+offset_left = 984.0
+offset_top = 211.0
+offset_right = 2446.0
+offset_bottom = 1239.0
+team_num = 2
+
+[node name="PortraitTeamOneName" type="Label" parent="PortraitScreen" unique_id=1531393914]
+custom_minimum_size = Vector2(935.68, 0)
+layout_mode = 0
+offset_top = 106.0
+offset_right = 935.68
+offset_bottom = 234.0
+text = "Team One"
+label_settings = SubResource("LabelSettings_xyo3e")
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("5_0lk3c")
+
+[node name="PortraitTeamTwoName" type="Label" parent="PortraitScreen" unique_id=375391703]
+custom_minimum_size = Vector2(935.68, 0)
+layout_mode = 0
+offset_left = 984.0
+offset_top = 106.0
+offset_right = 1919.6799
+offset_bottom = 234.0
+text = "Team Two"
+label_settings = SubResource("LabelSettings_wvaqc")
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("6_qiv2j")
+
+[node name="GameMenuMusic" type="AudioStreamPlayer" parent="." unique_id=1383161811]
+unique_name_in_owner = true
+stream = ExtResource("4_xyo3e")
+autoplay = true
+parameters/looping = true
+
+[node name="GoToGamesArrow" type="TextureButton" parent="." unique_id=767242089]
+custom_minimum_size = Vector2(200, 200)
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -20.0
+offset_top = -40.0
+offset_right = 20.0
+grow_horizontal = 2
+grow_vertical = 0
+texture_normal = ExtResource("8_o4x6c")
+texture_hover = ExtResource("9_eya86")
+ignore_texture_size = true
+stretch_mode = 0
+script = ExtResource("10_eya86")

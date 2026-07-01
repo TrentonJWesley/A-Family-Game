@@ -2,6 +2,7 @@
 
 [ext_resource type="VideoStream" uid="uid://meq11rqj8es1" path="res://game_data/what_the_horse_game_data/horse_heads/black_and_white_horse_head.ogv" id="1_ntbs3"]
 [ext_resource type="Script" uid="uid://d4l5ym5tktdxb" path="res://scenes_and_scripts/menus/GameCards/what_the_horse_card.gd" id="1_xsuuf"]
+[ext_resource type="AudioStream" uid="uid://qve4vhbcctii" path="res://audio/card sound.mp3" id="3_wxaer"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2n5el"]
 bg_color = Color(0.12225222, 0.12225225, 0.12225217, 1)
@@ -93,3 +94,8 @@ text = "Randoms videos are played. You have to guess what the [rainbow freq=0.5 
 "
 scroll_active = false
 horizontal_alignment = 1
+
+[node name="HoverSound" type="AudioStreamPlayer" parent="." unique_id=864246952]
+unique_name_in_owner = true
+stream = ExtResource("3_wxaer")
+volume_db = 10.0
