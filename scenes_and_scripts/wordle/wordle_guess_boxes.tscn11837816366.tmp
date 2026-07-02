@@ -1,0 +1,104 @@
+[gd_scene format=3 uid="uid://cpss67udkycjm"]
+
+[ext_resource type="Script" uid="uid://dqjklm17qk3in" path="res://scenes_and_scripts/wordle/wordle_guess_boxes.gd" id="1_s6ina"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3l0nm"]
+bg_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="LabelSettings" id="LabelSettings_s6ina"]
+font_size = 108
+
+[node name="WordleGuessBoxes" type="HBoxContainer" unique_id=205661762]
+offset_right = 766.0
+offset_bottom = 150.0
+theme_override_constants/separation = 15
+script = ExtResource("1_s6ina")
+
+[node name="GuessBoxOne" type="Panel" parent="." unique_id=1361973205]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(150, 150)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_3l0nm")
+
+[node name="LetterOne" type="Label" parent="GuessBoxOne" unique_id=1571503777]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(150, 150)
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+text = "W"
+label_settings = SubResource("LabelSettings_s6ina")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="GuessBoxTwo" type="Panel" parent="." unique_id=576977209]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(150, 150)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_3l0nm")
+
+[node name="LetterTwo" type="Label" parent="GuessBoxTwo" unique_id=1806277219]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(150, 150)
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+text = "W"
+label_settings = SubResource("LabelSettings_s6ina")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="GuessBoxThree" type="Panel" parent="." unique_id=600452614]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(150, 150)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_3l0nm")
+
+[node name="LetterThree" type="Label" parent="GuessBoxThree" unique_id=1132490856]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(150, 150)
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+text = "W"
+label_settings = SubResource("LabelSettings_s6ina")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="GuessBoxFour" type="Panel" parent="." unique_id=358482781]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(150, 150)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_3l0nm")
+
+[node name="LetterFour" type="Label" parent="GuessBoxFour" unique_id=165625544]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(150, 150)
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+text = "W"
+label_settings = SubResource("LabelSettings_s6ina")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="GuessBoxFive" type="Panel" parent="." unique_id=1550454545]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(150, 150)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_3l0nm")
+
+[node name="LetterFive" type="Label" parent="GuessBoxFive" unique_id=939553706]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(150, 150)
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+text = "W"
+label_settings = SubResource("LabelSettings_s6ina")
+horizontal_alignment = 1
+vertical_alignment = 1
