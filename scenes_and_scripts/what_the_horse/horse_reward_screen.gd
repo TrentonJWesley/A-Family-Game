@@ -79,7 +79,8 @@ func add_horse_head(team):
 	await get_tree().process_frame
 	
 	# Set initial horse head position
-	var viewport_size = get_viewport().get_size()
+	#var viewport_size = get_viewport().get_size()
+	var viewport_size = get_viewport_rect().size
 	new_horse_head.global_position = Vector2(viewport_size / 2) - Vector2(video_size / 2)
 	
 	var new_pos = null
