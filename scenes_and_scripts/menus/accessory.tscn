@@ -1,0 +1,93 @@
+[gd_scene format=3 uid="uid://edxf4qxfnh33"]
+
+[ext_resource type="Texture2D" uid="uid://stl0mepdvfyn" path="res://images/accessories/sunglasses_1.png" id="1_a4168"]
+[ext_resource type="Script" uid="uid://be4lgg7iu8uc3" path="res://scenes_and_scripts/menus/accessory.gd" id="2_mb2bx"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mb2bx"]
+bg_color = Color(0.60038817, 0.60038817, 0.60038817, 0)
+border_width_left = 20
+border_width_top = 20
+border_width_right = 20
+border_width_bottom = 20
+border_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3lcxo"]
+bg_color = Color(0.60038817, 0.60038817, 0.60038817, 0)
+border_width_left = 20
+border_width_top = 20
+border_width_right = 20
+border_width_bottom = 20
+border_color = Color(0.8004907, 0.8004907, 0.8004914, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_oflng"]
+content_margin_left = 30.0
+content_margin_top = 4.0
+content_margin_right = 30.0
+content_margin_bottom = 4.0
+bg_color = Color(0.1, 0.1, 0.1, 0.6)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+corner_detail = 6
+
+[node name="Accessory" type="TextureRect" unique_id=394517335]
+custom_minimum_size = Vector2(400, 0)
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("1_a4168")
+expand_mode = 5
+stretch_mode = 5
+script = ExtResource("2_mb2bx")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=284061752]
+
+[node name="FinishButton" type="Button" parent="CanvasLayer" unique_id=820064842]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(360, 150)
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -180.0
+offset_top = -180.0
+offset_right = 180.0
+offset_bottom = -30.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_color = Color(0.8004907, 0.8004907, 0.8004914, 1)
+theme_override_font_sizes/font_size = 64
+theme_override_styles/normal = SubResource("StyleBoxFlat_mb2bx")
+theme_override_styles/hover = SubResource("StyleBoxFlat_3lcxo")
+text = "Finished"
+
+[node name="ResizeSlider" type="VSlider" parent="CanvasLayer" unique_id=1666800703]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(100, 800)
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -170.0
+offset_top = -400.0
+offset_right = -70.0
+offset_bottom = 400.0
+grow_horizontal = 0
+grow_vertical = 2
+theme_override_styles/slider = SubResource("StyleBoxFlat_oflng")
+max_value = 2.0
+step = 0.01
+value = 1.0
+
+[connection signal="pressed" from="CanvasLayer/FinishButton" to="." method="_on_finish_button_pressed"]

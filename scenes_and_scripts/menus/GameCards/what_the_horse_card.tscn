@@ -3,6 +3,7 @@
 [ext_resource type="VideoStream" uid="uid://meq11rqj8es1" path="res://game_data/what_the_horse_game_data/horse_heads/black_and_white_horse_head.ogv" id="1_ntbs3"]
 [ext_resource type="Script" uid="uid://d4l5ym5tktdxb" path="res://scenes_and_scripts/menus/GameCards/what_the_horse_card.gd" id="1_xsuuf"]
 [ext_resource type="AudioStream" uid="uid://qve4vhbcctii" path="res://audio/card sound.mp3" id="3_wxaer"]
+[ext_resource type="Texture2D" uid="uid://bvrmww5u020td" path="res://images/Lock.png" id="4_ry3q0"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2n5el"]
 bg_color = Color(0.12225222, 0.12225225, 0.12225217, 1)
@@ -99,3 +100,28 @@ horizontal_alignment = 1
 unique_name_in_owner = true
 stream = ExtResource("3_wxaer")
 volume_db = 10.0
+
+[node name="LockScreen" type="Panel" parent="." unique_id=761596576]
+unique_name_in_owner = true
+visible = false
+custom_minimum_size = Vector2(350, 450)
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="TextureRect" type="TextureRect" parent="LockScreen" unique_id=1970181781]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -50.0
+offset_top = -50.0
+offset_right = 50.0
+offset_bottom = 50.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("4_ry3q0")
+expand_mode = 1

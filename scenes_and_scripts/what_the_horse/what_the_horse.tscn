@@ -21,7 +21,7 @@
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_6k5vo"]
 shader = ExtResource("2_rwyxg")
-shader_parameter/scroll_speed = 0.010000237975000381
+shader_parameter/scroll_speed = 0.01000023797500038
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_gj6mx"]
 shader = ExtResource("6_12yvi")

@@ -20,7 +20,10 @@
 [ext_resource type="PackedScene" uid="uid://ca3p42kvatog6" path="res://scenes_and_scripts/what_the_horse/what_the_horse.tscn" id="18_2ldwp"]
 [ext_resource type="Texture2D" uid="uid://u7wks7iwmefe" path="res://images/random_picture_frames.png" id="19_i624y"]
 [ext_resource type="Shader" uid="uid://owtdl02rjpg7" path="res://scenes_and_scripts/menus/game_transition.gdshader" id="19_p3lws"]
+[ext_resource type="Script" uid="uid://dxhag8j36l5k4" path="res://scenes_and_scripts/menus/reward_screen.gd" id="20_g0y0j"]
 [ext_resource type="Script" uid="uid://dvbb13nm3qtoo" path="res://scenes_and_scripts/menus/mini_game_transition_screen.gd" id="21_1v3wo"]
+[ext_resource type="PackedScene" uid="uid://cm6gvrfkhgony" path="res://scenes_and_scripts/menus/reward_card.tscn" id="21_5mlcc"]
+[ext_resource type="Script" uid="uid://c8dkkm24o57yt" path="res://scenes_and_scripts/menus/end_screen.gd" id="22_n8b8k"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_xyo3e"]
 font = ExtResource("3_wvaqc")
@@ -36,17 +39,17 @@ font_color = Color(1, 0.32941177, 0.32941177, 1)
 outline_size = 10
 outline_color = Color(0, 0, 0, 1)
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_1v3wo"]
-shader = ExtResource("19_p3lws")
-shader_parameter/circle_size = 0.0
-shader_parameter/screen_width = 0.0
-shader_parameter/screen_height = 0.0
-
 [sub_resource type="LabelSettings" id="LabelSettings_1v3wo"]
 font = ExtResource("3_wvaqc")
 font_size = 128
 outline_size = 25
 outline_color = Color(0, 0, 0, 1)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_1v3wo"]
+shader = ExtResource("19_p3lws")
+shader_parameter/circle_size = 0.0
+shader_parameter/screen_width = 0.0
+shader_parameter/screen_height = 0.0
 
 [node name="GameScreen" type="TextureRect" unique_id=140781227]
 custom_minimum_size = Vector2(1920, 1080)
@@ -64,11 +67,13 @@ offset_right = 40.0
 offset_bottom = 40.0
 
 [node name="FamilyPortrait" parent="PortraitScreen" unique_id=713759484 instance=ExtResource("2_dgqku")]
+unique_name_in_owner = true
 layout_mode = 0
 offset_top = 211.0
 offset_bottom = 1239.0
 
 [node name="FamilyPortrait2" parent="PortraitScreen" unique_id=293639835 instance=ExtResource("2_dgqku")]
+unique_name_in_owner = true
 layout_mode = 0
 offset_left = 984.0
 offset_top = 211.0
@@ -77,6 +82,8 @@ offset_bottom = 1239.0
 team_num = 2
 
 [node name="PortraitTeamOneName" type="Label" parent="PortraitScreen" unique_id=1531393914]
+unique_name_in_owner = true
+z_index = 2
 custom_minimum_size = Vector2(935.68, 0)
 layout_mode = 0
 offset_top = 106.0
@@ -89,6 +96,8 @@ vertical_alignment = 1
 script = ExtResource("5_0lk3c")
 
 [node name="PortraitTeamTwoName" type="Label" parent="PortraitScreen" unique_id=375391703]
+unique_name_in_owner = true
+z_index = 2
 custom_minimum_size = Vector2(935.68, 0)
 layout_mode = 0
 offset_left = 984.0
@@ -118,17 +127,39 @@ script = ExtResource("8_guyxk")
 
 [node name="WhatTheHorseCard" parent="MiniGameScreen" unique_id=685451248 instance=ExtResource("11_jbmg5")]
 layout_mode = 0
-offset_left = 276.0
-offset_top = 132.0
-offset_right = 626.0
-offset_bottom = 582.0
+offset_left = 279.0
+offset_top = 218.0
+offset_right = 629.0
+offset_bottom = 668.0
+scale = Vector2(0.75, 0.75)
 
 [node name="WordleCard" parent="MiniGameScreen" unique_id=828545869 instance=ExtResource("12_b7u2v")]
 layout_mode = 0
-offset_left = 756.0
-offset_top = 132.0
-offset_right = 1106.0
-offset_bottom = 582.0
+offset_left = 776.0
+offset_top = 218.0
+offset_right = 1126.0
+offset_bottom = 668.0
+scale = Vector2(0.75, 0.75)
+
+[node name="TeamPickingLabel" type="RichTextLabel" parent="MiniGameScreen" unique_id=1641059107]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(1000, 200)
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -500.0
+offset_right = 500.0
+offset_bottom = 200.0
+grow_horizontal = 2
+theme_override_constants/outline_size = 20
+theme_override_fonts/normal_font = ExtResource("3_wvaqc")
+theme_override_font_sizes/normal_font_size = 86
+bbcode_enabled = true
+text = "Team One, pick a game!"
+scroll_active = false
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="GoToGamesArrow" type="TextureButton" parent="." unique_id=767242089]
 unique_name_in_owner = true
@@ -187,23 +218,14 @@ layout_mode = 1
 offset_right = 1880.0
 offset_bottom = 1040.0
 
-[node name="MiniGameTransitionScreen" type="TextureRect" parent="." unique_id=752657527]
-unique_name_in_owner = true
-visible = false
-material = SubResource("ShaderMaterial_1v3wo")
-custom_minimum_size = Vector2(1920, 1080)
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
-texture = ExtResource("19_i624y")
-script = ExtResource("21_1v3wo")
-
 [node name="EndScreen" type="Control" parent="." unique_id=1898194201]
 unique_name_in_owner = true
+visible = false
 custom_minimum_size = Vector2(1920, 1080)
 anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
+offset_right = 1920.0
+offset_bottom = 1080.0
+script = ExtResource("22_n8b8k")
 
 [node name="EndLabel" type="Label" parent="EndScreen" unique_id=1496523016]
 unique_name_in_owner = true
@@ -225,6 +247,74 @@ label_settings = SubResource("LabelSettings_1v3wo")
 horizontal_alignment = 1
 vertical_alignment = 1
 
+[node name="RewardScreen" type="Control" parent="." unique_id=1054362953]
+unique_name_in_owner = true
+visible = false
+custom_minimum_size = Vector2(1920, 1080)
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("20_g0y0j")
+
+[node name="ChooseRewardLabel" type="RichTextLabel" parent="RewardScreen" unique_id=1446876996]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(1000, 300)
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -500.0
+offset_right = 500.0
+offset_bottom = 200.0
+grow_horizontal = 2
+theme_override_constants/outline_size = 20
+theme_override_fonts/normal_font = ExtResource("3_wvaqc")
+theme_override_font_sizes/normal_font_size = 84
+bbcode_enabled = true
+text = "[color=#ffffff]Team One, choose a reward![/color]"
+scroll_active = false
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="RewardCard1" parent="RewardScreen" unique_id=421371938 instance=ExtResource("21_5mlcc")]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 150.0
+offset_top = 315.0
+offset_right = 500.0
+offset_bottom = 765.0
+
+[node name="RewardCard2" parent="RewardScreen" unique_id=1409652961 instance=ExtResource("21_5mlcc")]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 785.0
+offset_top = 315.0
+offset_right = 1135.0
+offset_bottom = 765.0
+
+[node name="RewardCard3" parent="RewardScreen" unique_id=466460093 instance=ExtResource("21_5mlcc")]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 1420.0
+offset_top = 315.0
+offset_right = 1770.0
+offset_bottom = 765.0
+
+[node name="MiniGameTransitionScreen" type="TextureRect" parent="." unique_id=752657527]
+unique_name_in_owner = true
+visible = false
+z_index = 3
+material = SubResource("ShaderMaterial_1v3wo")
+custom_minimum_size = Vector2(1920, 1080)
+layout_mode = 0
+offset_right = 1920.0
+offset_bottom = 1080.0
+texture = ExtResource("19_i624y")
+script = ExtResource("21_1v3wo")
+
 [connection signal="pressed" from="MiniGameScreen/WhatTheHorseCard" to="MiniGameScreen" method="_on_what_the_horse_card_pressed"]
 [connection signal="pressed" from="MiniGameScreen/WordleCard" to="MiniGameScreen" method="_on_wordle_card_pressed"]
 [connection signal="end" from="MiniGames/WhatTheHorse" to="MiniGameScreen" method="_on_what_the_horse_end"]
+[connection signal="pressed" from="RewardScreen/RewardCard1" to="RewardScreen" method="_on_reward_card_1_pressed"]
+[connection signal="pressed" from="RewardScreen/RewardCard2" to="RewardScreen" method="_on_reward_card_2_pressed"]
+[connection signal="pressed" from="RewardScreen/RewardCard3" to="RewardScreen" method="_on_reward_card_3_pressed"]

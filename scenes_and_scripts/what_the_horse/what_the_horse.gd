@@ -158,12 +158,6 @@ func _on_play_button_pressed() -> void:
 	round_label.set_visible(false)
 	play_button.set_visible(false)
 	
-	## Change video position
-	#var video_size = video_stream_player.get_size()
-	#var viewport_size = get_viewport().get_size()
-	#var new_position = Vector2(viewport_size / 2) - Vector2(video_size / 2)
-	#video_stream_player.set_position(new_position)
-	
 	# Start video
 	video_stream_player.start_video()
 
@@ -386,10 +380,18 @@ func _on_start_button_pressed() -> void:
 	round_label.visible = true
 	play_button.visible = true
 	start_screen.visible = false
+	video_stream_player.set_visible(true)
 	waiting_sound.stop()
 	start_random_video()
 	
 func show_end_screen() -> void:
+	# Remove Horse Heads
+	horse_reward_screen.reset_fully()
+	# Check if we have enough cards for another game
+	if video_playlist.size() < GameData.horse_game_max_rounds:
+		GameData.out_of_horse_cards.emit()
+		
+	# Emit end signal with winning team number
 	if team_1_horse_num > team_2_horse_num:
 		end.emit(1)
 	elif team_2_horse_num > team_1_horse_num:

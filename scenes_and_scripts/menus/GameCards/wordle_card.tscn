@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://brqjnqo55tfxj" path="res://scenes_and_scripts/menus/GameCards/wordle_card.gd" id="1_ksec1"]
 [ext_resource type="Texture2D" uid="uid://c0w6qyhsy1r8j" path="res://images/Wordle Diagram.png" id="1_nwctt"]
 [ext_resource type="AudioStream" uid="uid://qve4vhbcctii" path="res://audio/card sound.mp3" id="3_6f83p"]
+[ext_resource type="Texture2D" uid="uid://bvrmww5u020td" path="res://images/Lock.png" id="4_td7f7"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7mivw"]
 bg_color = Color(0.12225222, 0.12225225, 0.12225217, 1)
@@ -96,3 +97,28 @@ horizontal_alignment = 1
 unique_name_in_owner = true
 stream = ExtResource("3_6f83p")
 volume_db = 10.0
+
+[node name="LockScreen" type="Panel" parent="." unique_id=428870081]
+unique_name_in_owner = true
+visible = false
+custom_minimum_size = Vector2(350, 450)
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="TextureRect" type="TextureRect" parent="LockScreen" unique_id=404039744]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -50.0
+offset_top = -50.0
+offset_right = 50.0
+offset_bottom = 50.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("4_td7f7")
+expand_mode = 1

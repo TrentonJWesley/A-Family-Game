@@ -33,6 +33,7 @@ func start_bobbing() -> void:
 func _on_pressed() -> void:
 	# Disable button
 	self.disabled = true
+	self.visible = false
 	
 	# Get viewport width
 	var screen_width = get_viewport_rect().size.x
@@ -46,7 +47,6 @@ func _on_pressed() -> void:
 	tween_move_screens.tween_property(mini_game_screen, "position:x", 0, 1.5)
 	
 	await tween_move_screens.finished
-	self.visible = false
 	portrait_screen.visible = false
 	go_to_portraits_arrow.visible = true
 	go_to_portraits_arrow.disabled = false

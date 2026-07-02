@@ -1,0 +1,50 @@
+[gd_scene format=3 uid="uid://edxf4qxfnh33"]
+
+[ext_resource type="Texture2D" uid="uid://stl0mepdvfyn" path="res://images/accessories/sunglasses_1.png" id="1_a4168"]
+[ext_resource type="Script" uid="uid://be4lgg7iu8uc3" path="res://scenes_and_scripts/menus/accessory.gd" id="2_mb2bx"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mb2bx"]
+bg_color = Color(0.60038817, 0.60038817, 0.60038817, 0)
+border_width_left = 20
+border_width_top = 20
+border_width_right = 20
+border_width_bottom = 20
+border_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3lcxo"]
+bg_color = Color(0.60038817, 0.60038817, 0.60038817, 0)
+border_width_left = 20
+border_width_top = 20
+border_width_right = 20
+border_width_bottom = 20
+border_color = Color(0.8004907, 0.8004907, 0.8004914, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[node name="Accessory" type="TextureRect" unique_id=394517335]
+custom_minimum_size = Vector2(400, 0)
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("1_a4168")
+expand_mode = 5
+stretch_mode = 5
+script = ExtResource("2_mb2bx")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=284061752]
+
+[node name="Button" type="Button" parent="CanvasLayer" unique_id=820064842]
+custom_minimum_size = Vector2(400, 200)
+offset_right = 8.0
+offset_bottom = 8.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_color = Color(0.8004907, 0.8004907, 0.8004914, 1)
+theme_override_font_sizes/font_size = 128
+theme_override_styles/normal = SubResource("StyleBoxFlat_mb2bx")
+theme_override_styles/hover = SubResource("StyleBoxFlat_3lcxo")
+text = "Finished"

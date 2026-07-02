@@ -4,6 +4,11 @@
 [ext_resource type="Script" uid="uid://d15qqasodktn7" path="res://scenes_and_scripts/menus/family_portrait.gd" id="2_8374n"]
 [ext_resource type="Texture2D" uid="uid://dhj6yf5duqgm2" path="res://images/family_portraits/family_portrait_6.png" id="3_8374n"]
 [ext_resource type="PackedScene" uid="uid://cefi6x25vm0tj" path="res://scenes_and_scripts/menus/player_pic.tscn" id="4_8374n"]
+[ext_resource type="FontFile" uid="uid://c3cojw58n10nm" path="res://fonts/ShortBaby-Mg2w.ttf" id="5_17jfo"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_xv6pe"]
+font = ExtResource("5_17jfo")
+font_size = 128
 
 [node name="FamilyPortrait" type="TextureRect" unique_id=713759484]
 z_index = 1
@@ -230,3 +235,24 @@ offset_right = 1554.1875
 offset_bottom = 1142.9999
 texture = ExtResource("1_rg5eo")
 expand_mode = 1
+
+[node name="ScoreLabel" type="Label" parent="." unique_id=601961360]
+unique_name_in_owner = true
+visible = false
+custom_minimum_size = Vector2(200, 200)
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -100.0
+offset_top = -228.0
+offset_right = 100.0
+offset_bottom = -28.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "0"
+label_settings = SubResource("LabelSettings_xv6pe")
+horizontal_alignment = 1
+vertical_alignment = 1

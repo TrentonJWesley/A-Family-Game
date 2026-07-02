@@ -11,6 +11,8 @@ extends TextureRect
 @onready var player_count_5: Control = $PlayerCount5
 @onready var player_count_6: Control = $PlayerCount6
 
+@onready var score_label: Label = %ScoreLabel
+
 
 func _ready() -> void:
 	change_player_pic_teams(team_num)
@@ -19,9 +21,11 @@ func _ready() -> void:
 	var player_count = 0
 	if team_num == 1:
 		player_count = GameData.team_one_player_count
+		score_label.self_modulate = GameData.team_one_color
 	else:
 		player_count = GameData.team_two_player_count
-		
+		score_label.self_modulate = GameData.team_two_color
+	
 	# Load family portrait
 	var file_path = "res://images/family_portraits/family_portrait_%s.png" % player_count
 	photo.set_texture(load(file_path))
@@ -50,3 +54,13 @@ func change_player_pic_teams(num: int) -> void:
 			child.team_num = num
 			if child.has_method("activate"):
 				child.activate()
+				
+func update_score() -> void:
+	score_label.visible = true
+	if team_num == 1:
+		score_label.text = str(GameData.team_one_score)
+	elif team_num == 2:
+		score_label.text = str(GameData.team_two_score)
+
+func hide_score() -> void:
+	score_label.visible = false

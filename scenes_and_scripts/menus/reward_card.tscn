@@ -1,0 +1,36 @@
+[gd_scene format=3 uid="uid://cm6gvrfkhgony"]
+
+[ext_resource type="Texture2D" uid="uid://d4fru53nof662" path="res://images/accessories/Crown.png" id="1_pxjq6"]
+[ext_resource type="Script" uid="uid://6hhfowtufoiy" path="res://scenes_and_scripts/menus/reward_card.gd" id="1_vpvy3"]
+[ext_resource type="AudioStream" uid="uid://qve4vhbcctii" path="res://audio/card sound.mp3" id="3_ajvnl"]
+
+[node name="RewardCard" type="Button" unique_id=421371938]
+custom_minimum_size = Vector2(350, 450)
+offset_right = 8.0
+offset_bottom = 8.0
+script = ExtResource("1_vpvy3")
+
+[node name="RewardImage" type="TextureRect" parent="." unique_id=1429927533]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(300, 400)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -150.0
+offset_top = -200.0
+offset_right = 150.0
+offset_bottom = 200.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("1_pxjq6")
+expand_mode = 5
+stretch_mode = 5
+
+[node name="HoverSound" type="AudioStreamPlayer" parent="." unique_id=414534]
+unique_name_in_owner = true
+stream = ExtResource("3_ajvnl")
+volume_db = 10.0
