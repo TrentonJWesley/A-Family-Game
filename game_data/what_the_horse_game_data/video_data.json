@@ -110,5 +110,181 @@
 			"video_pause": 47.6,
 			"video_end": null
 		}
+	},
+	"Skateboard Kid": {
+		"file": "skateboard_kid.ogv",
+		"answer_choices": [
+			"Kid fails and falls into the crowd.",
+			"Kid fails and falls the other way onto the ramp and does a cool roll!",
+			"Kid nails the trick. Everyone cheers!",
+            "None of the above."
+		],
+		"correct_answer": 3,
+		"settings": {
+			"window_type": "portrait",
+			"video_start": 0,
+			"video_pause": 3,
+			"video_end": 30
+		}
+	},
+	"Stupid Kid Falls in Mud": {
+		"file": "stupid_kid_falls_in_mud.ogv",
+		"answer_choices": [
+			"Kid stops himself right before the end of the slide and avoids the mud!",
+			"Kid falls into mud. lol",
+			"Kid leaps right over the mud?! Parkour!",
+            "Father swoops in to save the kid but falls into the mud himself."
+		],
+		"correct_answer": 2,
+		"settings": {
+			"window_type": "portrait",
+			"video_start": 0,
+			"video_pause": 1.5,
+			"video_end": null
+		}
+	},
+	"Thanks for not Drinking and Driving I Guess": {
+		"file": "thanks_for_not_drinking_and_driving_i_guess.ogv",
+		"answer_choices": [
+			"Drunk dude falls into the pit. lol",
+			"Drunk dude successfully makes it across?! Amazing.",
+			"Drunk dude falls backwards multiple times and then decides it's not worth it and walks the other way.",
+			"A worker leaps to the rescue and prevents the drunk guy from falling into the pit. However, the worker falls instead. lol"
+		],
+		"correct_answer": 1,
+		"settings": {
+			"window_type": "landscape",
+			"video_start": 14,
+			"video_pause": 27.2,
+			"video_end": 67
+		}
+	},
+	"Frisbee Kid": {
+		"file": "frisbee_kid.ogv",
+		"answer_choices": [
+			"Kid in red gets hit in the face with a frisbee. Bullseye!",
+			"Kid in red narrowly avoids the frisbee.",
+			"Kid in red throws another frisbee and it colides with the other frisbee.",
+			"Eagle swoops in and steals the frisbee."
+		],
+		"correct_answer": 2,
+		"settings": {
+			"window_type": "portrait",
+			"video_start": 0,
+			"video_pause": 1.75,
+			"video_end": 6
+		}
+	},
+	"Giant Cat": {
+		"file": "giant_cat.ogv",
+		"answer_choices": [
+			"A car comes out of the tunnel. I think they are lost.",
+			"A biker narrowly avoids a train.",
+			"A giant feline appears.",
+			"SKJFKJefsjdfse!?!?! What does this mean?"
+		],
+		"correct_answer": 3,
+		"settings": {
+			"window_type": "landscape",
+			"video_start": 0,
+			"video_pause": 3,
+			"video_end": null
+		}
+	},
+	"Girl Swing": {
+		"file": "girl_swing.ogv",
+		"answer_choices": [
+			"Girl falls onto multiple kids. Strike!",
+			"Girl does a flip off of the swing somehow and suprises herself.",
+			"Girl continues holding onto the swing and ends up drop kicking the lady behind her.",
+			"Girl falls into the abyss. Probably in the backrooms idk"
+		],
+		"correct_answer": 4,
+		"settings": {
+			"window_type": "portrait",
+			"video_start": 0,
+			"video_pause": 5,
+			"video_end": null
+		}
+	},
+	"Dog and Kid": {
+		"file": "dog_and_kid.ogv",
+		"answer_choices": [
+			"Dog and kid jump in perfect sync and narrowly miss each other.",
+			"Dog and kid slip in perfect sync and fall into the water",
+			"Dog uses the kid as a mid-air stepping stool. Poor kid takes a swim.",
+			"Kid uses the dog as a mid-air stepping stool. Poor dog takes a swim."
+		],
+		"correct_answer": 3,
+		"settings": {
+			"window_type": "portrait",
+			"video_start": 0,
+			"video_pause": 4.5,
+			"video_end": null
+		}
+	},
+	"Cake Fail Thing": {
+		"file": "cake_fail_thing.ogv",
+		"answer_choices": [
+			"Lady ruins whatever cake thing was inside of that bowl.",
+			"Lady successfuly flips the cake thing over and reveals a lovely, perfectly intact Flan.",
+			"Lady sucessfully flips the cake thing over but a random dog appears and ruins it.",
+			"This is all a trick. There is actually nothing inside of that bowl."
+		],
+		"correct_answer": 1,
+		"settings": {
+			"window_type": "portrait",
+			"video_start": 0,
+			"video_pause": 1.5,
+			"video_end": null
+		}
+	},
+	"Two Dogs": {
+		"file": "two_dogs.ogv",
+		"answer_choices": [
+			"Dog completely misses the rope and falls. Second dog also completely misses. Why not",
+			"Dog successfully latches onto the white ropes with their jaw. Second dog does the same. Why not",
+			"Dog successfully latches onto the white ropes with their jaw. Second dog completetly misses and knocks the first dog out.",
+			"Both dogs completely miss the rope. A bigger third dog appears and attempts as well, but collapses the table collapses."
+		],
+		"correct_answer": 2,
+		"settings": {
+			"window_type": "landscape",
+			"video_start": 0,
+			"video_pause": 1.85,
+			"video_end": 14
+		}
+	},
+	"Guy and Girl Jump into Pool": {
+		"file": "guy_and_girl_jump_into_pool.ogv",
+		"answer_choices": [
+			"Man successfully does a backflip into the pool.",
+			"Man slips, sending the woman into the pool and giving himself a wedgie hanging from the roof.",
+			"The corner of the roof collapses. No one was seriously hurt.",
+			"Man has a change of heart. Decides not to be stupid."
+		],
+		"correct_answer": 1,
+		"settings": {
+			"window_type": "portrait",
+			"video_start": 0,
+			"video_pause": 5.6,
+			"video_end": 11.25
+		}
+	},
+	"Dumplings": {
+		"file": "dumplings.ogv",
+		"answer_choices": [
+			"Dude completely fails to flip food.",
+			"Dude slips but somehow still manages to get the food into the plate.",
+			"Dude successfully gets the food onto the plate. However, he then proceeds to slip and fall.",
+			"None of the above."
+		],
+		"correct_answer": 4,
+		"settings": {
+			"window_type": "portrait",
+			"video_start": 0,
+			"video_pause": 5,
+			"video_end": null
+		}
 	}
 }

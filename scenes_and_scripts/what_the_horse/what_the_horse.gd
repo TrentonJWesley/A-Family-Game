@@ -111,7 +111,7 @@ func start_video(video: WhatTheHorseVideo, video_num: int):
 
 func update_round() -> void:
 	current_round += 1
-	round_label.text = "Round %s" % current_round
+	round_label.text = "Round %s/%s" % [current_round, MAX_ROUNDS]
 	round_label.set_visible(true)
 
 func load_videos_from_json(path: String) -> void:

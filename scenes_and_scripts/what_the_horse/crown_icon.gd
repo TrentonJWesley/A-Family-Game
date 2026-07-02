@@ -13,6 +13,7 @@ func reveal_answer(new_global_pos: Vector2) -> void:
 	var tween_pos = create_tween()
 	var tween_scale = create_tween()
 	var tween_a = create_tween()
-	tween_pos.tween_property(self, "global_position", new_global_pos, 4.0)
+	var adjusted_position = new_global_pos + Vector2(15, 15)
+	tween_pos.tween_property(self, "global_position", adjusted_position, 4.0)
 	tween_scale.tween_property(self, "scale", Vector2(0.3, 0.3), 4.0)
 	tween_a.tween_property(self, "modulate:a", 0.70, 4.0)

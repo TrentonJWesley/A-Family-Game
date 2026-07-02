@@ -31,7 +31,8 @@ var team_two_player_pictures: Dictionary = {
 	6: null,
 }
 
-var horse_game_max_rounds = 3
+var horse_game_max_rounds = 6
+var wordle_game_max_rounds = 4
 
 
 signal out_of_horse_cards

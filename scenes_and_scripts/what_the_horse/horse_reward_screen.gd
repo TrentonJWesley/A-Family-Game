@@ -32,6 +32,9 @@ signal on_next_video
 
 func _ready() -> void:
 	# Get all horse head file paths
+	load_horse_heads()
+
+func load_horse_heads() -> void:
 	var horse_heads_folder_path := "res://game_data/what_the_horse_game_data/horse_heads/"
 	var dir := DirAccess.open(horse_heads_folder_path)
 	dir.list_dir_begin()
@@ -173,3 +176,4 @@ func clear_horse_heads() -> void:
 func reset_fully() -> void:
 	defeat_horse_head.set_visible(false)
 	clear_horse_heads() # <-- Add this line here
+	load_horse_heads()

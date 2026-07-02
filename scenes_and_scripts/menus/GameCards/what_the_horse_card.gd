@@ -8,6 +8,7 @@ func _ready() -> void:
 	mouse_entered.connect(_on_mouse_entered)
 	mouse_exited.connect(_on_mouse_exited)
 	GameData.out_of_horse_cards.connect(_on_out_of_horse_cards)
+	lock_screen.visible = false
 
 func _on_mouse_entered() -> void:
 	var tween = create_tween()
