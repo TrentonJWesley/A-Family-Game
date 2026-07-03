@@ -24,6 +24,15 @@ offset_bottom = 8.0
 pivot_offset = Vector2(175, 225)
 script = ExtResource("1_xsuuf")
 
+[node name="Shadow" type="Panel" parent="." unique_id=1082489665]
+custom_minimum_size = Vector2(350, 450)
+layout_mode = 0
+offset_left = 25.0
+offset_top = 25.0
+offset_right = 375.0
+offset_bottom = 475.0
+mouse_filter = 2
+
 [node name="CardBackground" type="Panel" parent="." unique_id=2121426954]
 custom_minimum_size = Vector2(350, 450)
 layout_mode = 0

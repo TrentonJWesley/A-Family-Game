@@ -40,6 +40,7 @@ var team_2_horse_num = 0
 
 func _ready() -> void:
 	load_videos_from_json("res://game_data/what_the_horse_game_data/video_data.json")
+	check_if_out_of_videos()
 
 func _on_button_on_answer_choice_selected(answer_number: int, team: int) -> void:
 	set_answer(answer_number, team)
@@ -383,14 +384,17 @@ func _on_start_button_pressed() -> void:
 	video_stream_player.set_visible(true)
 	waiting_sound.stop()
 	start_random_video()
+
+func check_if_out_of_videos() -> void:
+	if video_playlist.size() < GameData.horse_game_max_rounds:
+		GameData.out_of_horse_cards.emit()
 	
 func show_end_screen() -> void:
 	# Remove Horse Heads
 	horse_reward_screen.reset_fully()
 	# Check if we have enough cards for another game
-	if video_playlist.size() < GameData.horse_game_max_rounds:
-		GameData.out_of_horse_cards.emit()
-		
+	check_if_out_of_videos()
+	
 	# Emit end signal with winning team number
 	if team_1_horse_num > team_2_horse_num:
 		end.emit(1)

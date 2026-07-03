@@ -1,8 +1,11 @@
 [gd_scene format=3 uid="uid://culwn8vlr5ccp"]
 
+[ext_resource type="Script" uid="uid://bfi0kkwc72x3n" path="res://scenes_and_scripts/wordle/wordle.gd" id="1_2s4yw"]
 [ext_resource type="Texture2D" uid="uid://3m3gv674r33v" path="res://game_data/wordle_game_data/images/wordle_background.png" id="1_70of0"]
 [ext_resource type="Script" uid="uid://b42qbs555nw8w" path="res://scenes_and_scripts/wordle/word_screen.gd" id="2_70of0"]
 [ext_resource type="AudioStream" uid="uid://cje0txsid76rl" path="res://game_data/wordle_game_data/audio/CHEK - CRIME (Instrumental).mp3" id="3_fbbba"]
+[ext_resource type="FontFile" uid="uid://c3cojw58n10nm" path="res://fonts/ShortBaby-Mg2w.ttf" id="4_r0rk6"]
+[ext_resource type="AudioStream" uid="uid://c60cjsore1s2l" path="res://game_data/wordle_game_data/audio/success sound effect.mp3" id="6_1txna"]
 
 [sub_resource type="Shader" id="Shader_v0ofl"]
 code = "shader_type canvas_item;
@@ -36,6 +39,18 @@ font_size = 128
 outline_size = 30
 outline_color = Color(0.0018410678, 0.0018410682, 0.0018410678, 1)
 
+[sub_resource type="LabelSettings" id="LabelSettings_1txna"]
+font = ExtResource("4_r0rk6")
+font_size = 96
+outline_size = 20
+outline_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_r0rk6"]
+font = ExtResource("4_r0rk6")
+font_size = 96
+outline_size = 20
+outline_color = Color(0, 0, 0, 1)
+
 [node name="Wordle" type="Control" unique_id=482201849]
 custom_minimum_size = Vector2(1920, 1080)
 layout_mode = 3
@@ -44,6 +59,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_2s4yw")
 
 [node name="WordleBackground" type="TextureRect" parent="." unique_id=762260168]
 texture_repeat = 2
@@ -55,7 +71,7 @@ offset_bottom = 40.0
 texture = ExtResource("1_70of0")
 
 [node name="StartScreen" type="Control" parent="." unique_id=1966048820]
-visible = false
+unique_name_in_owner = true
 custom_minimum_size = Vector2(1920, 1080)
 anchors_preset = 0
 offset_right = 40.0
@@ -108,6 +124,8 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="WordScreen" type="Control" parent="." unique_id=320416287]
+unique_name_in_owner = true
+visible = false
 custom_minimum_size = Vector2(1920, 1080)
 anchors_preset = 0
 offset_right = 40.0
@@ -144,6 +162,58 @@ offset_bottom = 1080.0
 grow_horizontal = 2
 alignment = 1
 
+[node name="TeamOneName" type="Label" parent="WordScreen" unique_id=1571182413]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(450, 350)
+layout_mode = 0
+offset_left = 20.0
+offset_top = 250.0
+offset_right = 470.0
+offset_bottom = 600.0
+text = "Team One"
+label_settings = SubResource("LabelSettings_1txna")
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="TeamTwoName" type="Label" parent="WordScreen" unique_id=1921900502]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(450, 350)
+layout_mode = 0
+offset_left = 1450.0
+offset_top = 250.0
+offset_right = 1900.0
+offset_bottom = 600.0
+text = "Team Two"
+label_settings = SubResource("LabelSettings_r0rk6")
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="TeamOneWordPos" type="Control" parent="WordScreen" unique_id=1725829692]
+unique_name_in_owner = true
+anchors_preset = 0
+offset_left = 245.0
+offset_top = 650.0
+offset_right = 245.0
+offset_bottom = 650.0
+
+[node name="TeamTwoWordPos" type="Control" parent="WordScreen" unique_id=2063863705]
+unique_name_in_owner = true
+anchors_preset = 0
+offset_left = 1675.0
+offset_top = 650.0
+offset_right = 1675.0
+offset_bottom = 650.0
+
 [node name="ThemeMusic" type="AudioStreamPlayer" parent="." unique_id=674500865]
+unique_name_in_owner = true
 stream = ExtResource("3_fbbba")
-autoplay = true
+parameters/looping = true
+
+[node name="SuccessSound" type="AudioStreamPlayer" parent="." unique_id=872509048]
+unique_name_in_owner = true
+stream = ExtResource("6_1txna")
+volume_db = 10.0
+
+[connection signal="pressed" from="StartScreen/StartButton" to="." method="_on_start_button_pressed"]

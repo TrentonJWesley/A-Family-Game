@@ -1,7 +1,8 @@
 extends Control
 
-
+# Minigames
 @onready var what_the_horse: Control = %WhatTheHorse
+@onready var wordle: Control = %Wordle
 
 @onready var mini_game_transition_screen: TextureRect = %MiniGameTransitionScreen
 @onready var mini_game_screen: Control = %MiniGameScreen
@@ -29,6 +30,7 @@ func _on_what_the_horse_card_pressed() -> void:
 
 func _on_wordle_card_pressed() -> void:
 	start_transition_sound()
+	transition_to_game(wordle)
 
 func start_transition_sound() -> void:
 	game_transition_sound.play()
@@ -59,13 +61,26 @@ func update_picking_label() -> void:
 	
 	team_picking_label.text = "[color=%s]%s[/color], pick a game!" % [team_color, team_name]
 
-
+## On Game Ends
 func _on_what_the_horse_end(who_won: int) -> void:
+	end_game_and_transition(who_won, what_the_horse)
+
+func _on_wordle_end(who_won: int) -> void:
+	end_game_and_transition(who_won, wordle)
+
+func update_score(who_won: int) -> void:
+	if who_won == 1:
+		GameData.team_one_score += 1
+	if who_won == 2:
+		GameData.team_two_score += 1
+
+func end_game_and_transition(who_won: int, game: Control) -> void:
 	update_score(who_won)
 	game_transition_sound.play()
 	mini_game_transition_screen.play_iris_in(2)
 	
 	await mini_game_transition_screen.tween.finished
+	
 	# Show End Result Screen
 	end_screen.visible = true
 	end_screen.tie = false
@@ -85,19 +100,15 @@ func _on_what_the_horse_end(who_won: int) -> void:
 		end_screen.tie = true
 		end_label.text = "It's a tie!"
 		end_label.self_modulate = Color("#ffffff")
-		
-	what_the_horse.visible = false
+	
+	game.visible = false
 	mini_game_screen.visible = false
+	
 	go_to_portraits_arrow.visible = false
 	reward_screen.winning_team = who_won
 	reward_screen.display_new_rewards()
+	
 	mini_game_transition_screen.play_iris_out(3)
 	
 	await mini_game_transition_screen.tween.finished
 	game_menu_music.play()
-	
-func update_score(who_won: int) -> void:
-	if who_won == 1:
-		GameData.team_one_score += 1
-	if who_won == 2:
-		GameData.team_two_score += 1

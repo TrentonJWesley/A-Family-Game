@@ -27,13 +27,12 @@ var DEFAULT_COLOR = Color("#161616")
 signal guessed_correctly(team: int)
 signal guessed_incorrectly(team: int)
 
-func _ready() -> void:
+func reset() -> void:
 	change_box_color(guess_box_one, DEFAULT_COLOR)
 	change_box_color(guess_box_two, DEFAULT_COLOR)
 	change_box_color(guess_box_three, DEFAULT_COLOR)
 	change_box_color(guess_box_four, DEFAULT_COLOR)
 	change_box_color(guess_box_five, DEFAULT_COLOR)
-	
 	letter_one.text = ""
 	letter_two.text = ""
 	letter_three.text = ""
@@ -112,10 +111,8 @@ func enter_guess() -> void:
 		await animate_box_flip(guess_box, color).finished
 	
 	if num_correct == 5:
-		print("guessed_correctly signal emitted")
 		guessed_correctly.emit(team)
 	else:
-		print("guessed_incorrectly signal emitted")
 		guessed_incorrectly.emit(team)
 
 func remove_letter() -> void:
