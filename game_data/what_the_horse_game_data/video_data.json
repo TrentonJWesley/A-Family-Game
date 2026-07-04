@@ -283,7 +283,7 @@
 		"settings": {
 			"window_type": "portrait",
 			"video_start": 0,
-			"video_pause": 5,
+			"video_pause": 5.5,
 			"video_end": null
 		}
 	}

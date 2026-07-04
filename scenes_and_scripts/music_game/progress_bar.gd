@@ -10,8 +10,6 @@ func _ready() -> void:
 	tick_count = custom_values.size() + 1
 	custom_values.push_front(0)
 	step = 0.01
-	print("max_value: ", max_value)
-	print("tick_count: ", tick_count)
 	
 
 func change_value(slider_value: float) -> void:

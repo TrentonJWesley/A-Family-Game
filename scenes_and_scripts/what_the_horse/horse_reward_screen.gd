@@ -87,13 +87,11 @@ func add_horse_head(team):
 	match team:
 		1:
 			var start_pos = initial_horse_head_position_1.get_global_rect().position
-			print("start_pos", start_pos)
 			var offset_pos = start_pos + Vector2(0, HORSE_HEAD_SEPARATION*team_1_horse_head_num)
 			new_pos = offset_pos - Vector2(video_size.x/2, 0)
 			team_1_horse_head_num += 1
 		2: 
 			var start_pos = initial_horse_head_position_2.get_global_rect().position
-			print("start_pos", start_pos)
 			var offset_pos = start_pos + Vector2(0, HORSE_HEAD_SEPARATION*team_2_horse_head_num)
 			new_pos = offset_pos - Vector2(video_size.x/2, 0)
 			team_2_horse_head_num += 1

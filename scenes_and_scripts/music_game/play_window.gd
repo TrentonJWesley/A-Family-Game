@@ -42,8 +42,8 @@ func _process(delta: float) -> void:
 	if song_player.playing == true:
 		var song_time = song_player.get_playback_position()
 		# Update slider
-		progress_bar.change_value(song_time)
-		if song_time >= PAUSE_TIMES[current_pause_idx]:
+		progress_bar.change_value(song_time - song_start)
+		if song_time >= PAUSE_TIMES[current_pause_idx] + song_start:
 			song_player.stream_paused = true
 
 func _on_play_button_pressed() -> void:
