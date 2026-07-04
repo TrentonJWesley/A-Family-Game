@@ -1,0 +1,94 @@
+[gd_scene format=3 uid="uid://o2gkmo3u3pxv"]
+
+[ext_resource type="Script" uid="uid://c2nwinfnc8daa" path="res://scenes_and_scripts/music_game/play_window.gd" id="1_38425"]
+[ext_resource type="Texture2D" uid="uid://dcfi27mmeu728" path="res://game_data/music_game_data/images/play_window.png" id="1_gy3vs"]
+[ext_resource type="Texture2D" uid="uid://42gp5bej3qx" path="res://game_data/music_game_data/images/grabber_rect_pink_14x50.png" id="3_t3dui"]
+[ext_resource type="Texture2D" uid="uid://dps1av7355ud3" path="res://game_data/music_game_data/images/invisible_tick_5x50.png" id="4_t3dui"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_38425"]
+bg_color = Color(0.60038817, 0.60038817, 0.60038817, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_t3dui"]
+content_margin_left = 4.0
+content_margin_top = 4.0
+content_margin_right = 4.0
+content_margin_bottom = 4.0
+bg_color = Color(0.972549, 0.972549, 0.9254902, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0.4, 0.38039216, 0.3882353, 1)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+corner_detail = 6
+expand_margin_top = 15.0
+expand_margin_bottom = 15.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pxu6g"]
+bg_color = Color(0.4627451, 0.7921569, 0.7294118, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_bottom = 5
+border_color = Color(0.4, 0.38039216, 0.3882353, 1)
+corner_radius_top_left = 20
+corner_radius_bottom_left = 20
+expand_margin_top = 15.0
+expand_margin_bottom = 15.0
+
+[node name="PlayWindow" type="Control" unique_id=1781100586]
+custom_minimum_size = Vector2(511, 61)
+layout_mode = 3
+anchors_preset = 0
+offset_right = 511.0
+offset_bottom = 61.0
+script = ExtResource("1_38425")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=859605800]
+custom_minimum_size = Vector2(520, 270)
+layout_mode = 0
+offset_right = 520.0
+offset_bottom = 270.0
+texture = ExtResource("1_gy3vs")
+expand_mode = 1
+
+[node name="Button" type="Button" parent="." unique_id=1242837764]
+custom_minimum_size = Vector2(68, 79)
+layout_mode = 0
+offset_left = 229.0
+offset_top = 84.0
+offset_right = 297.0
+offset_bottom = 163.0
+theme_override_styles/normal = SubResource("StyleBoxFlat_38425")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_38425")
+theme_override_styles/hover = SubResource("StyleBoxFlat_38425")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=690600933]
+layout_mode = 0
+offset_left = 26.0
+offset_top = 179.0
+offset_right = 491.0
+offset_bottom = 235.0
+color = Color(0.972549, 0.972549, 0.9254902, 1)
+
+[node name="HSlider" type="HSlider" parent="." unique_id=1352485187]
+layout_mode = 0
+offset_left = 15.0
+offset_top = 178.0
+offset_right = 493.0
+offset_bottom = 228.0
+theme_override_icons/grabber = ExtResource("3_t3dui")
+theme_override_icons/grabber_highlight = ExtResource("3_t3dui")
+theme_override_icons/grabber_disabled = ExtResource("3_t3dui")
+theme_override_icons/tick = ExtResource("4_t3dui")
+theme_override_styles/slider = SubResource("StyleBoxFlat_t3dui")
+theme_override_styles/grabber_area = SubResource("StyleBoxFlat_pxu6g")
+theme_override_styles/grabber_area_highlight = SubResource("StyleBoxFlat_pxu6g")
+max_value = 30.0
+step = 0.01
+value = 10.0
+scrollable = false
+tick_count = 6
+ticks_position = 3

@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://b832ajbjrntvb"
+path="res://.godot/imported/cassette tape sound with fade out.mp3-01b90d957da79d91fff5f3c4823c6c85.mp3str"
+
+[deps]
+
+source_file="res://game_data/music_game_data/audio/cassette tape sound with fade out.mp3"
+dest_files=["res://.godot/imported/cassette tape sound with fade out.mp3-01b90d957da79d91fff5f3c4823c6c85.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

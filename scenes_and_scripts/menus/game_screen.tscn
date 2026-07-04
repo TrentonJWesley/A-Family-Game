@@ -14,6 +14,7 @@
 [ext_resource type="PackedScene" uid="uid://bva5deyhe44ad" path="res://scenes_and_scripts/menus/GameCards/what_the_horse_card.tscn" id="11_jbmg5"]
 [ext_resource type="PackedScene" uid="uid://bbstg4n7cwba7" path="res://scenes_and_scripts/menus/GameCards/trivia_card.tscn" id="11_w63nd"]
 [ext_resource type="PackedScene" uid="uid://mqsu1rwin6tb" path="res://scenes_and_scripts/menus/GameCards/wordle_card.tscn" id="12_b7u2v"]
+[ext_resource type="PackedScene" uid="uid://bs0b5ejyyj4us" path="res://scenes_and_scripts/menus/GameCards/music_card.tscn" id="12_ng6j5"]
 [ext_resource type="Script" uid="uid://b6piuhco1b62w" path="res://scenes_and_scripts/menus/go_to_portraits_arrow.gd" id="13_b7u2v"]
 [ext_resource type="Texture2D" uid="uid://um1sktq4w3r7" path="res://images/arrow_left_variant_1.png" id="13_y2yss"]
 [ext_resource type="Texture2D" uid="uid://c1uwqc5exdalg" path="res://images/arrow_left_variant_2.png" id="14_guyxk"]
@@ -129,27 +130,42 @@ offset_bottom = 40.0
 script = ExtResource("8_guyxk")
 
 [node name="WhatTheHorseCard" parent="MiniGameScreen" unique_id=685451248 instance=ExtResource("11_jbmg5")]
-layout_mode = 0
-offset_left = 279.0
-offset_top = 218.0
-offset_right = 629.0
-offset_bottom = 668.0
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 460.0
+offset_top = -225.0
+offset_right = 810.0
+offset_bottom = 225.0
+grow_horizontal = 2
+grow_vertical = 2
 scale = Vector2(0.75, 0.75)
 
 [node name="WordleCard" parent="MiniGameScreen" unique_id=828545869 instance=ExtResource("12_b7u2v")]
 layout_mode = 0
-offset_left = 776.0
-offset_top = 218.0
-offset_right = 1126.0
-offset_bottom = 668.0
+offset_left = 150.0
+offset_top = 315.0
+offset_right = 500.0
+offset_bottom = 765.0
 scale = Vector2(0.75, 0.75)
 
 [node name="TriviaCard" parent="MiniGameScreen" unique_id=1607055222 instance=ExtResource("11_w63nd")]
 layout_mode = 0
-offset_left = 1273.0
-offset_top = 218.0
-offset_right = 1623.0
-offset_bottom = 668.0
+offset_left = 960.0
+offset_top = 315.0
+offset_right = 1310.0
+offset_bottom = 765.0
+scale = Vector2(0.75, 0.75)
+
+[node name="MusicCard" parent="MiniGameScreen" unique_id=1887450139 instance=ExtResource("12_ng6j5")]
+layout_mode = 0
+offset_left = 555.0
+offset_top = 315.0
+offset_right = 905.0
+offset_bottom = 765.0
 scale = Vector2(0.75, 0.75)
 
 [node name="TeamPickingLabel" type="RichTextLabel" parent="MiniGameScreen" unique_id=1641059107]
@@ -345,6 +361,7 @@ script = ExtResource("21_1v3wo")
 [connection signal="pressed" from="MiniGameScreen/WhatTheHorseCard" to="MiniGameScreen" method="_on_what_the_horse_card_pressed"]
 [connection signal="pressed" from="MiniGameScreen/WordleCard" to="MiniGameScreen" method="_on_wordle_card_pressed"]
 [connection signal="pressed" from="MiniGameScreen/TriviaCard" to="MiniGameScreen" method="_on_trivia_card_pressed"]
+[connection signal="pressed" from="MiniGameScreen/MusicCard" to="MiniGameScreen" method="_on_music_card_pressed"]
 [connection signal="end" from="MiniGames/WhatTheHorse" to="MiniGameScreen" method="_on_what_the_horse_end"]
 [connection signal="end" from="MiniGames/Wordle" to="MiniGameScreen" method="_on_wordle_end"]
 [connection signal="end" from="MiniGames/Trivia" to="MiniGameScreen" method="_on_trivia_end"]

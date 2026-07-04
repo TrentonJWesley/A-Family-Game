@@ -1,0 +1,120 @@
+[gd_scene format=3 uid="uid://bs0b5ejyyj4us"]
+
+[ext_resource type="Script" uid="uid://b6ib0a1qss5ci" path="res://scenes_and_scripts/menus/GameCards/music_card.gd" id="1_ail3d"]
+[ext_resource type="Texture2D" uid="uid://drxf6gpa8upr4" path="res://game_data/music_game_data/images/empty_cassette_player.png" id="1_u5vv3"]
+[ext_resource type="FontFile" uid="uid://b6pjpgsyrejgy" path="res://game_data/music_game_data/fonts/NitroEagle-KVP1W.ttf" id="2_4ula4"]
+[ext_resource type="AudioStream" uid="uid://c72bwpwhxusqh" path="res://game_data/music_game_data/audio/plastic-hit-3-sound-effect_dAKDHYot.mp3" id="4_o42nj"]
+[ext_resource type="Texture2D" uid="uid://dpiydd7ln7ot0" path="res://images/lock_icon.png" id="4_r28lb"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ail3d"]
+bg_color = Color(0.60038817, 0.60038817, 0.60038817, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_r28lb"]
+bg_color = Color(0, 0, 0, 0.45800003)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
+[node name="MusicCard" type="Button" unique_id=1887450139]
+custom_minimum_size = Vector2(350, 450)
+offset_right = 8.0
+offset_bottom = 8.0
+pivot_offset = Vector2(175, 225)
+theme_override_styles/normal = SubResource("StyleBoxFlat_ail3d")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_ail3d")
+theme_override_styles/hover = SubResource("StyleBoxFlat_ail3d")
+script = ExtResource("1_ail3d")
+
+[node name="Shadow" type="TextureRect" parent="." unique_id=1138434479]
+self_modulate = Color(0, 0, 0, 0.6)
+custom_minimum_size = Vector2(400, 500)
+layout_mode = 0
+offset_left = -2.0
+offset_top = -3.0
+offset_right = 398.0
+offset_bottom = 497.0
+texture = ExtResource("1_u5vv3")
+expand_mode = 1
+
+[node name="CardBackground" type="TextureRect" parent="." unique_id=1949905243]
+custom_minimum_size = Vector2(400, 500)
+layout_mode = 0
+offset_left = -27.0
+offset_top = -28.0
+offset_right = 373.0
+offset_bottom = 472.0
+texture = ExtResource("1_u5vv3")
+expand_mode = 1
+
+[node name="CardTitle" type="RichTextLabel" parent="." unique_id=187879665]
+custom_minimum_size = Vector2(450, 200)
+layout_mode = 0
+offset_left = -50.0
+offset_top = -100.0
+offset_right = 400.0
+offset_bottom = 100.0
+mouse_filter = 2
+theme_override_constants/outline_size = 10
+theme_override_fonts/normal_font = ExtResource("2_4ula4")
+theme_override_font_sizes/normal_font_size = 56
+bbcode_enabled = true
+text = "[rainbow freq=0.5 sat=0.8 val=0.8 speed=1.0]Guess the Song[/rainbow]"
+scroll_active = false
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Info" type="RichTextLabel" parent="." unique_id=1584145332]
+custom_minimum_size = Vector2(450, 200)
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -225.0
+offset_top = -100.0
+offset_right = 225.0
+offset_bottom = 100.0
+grow_horizontal = 2
+grow_vertical = 0
+mouse_filter = 2
+theme_override_constants/outline_size = 10
+theme_override_fonts/normal_font = ExtResource("2_4ula4")
+theme_override_font_sizes/normal_font_size = 56
+bbcode_enabled = true
+text = "[rainbow freq=0.5 sat=0.8 val=0.8 speed=1.0]4 Rounds![/rainbow]"
+scroll_active = false
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HoverSound" type="AudioStreamPlayer" parent="." unique_id=1671659200]
+unique_name_in_owner = true
+stream = ExtResource("4_o42nj")
+volume_db = 24.0
+
+[node name="LockScreen" type="Panel" parent="." unique_id=1103644547]
+unique_name_in_owner = true
+visible = false
+custom_minimum_size = Vector2(350, 450)
+layout_mode = 0
+offset_right = 350.0
+offset_bottom = 450.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_r28lb")
+
+[node name="TextureRect" type="TextureRect" parent="LockScreen" unique_id=984885710]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -50.0
+offset_top = -50.0
+offset_right = 50.0
+offset_bottom = 50.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("4_r28lb")
+expand_mode = 1

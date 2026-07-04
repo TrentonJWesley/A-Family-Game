@@ -37,9 +37,13 @@ func _on_trivia_card_pressed() -> void:
 	start_transition_sound()
 	transition_to_game(trivia)
 
+func _on_music_card_pressed() -> void:
+	start_transition_sound()
+
 func start_transition_sound() -> void:
 	game_transition_sound.play()
 	game_menu_music.stop()
+
 
 func transition_to_game(game: Control) -> void:
 	mini_game_transition_screen.play_iris_in(2)
@@ -75,6 +79,7 @@ func _on_wordle_end(who_won: int) -> void:
 
 func _on_trivia_end(who_won: int) -> void:
 	end_game_and_transition(who_won, trivia)
+
 
 func update_score(who_won: int) -> void:
 	if who_won == 1:
