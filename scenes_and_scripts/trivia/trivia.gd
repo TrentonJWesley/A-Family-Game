@@ -52,6 +52,9 @@ func check_if_out_of_questions() -> void:
 func start_music() -> void:
 	trivia_theme.play()
 	
+func stop_music() -> void:
+	trivia_theme.stop()
+	
 func get_new_questions() -> Array:
 	var all_questions = questions_dict.keys()
 	all_questions.shuffle()

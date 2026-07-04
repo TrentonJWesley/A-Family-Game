@@ -31,14 +31,15 @@ var team_two_player_pictures: Dictionary = {
 	6: null,
 }
 
-# Minigame specific values
-var horse_game_max_rounds = 6
-var wordle_game_max_rounds = 4
-var trivia_game_max_rounds = 8
+## Minigame specific values
+#var horse_game_max_rounds = 6
+#var wordle_game_max_rounds = 4
+#var trivia_game_max_rounds = 8
 
-## For testing purposes
-#var horse_game_max_rounds = 2
-#var wordle_game_max_rounds = 2
+# For testing purposes
+var horse_game_max_rounds = 2
+var wordle_game_max_rounds = 2
+var trivia_game_max_rounds = 2
 
 
 signal out_of_horse_cards

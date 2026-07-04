@@ -225,6 +225,7 @@ func end_game() -> void:
 	display_screen.visible = false
 	
 	get_parent().check_if_out_of_questions()
+	get_parent().stop_music()
 	
 	if team_one_score > team_two_score:
 		get_parent().end.emit(1)
