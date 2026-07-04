@@ -17,7 +17,7 @@ func stop_song() -> void:
 
 func load_new_song(song: Dictionary) -> void:
 	var song_path = song["song_path"]
-	song_name.text = song["song_name"]
+	song_name.text = "[rainbow freq=0.5 sat=0.8 val=0.8 speed=1.0]%s[/rainbow]" % song["song_name"]
 	song_player.stream = load(song_path)
 	song_start = song["start_time"]
 

@@ -28,6 +28,7 @@
 [ext_resource type="PackedScene" uid="uid://cm6gvrfkhgony" path="res://scenes_and_scripts/menus/reward_card.tscn" id="21_5mlcc"]
 [ext_resource type="PackedScene" uid="uid://e3yopy6dir1e" path="res://scenes_and_scripts/trivia/trivia.tscn" id="21_rv6br"]
 [ext_resource type="Script" uid="uid://c8dkkm24o57yt" path="res://scenes_and_scripts/menus/end_screen.gd" id="22_n8b8k"]
+[ext_resource type="PackedScene" uid="uid://c4wkekaocbooy" path="res://scenes_and_scripts/music_game/music_game.tscn" id="23_hm32o"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_xyo3e"]
 font = ExtResource("3_wvaqc")
@@ -264,6 +265,11 @@ unique_name_in_owner = true
 visible = false
 layout_mode = 1
 
+[node name="MusicGame" parent="MiniGames" unique_id=1404726643 instance=ExtResource("23_hm32o")]
+unique_name_in_owner = true
+visible = false
+layout_mode = 1
+
 [node name="EndScreen" type="Control" parent="." unique_id=1898194201]
 unique_name_in_owner = true
 visible = false
@@ -365,6 +371,7 @@ script = ExtResource("21_1v3wo")
 [connection signal="end" from="MiniGames/WhatTheHorse" to="MiniGameScreen" method="_on_what_the_horse_end"]
 [connection signal="end" from="MiniGames/Wordle" to="MiniGameScreen" method="_on_wordle_end"]
 [connection signal="end" from="MiniGames/Trivia" to="MiniGameScreen" method="_on_trivia_end"]
+[connection signal="end" from="MiniGames/MusicGame" to="MiniGameScreen" method="_on_music_game_end"]
 [connection signal="pressed" from="RewardScreen/RewardCard1" to="RewardScreen" method="_on_reward_card_1_pressed"]
 [connection signal="pressed" from="RewardScreen/RewardCard2" to="RewardScreen" method="_on_reward_card_2_pressed"]
 [connection signal="pressed" from="RewardScreen/RewardCard3" to="RewardScreen" method="_on_reward_card_3_pressed"]

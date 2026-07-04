@@ -47,6 +47,7 @@ outline_size = 20
 outline_color = Color(0, 0, 0, 1)
 
 [sub_resource type="LabelSettings" id="LabelSettings_3fph6"]
+font = ExtResource("6_kjdyr")
 font_size = 128
 outline_size = 30
 outline_color = Color(0.0018410678, 0.0018410682, 0.0018410678, 1)
@@ -172,11 +173,11 @@ vertical_alignment = 1
 [node name="ThemeSong" type="AudioStreamPlayer" parent="." unique_id=264195846]
 unique_name_in_owner = true
 stream = ExtResource("7_n17hk")
-autoplay = true
 parameters/looping = true
 
 [node name="SongScreen" type="Control" parent="." unique_id=1918595469]
 unique_name_in_owner = true
+visible = false
 custom_minimum_size = Vector2(1920, 1080)
 anchors_preset = 0
 offset_right = 40.0

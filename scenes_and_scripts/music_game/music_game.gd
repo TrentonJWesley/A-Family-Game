@@ -85,10 +85,15 @@ func get_song() -> Dictionary:
 		"song_path": song_data[song_name]["file_path"],
 		"start_time": song_data[song_name]["start_time"]
 	}
-	
+	print("Loaded Song: ", song_name)
 	song_data.erase(song_name)
 	
 	return song
 
 func check_if_out_of_songs() -> void:
-	pass
+	if song_data.size() < GameData.music_game_max_rounds:
+		GameData.out_of_music.emit()
+
+func end_game(winning_team: int) -> void:
+	check_if_out_of_songs()
+	end.emit(winning_team)

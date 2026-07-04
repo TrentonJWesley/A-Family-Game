@@ -22,7 +22,6 @@ func load_new_song(song: Dictionary) -> void:
 	seconds_label.text = ""
 	current_pause_idx = 0
 	var song_path = song["song_path"]
-	print(song_path)
 	song_player.stream = load(song_path)
 	song_start = song["start_time"]
 
@@ -45,8 +44,6 @@ func _process(delta: float) -> void:
 		# Update slider
 		progress_bar.change_value(song_time)
 		if song_time >= PAUSE_TIMES[current_pause_idx]:
-			print("song_time: ", song_time)
-			print("current_pause_time: ", PAUSE_TIMES[current_pause_idx])
 			song_player.stream_paused = true
 
 func _on_play_button_pressed() -> void:
@@ -69,4 +66,5 @@ func update_seconds_label() -> void:
 
 func _on_exit_button_pressed() -> void:
 	song_player.stop()
+	progress_bar.change_value(0)
 	finished_song.emit()

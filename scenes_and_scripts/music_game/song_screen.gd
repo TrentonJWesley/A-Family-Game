@@ -34,6 +34,8 @@ func _ready() -> void:
 	
 	team_one_score_label.label_settings.font_color = GameData.team_one_color
 	team_two_score_label.label_settings.font_color = GameData.team_two_color
+	
+	round_label.text = "Round %s/%s" % [current_round, GameData.music_game_max_rounds]
 
 func reset() -> void:
 	current_round = 1
@@ -101,6 +103,7 @@ func _on_play_window_finished_song() -> void:
 
 
 func _on_who_won_window_who_won(team: int) -> void:
+	song_reveal_window.stop_song()
 	if team > 0:
 		success_sound.play()
 	
@@ -113,7 +116,7 @@ func _on_who_won_window_who_won(team: int) -> void:
 	
 	await close_window(who_won_window)
 	await close_window(song_reveal_window)
-	song_reveal_window.stop_music()
+	
 	
 	start_next_song()
 
@@ -121,7 +124,13 @@ func start_next_song() -> void:
 	current_round += 1
 	
 	if current_round > GameData.music_game_max_rounds:
-		return
+		if team_one_score > team_two_score:
+			get_parent().end_game(1)
+		elif team_two_score > team_one_score:
+			get_parent().end_game(2)
+		else:
+			get_parent().end_game(0)
+		return 
 	
 	round_label.text = "Round %s/%s" % [current_round, GameData.music_game_max_rounds]
 	await play_insert_cassette_animation()

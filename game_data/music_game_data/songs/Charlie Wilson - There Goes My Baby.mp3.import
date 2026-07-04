@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://dq44o1cfvubo6"
+path="res://.godot/imported/Charlie Wilson - There Goes My Baby.mp3-c0b6881748077833b2ea917255090b94.mp3str"
+
+[deps]
+
+source_file="res://game_data/music_game_data/songs/Charlie Wilson - There Goes My Baby.mp3"
+dest_files=["res://.godot/imported/Charlie Wilson - There Goes My Baby.mp3-c0b6881748077833b2ea917255090b94.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
