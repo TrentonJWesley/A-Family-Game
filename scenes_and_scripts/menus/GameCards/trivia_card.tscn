@@ -1,0 +1,135 @@
+[gd_scene format=3 uid="uid://bbstg4n7cwba7"]
+
+[ext_resource type="Texture2D" uid="uid://dpiydd7ln7ot0" path="res://images/lock_icon.png" id="1_k5q3i"]
+[ext_resource type="Script" uid="uid://yuu1v3gqpl76" path="res://scenes_and_scripts/menus/GameCards/trivia_card.gd" id="1_ua73x"]
+[ext_resource type="Script" uid="uid://d26tlxt133wu1" path="res://scenes_and_scripts/menus/GameCards/scroll_container.gd" id="2_ttt5s"]
+[ext_resource type="AudioStream" uid="uid://qve4vhbcctii" path="res://audio/card sound.mp3" id="4_ib5de"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ttt5s"]
+bg_color = Color(0.12225222, 0.12225225, 0.12225217, 1)
+border_width_left = 15
+border_width_top = 15
+border_width_right = 15
+border_width_bottom = 15
+border_color = Color(0.096204825, 0.09620472, 0.09620472, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[node name="TriviaCard" type="Button" unique_id=1607055222]
+custom_minimum_size = Vector2(350, 450)
+offset_right = 8.0
+offset_bottom = 8.0
+pivot_offset = Vector2(175, 225)
+script = ExtResource("1_ua73x")
+
+[node name="Shadow" type="Panel" parent="." unique_id=1564604363]
+custom_minimum_size = Vector2(350, 450)
+layout_mode = 0
+offset_left = 25.0
+offset_top = 25.0
+offset_right = 375.0
+offset_bottom = 475.0
+mouse_filter = 2
+
+[node name="CardBackground" type="Panel" parent="." unique_id=2141653399]
+custom_minimum_size = Vector2(350, 450)
+layout_mode = 0
+offset_right = 350.0
+offset_bottom = 450.0
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_ttt5s")
+
+[node name="Separator" type="ColorRect" parent="." unique_id=1799100921]
+custom_minimum_size = Vector2(320, 20)
+layout_mode = 0
+offset_left = 15.0
+offset_top = 195.0
+offset_right = 335.0
+offset_bottom = 215.0
+mouse_filter = 2
+color = Color(0.09411765, 0.09411765, 0.09411765, 1)
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=505504892]
+custom_minimum_size = Vector2(320, 0)
+layout_mode = 0
+offset_left = 15.0
+offset_top = 215.0
+offset_right = 335.0
+offset_bottom = 445.0
+mouse_filter = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 5
+
+[node name="RichTextLabel" type="RichTextLabel" parent="MarginContainer" unique_id=2129866989]
+custom_minimum_size = Vector2(0, 225)
+layout_mode = 2
+mouse_filter = 2
+theme_override_font_sizes/normal_font_size = 30
+bbcode_enabled = true
+text = "Trivia Questions. How much do you really know?           (8 Rounds)
+
+"
+scroll_active = false
+horizontal_alignment = 1
+
+[node name="ScrollContainer" type="ScrollContainer" parent="." unique_id=797719894]
+custom_minimum_size = Vector2(320, 180)
+layout_mode = 0
+offset_left = 15.0
+offset_top = 15.0
+offset_right = 335.0
+offset_bottom = 195.0
+scroll_horizontal = 156
+horizontal_scroll_mode = 3
+vertical_scroll_mode = 0
+script = ExtResource("2_ttt5s")
+
+[node name="CardTitle" type="RichTextLabel" parent="ScrollContainer" unique_id=957002716]
+custom_minimum_size = Vector2(450, 180)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 4
+mouse_filter = 2
+theme_override_constants/outline_size = 10
+theme_override_font_sizes/normal_font_size = 96
+bbcode_enabled = true
+text = "[rainbow freq=0.5 sat=0.8 val=0.8 speed=1.0][color=purple][tornado radius=10.0 freq=1.0 connected=1]Trivia[/tornado]            [tornado radius=10.0 freq=1.0 connected=1]Trivia[/tornado][/color][/rainbow]"
+fit_content = true
+scroll_active = false
+autowrap_mode = 0
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="LockScreen" type="Panel" parent="." unique_id=995982464]
+unique_name_in_owner = true
+visible = false
+custom_minimum_size = Vector2(350, 450)
+layout_mode = 0
+offset_right = 350.0
+offset_bottom = 450.0
+
+[node name="TextureRect" type="TextureRect" parent="LockScreen" unique_id=702384172]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -50.0
+offset_top = -50.0
+offset_right = 50.0
+offset_bottom = 50.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_k5q3i")
+expand_mode = 1
+
+[node name="HoverSound" type="AudioStreamPlayer" parent="." unique_id=894626101]
+unique_name_in_owner = true
+stream = ExtResource("4_ib5de")
+volume_db = 10.0

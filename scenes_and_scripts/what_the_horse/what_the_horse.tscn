@@ -362,7 +362,7 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_w70qq")
 theme_override_styles/hover = SubResource("StyleBoxFlat_6k5vo")
 text = "Start"
 
-[node name="FinishTitle" type="RichTextLabel" parent="StartScreen" unique_id=1439480824]
+[node name="StartTitle" type="RichTextLabel" parent="StartScreen" unique_id=1439480824]
 custom_minimum_size = Vector2(900, 500)
 layout_mode = 1
 anchors_preset = 8

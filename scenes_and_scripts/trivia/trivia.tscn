@@ -1,0 +1,462 @@
+[gd_scene format=3 uid="uid://e3yopy6dir1e"]
+
+[ext_resource type="Shader" uid="uid://cwcuouh7x25vv" path="res://scenes_and_scripts/trivia/trivia.gdshader" id="1_6unwm"]
+[ext_resource type="Script" uid="uid://6lknxqldpjk4" path="res://scenes_and_scripts/trivia/trivia.gd" id="1_8prff"]
+[ext_resource type="Texture2D" uid="uid://c01hvmfq3r4yy" path="res://game_data/pop_culture_trivia_data/images/colorful_spiral_background.jpeg" id="1_sln1v"]
+[ext_resource type="AudioStream" uid="uid://tl0gabl2pf5n" path="res://game_data/pop_culture_trivia_data/audio/Balatro Main Theme.mp3" id="3_6unwm"]
+[ext_resource type="Script" uid="uid://cs31lwi0sjode" path="res://scenes_and_scripts/trivia/question_screen.gd" id="4_mvgb0"]
+[ext_resource type="FontFile" uid="uid://c3cojw58n10nm" path="res://fonts/ShortBaby-Mg2w.ttf" id="5_l4ds4"]
+[ext_resource type="Texture2D" uid="uid://dy0wwwkwwl1k3" path="res://game_data/pop_culture_trivia_data/images/green_check.png" id="6_w678o"]
+[ext_resource type="Texture2D" uid="uid://c0rh73mft16ck" path="res://game_data/pop_culture_trivia_data/images/stop_sign.png" id="7_hcsj3"]
+[ext_resource type="AudioStream" uid="uid://c60cjsore1s2l" path="res://game_data/wordle_game_data/audio/success sound effect.mp3" id="9_br6ww"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_8prff"]
+shader = ExtResource("1_6unwm")
+shader_parameter/wave_speed = 1.0000000475
+shader_parameter/wave_frequency = 2.000000095
+shader_parameter/wave_amplitude = 0.03
+shader_parameter/pixelation_strength = 320.0
+shader_parameter/enable_pixelation = false
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_sln1v"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6unwm"]
+bg_color = Color(0.60038817, 0.60038817, 0.60038817, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8prff"]
+bg_color = Color(0.60038817, 0.60038817, 0.60038817, 0)
+
+[sub_resource type="LabelSettings" id="LabelSettings_w678o"]
+font_size = 128
+outline_size = 30
+outline_color = Color(0.0018410678, 0.0018410682, 0.0018410678, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_hcsj3"]
+font = ExtResource("5_l4ds4")
+font_size = 96
+outline_size = 20
+outline_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_l4ds4"]
+font = ExtResource("5_l4ds4")
+font_size = 128
+outline_size = 20
+outline_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_br6ww"]
+font = ExtResource("5_l4ds4")
+font_size = 96
+outline_size = 20
+outline_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_le4f4"]
+font = ExtResource("5_l4ds4")
+font_size = 128
+outline_size = 20
+outline_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_l4ds4"]
+bg_color = Color(0.12225222, 0.12225225, 0.12225217, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_w678o"]
+bg_color = Color(0.07683582, 0.07683582, 0.0768358, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hcsj3"]
+bg_color = Color(0.16206557, 0.1620656, 0.16206554, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="LabelSettings" id="LabelSettings_krqrl"]
+font_size = 48
+outline_size = 15
+outline_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_6x1fr"]
+font_size = 42
+outline_size = 15
+outline_color = Color(0, 0, 0, 1)
+
+[node name="Trivia" type="Control" unique_id=1852395890]
+custom_minimum_size = Vector2(1920, 1080)
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_8prff")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1592071884]
+material = SubResource("ShaderMaterial_8prff")
+custom_minimum_size = Vector2(1920, 1080)
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("1_sln1v")
+expand_mode = 1
+
+[node name="StartScreen" type="Control" parent="." unique_id=1842991413]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(1920, 1080)
+anchors_preset = 0
+offset_right = 1920.0
+offset_bottom = 1080.0
+
+[node name="StartButton" type="Button" parent="StartScreen" unique_id=1224348306]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -150.5
+offset_top = -230.0
+offset_right = 150.5
+offset_bottom = -55.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_constants/outline_size = 40
+theme_override_font_sizes/font_size = 128
+theme_override_styles/normal = SubResource("StyleBoxFlat_sln1v")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_6unwm")
+theme_override_styles/hover = SubResource("StyleBoxFlat_8prff")
+text = "Start"
+
+[node name="StartTitle" type="RichTextLabel" parent="StartScreen" unique_id=795511717]
+custom_minimum_size = Vector2(900, 400)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -450.0
+offset_top = -200.0
+offset_right = 450.0
+offset_bottom = 200.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 0
+size_flags_vertical = 4
+mouse_filter = 2
+theme_override_constants/outline_size = 40
+theme_override_font_sizes/normal_font_size = 256
+bbcode_enabled = true
+text = "[rainbow freq=0.5 sat=0.8 val=0.8 speed=1.0][tornado radius=15.0 freq=2.0 connected=1]Trivia[/tornado][/rainbow]"
+fit_content = true
+scroll_active = false
+autowrap_mode = 0
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="QuestionScreen" type="Control" parent="." unique_id=1381785007]
+unique_name_in_owner = true
+visible = false
+custom_minimum_size = Vector2(1920, 1080)
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("4_mvgb0")
+
+[node name="RoundLabel" type="Label" parent="QuestionScreen" unique_id=1341368405]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 200)
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -316.0
+offset_right = 316.0
+offset_bottom = 200.0
+grow_horizontal = 2
+text = "Round 1/4"
+label_settings = SubResource("LabelSettings_w678o")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TeamOneName" type="Label" parent="QuestionScreen" unique_id=1368447755]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(450, 250)
+layout_mode = 0
+offset_left = 20.0
+offset_top = 250.0
+offset_right = 470.0
+offset_bottom = 500.0
+text = "Team One"
+label_settings = SubResource("LabelSettings_hcsj3")
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="TeamOneScore" type="Label" parent="QuestionScreen/TeamOneName" unique_id=1353533296]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 0
+offset_left = 125.0
+offset_top = 275.0
+offset_right = 325.0
+offset_bottom = 403.0
+pivot_offset = Vector2(100, 0)
+text = "1"
+label_settings = SubResource("LabelSettings_l4ds4")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="CorrectButtonOne" type="TextureButton" parent="QuestionScreen/TeamOneName" unique_id=637264086]
+unique_name_in_owner = true
+visible = false
+custom_minimum_size = Vector2(150, 150)
+layout_mode = 0
+offset_left = 150.0
+offset_top = 400.0
+offset_right = 300.0
+offset_bottom = 550.0
+texture_normal = ExtResource("6_w678o")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="IncorrectButtonOne" type="TextureButton" parent="QuestionScreen/TeamOneName" unique_id=495413459]
+unique_name_in_owner = true
+visible = false
+custom_minimum_size = Vector2(150, 150)
+layout_mode = 0
+offset_left = 150.0
+offset_top = 575.0
+offset_right = 300.0
+offset_bottom = 725.0
+texture_normal = ExtResource("7_hcsj3")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="TeamTwoName" type="Label" parent="QuestionScreen" unique_id=1472964213]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(450, 250)
+layout_mode = 0
+offset_left = 1450.0
+offset_top = 250.0
+offset_right = 1900.0
+offset_bottom = 500.0
+text = "Team Two"
+label_settings = SubResource("LabelSettings_br6ww")
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="TeamTwoScore" type="Label" parent="QuestionScreen/TeamTwoName" unique_id=1490084035]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 0
+offset_left = 125.0
+offset_top = 275.0
+offset_right = 325.0
+offset_bottom = 403.0
+pivot_offset = Vector2(100, 0)
+text = "1"
+label_settings = SubResource("LabelSettings_le4f4")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="CorrectButtonTwo" type="TextureButton" parent="QuestionScreen/TeamTwoName" unique_id=1656439741]
+unique_name_in_owner = true
+visible = false
+custom_minimum_size = Vector2(150, 150)
+layout_mode = 0
+offset_left = 150.0
+offset_top = 400.0
+offset_right = 300.0
+offset_bottom = 550.0
+texture_normal = ExtResource("6_w678o")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="IncorrectButtonTwo" type="TextureButton" parent="QuestionScreen/TeamTwoName" unique_id=595717648]
+unique_name_in_owner = true
+visible = false
+custom_minimum_size = Vector2(150, 150)
+layout_mode = 0
+offset_left = 150.0
+offset_top = 575.0
+offset_right = 300.0
+offset_bottom = 725.0
+texture_normal = ExtResource("7_hcsj3")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="PickScreen" type="Control" parent="QuestionScreen" unique_id=1869887608]
+unique_name_in_owner = true
+visible = false
+custom_minimum_size = Vector2(900, 800)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -450.0
+offset_top = -340.0
+offset_right = 450.0
+offset_bottom = 460.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="PickLabel" type="RichTextLabel" parent="QuestionScreen/PickScreen" unique_id=891190851]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(900, 300)
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -20.0
+offset_right = 20.0
+offset_bottom = 40.0
+grow_horizontal = 2
+theme_override_constants/outline_size = 20
+theme_override_font_sizes/normal_font_size = 72
+bbcode_enabled = true
+text = "Team One, pick a question!"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="QuestionChoiceOne" type="Button" parent="QuestionScreen/PickScreen" unique_id=838459031]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(600, 100)
+layout_mode = 0
+offset_left = 150.0
+offset_top = 300.0
+offset_right = 750.0
+offset_bottom = 400.0
+theme_override_font_sizes/font_size = 56
+theme_override_styles/normal = SubResource("StyleBoxFlat_l4ds4")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_w678o")
+theme_override_styles/hover = SubResource("StyleBoxFlat_hcsj3")
+text = "What is..."
+
+[node name="QuestionChoiceTwo" type="Button" parent="QuestionScreen/PickScreen" unique_id=1421099918]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(600, 100)
+layout_mode = 0
+offset_left = 150.0
+offset_top = 450.0
+offset_right = 750.0
+offset_bottom = 550.0
+theme_override_font_sizes/font_size = 56
+theme_override_styles/normal = SubResource("StyleBoxFlat_l4ds4")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_w678o")
+theme_override_styles/hover = SubResource("StyleBoxFlat_hcsj3")
+text = "What is..."
+
+[node name="QuestionChoiceThree" type="Button" parent="QuestionScreen/PickScreen" unique_id=91362856]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(600, 100)
+layout_mode = 0
+offset_left = 150.0
+offset_top = 600.0
+offset_right = 750.0
+offset_bottom = 700.0
+theme_override_font_sizes/font_size = 56
+theme_override_styles/normal = SubResource("StyleBoxFlat_l4ds4")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_w678o")
+theme_override_styles/hover = SubResource("StyleBoxFlat_hcsj3")
+text = "What is..."
+
+[node name="DisplayScreen" type="Control" parent="QuestionScreen" unique_id=24091615]
+unique_name_in_owner = true
+visible = false
+custom_minimum_size = Vector2(900, 800)
+anchors_preset = 0
+offset_left = 510.0
+offset_top = 200.0
+offset_right = 1410.0
+offset_bottom = 1000.0
+
+[node name="WhichTeamLabel" type="RichTextLabel" parent="QuestionScreen/DisplayScreen" unique_id=246733014]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(900, 300)
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -450.0
+offset_right = 450.0
+offset_bottom = 300.0
+grow_horizontal = 2
+theme_override_constants/outline_size = 20
+theme_override_font_sizes/normal_font_size = 72
+bbcode_enabled = true
+text = "Team One, pick a question!"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="QuestionBox" type="Label" parent="QuestionScreen/DisplayScreen" unique_id=853904116]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(900, 300)
+layout_mode = 0
+offset_top = 300.0
+offset_right = 900.0
+offset_bottom = 600.0
+label_settings = SubResource("LabelSettings_krqrl")
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="AnswerBox" type="Label" parent="QuestionScreen/DisplayScreen" unique_id=504428738]
+unique_name_in_owner = true
+visible = false
+custom_minimum_size = Vector2(900, 200)
+layout_mode = 0
+offset_top = 600.0
+offset_right = 900.0
+offset_bottom = 800.0
+label_settings = SubResource("LabelSettings_6x1fr")
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="RevealButton" type="Button" parent="QuestionScreen/DisplayScreen" unique_id=1563874021]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(400, 100)
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -229.5
+offset_top = -200.0
+offset_right = 229.5
+offset_bottom = -100.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_font_sizes/font_size = 64
+text = "Reveal Answer"
+
+[node name="TriviaTheme" type="AudioStreamPlayer" parent="." unique_id=1805357389]
+unique_name_in_owner = true
+stream = ExtResource("3_6unwm")
+parameters/looping = true
+
+[node name="CorrectSound" type="AudioStreamPlayer" parent="." unique_id=871056474]
+unique_name_in_owner = true
+stream = ExtResource("9_br6ww")
+
+[connection signal="pressed" from="StartScreen/StartButton" to="." method="_on_start_button_pressed"]
+[connection signal="pressed" from="QuestionScreen/TeamOneName/CorrectButtonOne" to="QuestionScreen" method="_on_correct_button_one_pressed"]
+[connection signal="pressed" from="QuestionScreen/TeamOneName/IncorrectButtonOne" to="QuestionScreen" method="_on_incorrect_button_one_pressed"]
+[connection signal="pressed" from="QuestionScreen/TeamTwoName/CorrectButtonTwo" to="QuestionScreen" method="_on_correct_button_two_pressed"]
+[connection signal="pressed" from="QuestionScreen/TeamTwoName/IncorrectButtonTwo" to="QuestionScreen" method="_on_incorrect_button_two_pressed"]
+[connection signal="pressed" from="QuestionScreen/PickScreen/QuestionChoiceOne" to="QuestionScreen" method="_on_question_choice_one_pressed"]
+[connection signal="pressed" from="QuestionScreen/PickScreen/QuestionChoiceTwo" to="QuestionScreen" method="_on_question_choice_two_pressed"]
+[connection signal="pressed" from="QuestionScreen/PickScreen/QuestionChoiceThree" to="QuestionScreen" method="_on_question_choice_three_pressed"]
+[connection signal="pressed" from="QuestionScreen/DisplayScreen/RevealButton" to="QuestionScreen" method="_on_reveal_button_pressed"]

@@ -12,6 +12,7 @@
 [ext_resource type="Texture2D" uid="uid://ceitwptr866c0" path="res://images/arrow_right_variant_2.png" id="9_eya86"]
 [ext_resource type="Script" uid="uid://2udwtfp4o516" path="res://scenes_and_scripts/menus/go_to_games_arrow.gd" id="10_eya86"]
 [ext_resource type="PackedScene" uid="uid://bva5deyhe44ad" path="res://scenes_and_scripts/menus/GameCards/what_the_horse_card.tscn" id="11_jbmg5"]
+[ext_resource type="PackedScene" uid="uid://bbstg4n7cwba7" path="res://scenes_and_scripts/menus/GameCards/trivia_card.tscn" id="11_w63nd"]
 [ext_resource type="PackedScene" uid="uid://mqsu1rwin6tb" path="res://scenes_and_scripts/menus/GameCards/wordle_card.tscn" id="12_b7u2v"]
 [ext_resource type="Script" uid="uid://b6piuhco1b62w" path="res://scenes_and_scripts/menus/go_to_portraits_arrow.gd" id="13_b7u2v"]
 [ext_resource type="Texture2D" uid="uid://um1sktq4w3r7" path="res://images/arrow_left_variant_1.png" id="13_y2yss"]
@@ -24,6 +25,7 @@
 [ext_resource type="Script" uid="uid://dxhag8j36l5k4" path="res://scenes_and_scripts/menus/reward_screen.gd" id="20_g0y0j"]
 [ext_resource type="Script" uid="uid://dvbb13nm3qtoo" path="res://scenes_and_scripts/menus/mini_game_transition_screen.gd" id="21_1v3wo"]
 [ext_resource type="PackedScene" uid="uid://cm6gvrfkhgony" path="res://scenes_and_scripts/menus/reward_card.tscn" id="21_5mlcc"]
+[ext_resource type="PackedScene" uid="uid://e3yopy6dir1e" path="res://scenes_and_scripts/trivia/trivia.tscn" id="21_rv6br"]
 [ext_resource type="Script" uid="uid://c8dkkm24o57yt" path="res://scenes_and_scripts/menus/end_screen.gd" id="22_n8b8k"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_xyo3e"]
@@ -142,6 +144,14 @@ offset_right = 1126.0
 offset_bottom = 668.0
 scale = Vector2(0.75, 0.75)
 
+[node name="TriviaCard" parent="MiniGameScreen" unique_id=1607055222 instance=ExtResource("11_w63nd")]
+layout_mode = 0
+offset_left = 1273.0
+offset_top = 218.0
+offset_right = 1623.0
+offset_bottom = 668.0
+scale = Vector2(0.75, 0.75)
+
 [node name="TeamPickingLabel" type="RichTextLabel" parent="MiniGameScreen" unique_id=1641059107]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(1000, 200)
@@ -232,6 +242,11 @@ offset_left = -960.0
 offset_top = -540.0
 offset_right = 960.0
 offset_bottom = 540.0
+
+[node name="Trivia" parent="MiniGames" unique_id=1852395890 instance=ExtResource("21_rv6br")]
+unique_name_in_owner = true
+visible = false
+layout_mode = 1
 
 [node name="EndScreen" type="Control" parent="." unique_id=1898194201]
 unique_name_in_owner = true
@@ -329,8 +344,10 @@ script = ExtResource("21_1v3wo")
 
 [connection signal="pressed" from="MiniGameScreen/WhatTheHorseCard" to="MiniGameScreen" method="_on_what_the_horse_card_pressed"]
 [connection signal="pressed" from="MiniGameScreen/WordleCard" to="MiniGameScreen" method="_on_wordle_card_pressed"]
+[connection signal="pressed" from="MiniGameScreen/TriviaCard" to="MiniGameScreen" method="_on_trivia_card_pressed"]
 [connection signal="end" from="MiniGames/WhatTheHorse" to="MiniGameScreen" method="_on_what_the_horse_end"]
 [connection signal="end" from="MiniGames/Wordle" to="MiniGameScreen" method="_on_wordle_end"]
+[connection signal="end" from="MiniGames/Trivia" to="MiniGameScreen" method="_on_trivia_end"]
 [connection signal="pressed" from="RewardScreen/RewardCard1" to="RewardScreen" method="_on_reward_card_1_pressed"]
 [connection signal="pressed" from="RewardScreen/RewardCard2" to="RewardScreen" method="_on_reward_card_2_pressed"]
 [connection signal="pressed" from="RewardScreen/RewardCard3" to="RewardScreen" method="_on_reward_card_3_pressed"]

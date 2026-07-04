@@ -3,6 +3,7 @@ extends Control
 # Minigames
 @onready var what_the_horse: Control = %WhatTheHorse
 @onready var wordle: Control = %Wordle
+@onready var trivia: Control = %Trivia
 
 @onready var mini_game_transition_screen: TextureRect = %MiniGameTransitionScreen
 @onready var mini_game_screen: Control = %MiniGameScreen
@@ -31,6 +32,10 @@ func _on_what_the_horse_card_pressed() -> void:
 func _on_wordle_card_pressed() -> void:
 	start_transition_sound()
 	transition_to_game(wordle)
+
+func _on_trivia_card_pressed() -> void:
+	start_transition_sound()
+	transition_to_game(trivia)
 
 func start_transition_sound() -> void:
 	game_transition_sound.play()
@@ -67,6 +72,9 @@ func _on_what_the_horse_end(who_won: int) -> void:
 
 func _on_wordle_end(who_won: int) -> void:
 	end_game_and_transition(who_won, wordle)
+
+func _on_trivia_end(who_won: int) -> void:
+	end_game_and_transition(who_won, trivia)
 
 func update_score(who_won: int) -> void:
 	if who_won == 1:

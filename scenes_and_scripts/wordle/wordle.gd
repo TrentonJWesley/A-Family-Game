@@ -5,7 +5,6 @@ extends Control
 @onready var start_screen: Control = %StartScreen
 @onready var word_screen: Control = %WordScreen
 
-var WORD_LIST: Array[String] = ["DURAG"]
 
 signal end(who_won: int)
 
