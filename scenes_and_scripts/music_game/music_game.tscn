@@ -5,6 +5,51 @@
 [ext_resource type="Texture2D" uid="uid://drxf6gpa8upr4" path="res://game_data/music_game_data/images/empty_cassette_player.png" id="2_wq3kj"]
 [ext_resource type="Texture2D" uid="uid://bp08hca6b0tdd" path="res://game_data/music_game_data/images/hand_with_cassette.png" id="3_y3rmq"]
 [ext_resource type="AudioStream" uid="uid://b832ajbjrntvb" path="res://game_data/music_game_data/audio/cassette tape sound with fade out.mp3" id="5_v67xn"]
+[ext_resource type="FontFile" uid="uid://b6pjpgsyrejgy" path="res://game_data/music_game_data/fonts/NitroEagle-KVP1W.ttf" id="6_kjdyr"]
+[ext_resource type="AudioStream" uid="uid://cho81fobgjgu3" path="res://game_data/music_game_data/audio/Sugar On My Tongue (Instrumental) - Tyler, The Creator (prod. Tyler, the Creator).mp3" id="7_n17hk"]
+[ext_resource type="Script" uid="uid://b2jgq3rns2jh" path="res://scenes_and_scripts/music_game/song_screen.gd" id="7_txeak"]
+[ext_resource type="PackedScene" uid="uid://o2gkmo3u3pxv" path="res://scenes_and_scripts/music_game/play_window.tscn" id="8_n17hk"]
+[ext_resource type="PackedScene" uid="uid://bxhsm7bn3rax1" path="res://scenes_and_scripts/music_game/song_reveal_window.tscn" id="9_3fph6"]
+[ext_resource type="PackedScene" uid="uid://dyxg7kj5o10qt" path="res://scenes_and_scripts/music_game/who_won_window.tscn" id="10_ax86w"]
+[ext_resource type="AudioStream" uid="uid://c60cjsore1s2l" path="res://game_data/wordle_game_data/audio/success sound effect.mp3" id="12_3fph6"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_g8tdy"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_f68pd"]
+bg_color = Color(0.60038817, 0.60038817, 0.60038817, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ylddg"]
+bg_color = Color(0.60038817, 0.60038817, 0.60038817, 0)
+
+[sub_resource type="LabelSettings" id="LabelSettings_2oj4j"]
+font = ExtResource("6_kjdyr")
+font_size = 72
+outline_size = 20
+outline_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_66vpn"]
+font = ExtResource("6_kjdyr")
+font_size = 128
+outline_size = 20
+outline_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_k7s6n"]
+font = ExtResource("6_kjdyr")
+font_size = 72
+outline_size = 20
+outline_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_j5q45"]
+font = ExtResource("6_kjdyr")
+font_size = 128
+outline_size = 20
+outline_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_3fph6"]
+font_size = 128
+outline_size = 30
+outline_color = Color(0.0018410678, 0.0018410682, 0.0018410678, 1)
 
 [node name="MusicGame" type="Control" unique_id=1404726643]
 layout_mode = 3
@@ -13,6 +58,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
 script = ExtResource("1_v67xn")
 
 [node name="Background" type="TextureRect" parent="." unique_id=9809564]
@@ -23,7 +69,7 @@ offset_bottom = 40.0
 texture = ExtResource("1_24u8w")
 expand_mode = 1
 
-[node name="Control" type="Control" parent="." unique_id=1612089970]
+[node name="Crop" type="Control" parent="." unique_id=1612089970]
 clip_contents = true
 anchors_preset = 0
 offset_left = 789.0
@@ -31,7 +77,7 @@ offset_top = 491.0
 offset_right = 1223.0
 offset_bottom = 738.0
 
-[node name="EmptyCassettePlayer" type="TextureRect" parent="Control" unique_id=1856802190]
+[node name="EmptyCassettePlayer" type="TextureRect" parent="Crop" unique_id=1856802190]
 unique_name_in_owner = true
 visible = false
 clip_contents = true
@@ -43,6 +89,7 @@ offset_left = -359.0
 offset_top = -503.0
 offset_right = 351.0
 offset_bottom = 519.0
+grow_horizontal = 2
 texture = ExtResource("2_wq3kj")
 
 [node name="CassetteHand" type="TextureRect" parent="." unique_id=980621667]
@@ -66,3 +113,196 @@ offset_left = 923.0
 offset_top = 521.0
 offset_right = 923.0
 offset_bottom = 521.0
+
+[node name="StartScreen" type="Control" parent="." unique_id=1364012441]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(1920, 1080)
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+mouse_filter = 2
+
+[node name="StartButton" type="Button" parent="StartScreen" unique_id=388910269]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -150.5
+offset_top = -230.0
+offset_right = 150.5
+offset_bottom = -55.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_constants/outline_size = 40
+theme_override_font_sizes/font_size = 128
+theme_override_styles/normal = SubResource("StyleBoxFlat_g8tdy")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_f68pd")
+theme_override_styles/hover = SubResource("StyleBoxFlat_ylddg")
+text = "Start"
+
+[node name="FinishTitle" type="RichTextLabel" parent="StartScreen" unique_id=1616670897]
+custom_minimum_size = Vector2(900, 700)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -607.0
+offset_top = -428.0
+offset_right = 608.0
+offset_bottom = 272.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.9098039)
+theme_override_constants/shadow_outline_size = 0
+theme_override_constants/shadow_offset_x = 20
+theme_override_constants/shadow_offset_y = 20
+theme_override_constants/outline_size = 40
+theme_override_fonts/normal_font = ExtResource("6_kjdyr")
+theme_override_font_sizes/normal_font_size = 208
+bbcode_enabled = true
+text = "[rainbow freq=0.5 sat=0.8 val=0.8 speed=1.0]Guess the Song[/rainbow]"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ThemeSong" type="AudioStreamPlayer" parent="." unique_id=264195846]
+unique_name_in_owner = true
+stream = ExtResource("7_n17hk")
+autoplay = true
+parameters/looping = true
+
+[node name="SongScreen" type="Control" parent="." unique_id=1918595469]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(1920, 1080)
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+mouse_filter = 2
+script = ExtResource("7_txeak")
+
+[node name="TeamOneName" type="Label" parent="SongScreen" unique_id=979057989]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(450, 250)
+layout_mode = 0
+offset_left = 20.0
+offset_top = 250.0
+offset_right = 470.0
+offset_bottom = 500.0
+text = "Blue Bandits"
+label_settings = SubResource("LabelSettings_2oj4j")
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="TeamOneScore" type="Label" parent="SongScreen/TeamOneName" unique_id=1185455862]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 0
+offset_left = 125.0
+offset_top = 325.0
+offset_right = 325.0
+offset_bottom = 453.0
+pivot_offset = Vector2(100, 0)
+text = "0"
+label_settings = SubResource("LabelSettings_66vpn")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TeamTwoName" type="Label" parent="SongScreen" unique_id=1235664644]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(450, 250)
+layout_mode = 0
+offset_left = 1450.0
+offset_top = 250.0
+offset_right = 1900.0
+offset_bottom = 500.0
+text = "Red Rebels"
+label_settings = SubResource("LabelSettings_k7s6n")
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="TeamTwoScore" type="Label" parent="SongScreen/TeamTwoName" unique_id=1098679569]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 0
+offset_left = 125.0
+offset_top = 325.0
+offset_right = 325.0
+offset_bottom = 453.0
+pivot_offset = Vector2(100, 0)
+text = "0"
+label_settings = SubResource("LabelSettings_j5q45")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="PlayWindow" parent="SongScreen" unique_id=1781100586 instance=ExtResource("8_n17hk")]
+unique_name_in_owner = true
+layout_mode = 0
+offset_top = 1080.0
+offset_bottom = 1141.0
+
+[node name="SongRevealWindow" parent="SongScreen" unique_id=1983627631 instance=ExtResource("9_3fph6")]
+unique_name_in_owner = true
+layout_mode = 0
+offset_top = 1080.0
+offset_right = 390.0
+offset_bottom = 1080.0
+
+[node name="WhoWonWindow" parent="SongScreen" unique_id=840831714 instance=ExtResource("10_ax86w")]
+unique_name_in_owner = true
+layout_mode = 0
+offset_top = 1080.0
+offset_bottom = 1141.0
+
+[node name="PlayPos" type="Control" parent="SongScreen" unique_id=152072427]
+unique_name_in_owner = true
+anchors_preset = 0
+offset_left = 777.0
+offset_top = 430.0
+offset_right = 777.0
+offset_bottom = 430.0
+
+[node name="SongRevealPos" type="Control" parent="SongScreen" unique_id=819664661]
+unique_name_in_owner = true
+anchors_preset = 0
+offset_left = 284.0
+offset_top = 355.0
+offset_right = 284.0
+offset_bottom = 355.0
+
+[node name="WhoWonPos" type="Control" parent="SongScreen" unique_id=1252153515]
+unique_name_in_owner = true
+anchors_preset = 0
+offset_left = 1216.0
+offset_top = 309.0
+offset_right = 1216.0
+offset_bottom = 309.0
+
+[node name="RoundLabel" type="Label" parent="SongScreen" unique_id=17624330]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 200)
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -316.0
+offset_right = 316.0
+offset_bottom = 200.0
+grow_horizontal = 2
+text = "Round 1/4"
+label_settings = SubResource("LabelSettings_3fph6")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="SuccessSound" type="AudioStreamPlayer" parent="." unique_id=843518747]
+unique_name_in_owner = true
+stream = ExtResource("12_3fph6")
+
+[connection signal="pressed" from="StartScreen/StartButton" to="." method="_on_start_button_pressed"]
+[connection signal="finished_song" from="SongScreen/PlayWindow" to="SongScreen" method="_on_play_window_finished_song"]
+[connection signal="who_won" from="SongScreen/WhoWonWindow" to="SongScreen" method="_on_who_won_window_who_won"]

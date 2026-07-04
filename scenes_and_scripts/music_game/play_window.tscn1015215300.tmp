@@ -4,7 +4,6 @@
 [ext_resource type="Texture2D" uid="uid://dcfi27mmeu728" path="res://game_data/music_game_data/images/play_window.png" id="1_gy3vs"]
 [ext_resource type="Texture2D" uid="uid://42gp5bej3qx" path="res://game_data/music_game_data/images/grabber_rect_pink_14x50.png" id="3_t3dui"]
 [ext_resource type="Texture2D" uid="uid://dps1av7355ud3" path="res://game_data/music_game_data/images/invisible_tick_5x50.png" id="4_t3dui"]
-[ext_resource type="Script" uid="uid://p8miwve1kkbd" path="res://scenes_and_scripts/music_game/progress_bar.gd" id="5_34kq5"]
 [ext_resource type="AudioStream" uid="uid://tl0gabl2pf5n" path="res://game_data/pop_culture_trivia_data/audio/Balatro Main Theme.mp3" id="5_fwryn"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_38425"]
@@ -41,10 +40,10 @@ expand_margin_top = 15.0
 expand_margin_bottom = 15.0
 
 [node name="PlayWindow" type="Control" unique_id=1781100586]
-custom_minimum_size = Vector2(450, 61)
+custom_minimum_size = Vector2(511, 61)
 layout_mode = 3
 anchors_preset = 0
-offset_right = 450.0
+offset_right = 511.0
 offset_bottom = 61.0
 script = ExtResource("1_38425")
 
@@ -63,39 +62,6 @@ offset_left = 229.0
 offset_top = 84.0
 offset_right = 297.0
 offset_bottom = 163.0
-theme_override_styles/normal = SubResource("StyleBoxFlat_38425")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_38425")
-theme_override_styles/hover = SubResource("StyleBoxFlat_38425")
-
-[node name="PrevButton" type="Button" parent="." unique_id=1966973094]
-custom_minimum_size = Vector2(68, 79)
-layout_mode = 0
-offset_left = 142.0
-offset_top = 86.0
-offset_right = 210.0
-offset_bottom = 165.0
-theme_override_styles/normal = SubResource("StyleBoxFlat_38425")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_38425")
-theme_override_styles/hover = SubResource("StyleBoxFlat_38425")
-
-[node name="NextButton" type="Button" parent="." unique_id=1114083739]
-custom_minimum_size = Vector2(68, 79)
-layout_mode = 0
-offset_left = 311.0
-offset_top = 86.0
-offset_right = 379.0
-offset_bottom = 165.0
-theme_override_styles/normal = SubResource("StyleBoxFlat_38425")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_38425")
-theme_override_styles/hover = SubResource("StyleBoxFlat_38425")
-
-[node name="ExitButton" type="Button" parent="." unique_id=1207972184]
-custom_minimum_size = Vector2(40, 40)
-layout_mode = 0
-offset_left = 454.0
-offset_top = 11.0
-offset_right = 494.0
-offset_bottom = 51.0
 theme_override_styles/normal = SubResource("StyleBoxFlat_38425")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_38425")
 theme_override_styles/hover = SubResource("StyleBoxFlat_38425")
@@ -123,42 +89,13 @@ theme_override_styles/slider = SubResource("StyleBoxFlat_t3dui")
 theme_override_styles/grabber_area = SubResource("StyleBoxFlat_pxu6g")
 theme_override_styles/grabber_area_highlight = SubResource("StyleBoxFlat_pxu6g")
 max_value = 30.0
-step = 0.001
+step = 0.01
 scrollable = false
 tick_count = 6
 ticks_position = 3
-script = ExtResource("5_34kq5")
 
 [node name="Song" type="AudioStreamPlayer" parent="." unique_id=140485004]
 unique_name_in_owner = true
 stream = ExtResource("5_fwryn")
 
-[node name="SecondsLabel" type="RichTextLabel" parent="." unique_id=1372561303]
-unique_name_in_owner = true
-custom_minimum_size = Vector2(400, 100)
-layout_mode = 1
-anchors_preset = 7
-anchor_left = 0.5
-anchor_top = 1.0
-anchor_right = 0.5
-anchor_bottom = 1.0
-offset_left = -200.0
-offset_top = 139.0
-offset_right = 200.0
-offset_bottom = 239.0
-grow_horizontal = 2
-grow_vertical = 0
-mouse_filter = 2
-theme_override_constants/outline_size = 10
-theme_override_font_sizes/normal_font_size = 58
-bbcode_enabled = true
-text = "[rainbow freq=0.5 sat=0.8 val=0.8 speed=1.0].5s[/rainbow]"
-scroll_active = false
-autowrap_mode = 0
-horizontal_alignment = 1
-vertical_alignment = 1
-
 [connection signal="pressed" from="PlayButton" to="." method="_on_play_button_pressed"]
-[connection signal="pressed" from="PrevButton" to="." method="_on_prev_button_pressed"]
-[connection signal="pressed" from="NextButton" to="." method="_on_next_button_pressed"]
-[connection signal="pressed" from="ExitButton" to="." method="_on_exit_button_pressed"]

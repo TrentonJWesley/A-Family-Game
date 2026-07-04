@@ -1,0 +1,198 @@
+[gd_scene format=3 uid="uid://dyxg7kj5o10qt"]
+
+[ext_resource type="Texture2D" uid="uid://cvdlc5njfl1xn" path="res://game_data/music_game_data/images/display_window.png" id="1_5kh8e"]
+[ext_resource type="Script" uid="uid://bk5o15f7aueyh" path="res://scenes_and_scripts/music_game/who_won_window.gd" id="1_dyhm8"]
+[ext_resource type="FontFile" uid="uid://b6pjpgsyrejgy" path="res://game_data/music_game_data/fonts/NitroEagle-KVP1W.ttf" id="2_dyy1f"]
+[ext_resource type="FontFile" uid="uid://c3cojw58n10nm" path="res://fonts/ShortBaby-Mg2w.ttf" id="4_qatie"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dyhm8"]
+bg_color = Color(0.9490196, 0.7294118, 0.8352941, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0.40392157, 0.38039216, 0.38039216, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qatie"]
+bg_color = Color(0.80808604, 0.33603808, 0.6035241, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0.40392157, 0.38039216, 0.38039216, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_x8l8d"]
+bg_color = Color(0.97092015, 0.8474247, 0.9045975, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0.40392157, 0.38039216, 0.38039216, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[node name="WhoWonWindow" type="Control" unique_id=840831714]
+custom_minimum_size = Vector2(390, 61)
+layout_mode = 3
+anchors_preset = 0
+offset_right = 390.0
+offset_bottom = 61.0
+script = ExtResource("1_dyhm8")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1711754905]
+layout_mode = 0
+offset_right = 387.0
+offset_bottom = 601.0
+mouse_filter = 2
+texture = ExtResource("1_5kh8e")
+expand_mode = 3
+stretch_mode = 5
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=346898609]
+layout_mode = 0
+offset_left = 20.0
+offset_top = 78.0
+offset_right = 373.0
+offset_bottom = 531.0
+mouse_filter = 2
+color = Color(0.972549, 0.972549, 0.9254902, 1)
+
+[node name="WhoWonLabel" type="RichTextLabel" parent="." unique_id=1983626901]
+clip_contents = false
+custom_minimum_size = Vector2(310, 100)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -150.0
+offset_top = 69.5
+offset_right = 150.0
+offset_bottom = 169.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/normal_font = ExtResource("2_dyy1f")
+theme_override_font_sizes/normal_font_size = 40
+bbcode_enabled = true
+text = "[rainbow freq=0.5 sat=0.8 val=0.8 speed=1.0]Who Won?[/rainbow]"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TeamOneButton" type="Button" parent="." unique_id=2100424455]
+custom_minimum_size = Vector2(300, 75)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -148.0
+offset_top = 191.5
+offset_right = 152.0
+offset_bottom = 266.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_dyhm8")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_qatie")
+theme_override_styles/hover = SubResource("StyleBoxFlat_x8l8d")
+
+[node name="TeamOneLabel" type="RichTextLabel" parent="TeamOneButton" unique_id=1346157792]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme_override_fonts/normal_font = ExtResource("4_qatie")
+theme_override_font_sizes/normal_font_size = 32
+bbcode_enabled = true
+text = "Blue Bandits"
+scroll_active = false
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TeamTwoButton" type="Button" parent="." unique_id=428517613]
+custom_minimum_size = Vector2(300, 75)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -148.0
+offset_top = 291.5
+offset_right = 152.0
+offset_bottom = 366.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_dyhm8")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_qatie")
+theme_override_styles/hover = SubResource("StyleBoxFlat_x8l8d")
+
+[node name="TeamTwoLabel" type="RichTextLabel" parent="TeamTwoButton" unique_id=1933045837]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme_override_fonts/normal_font = ExtResource("4_qatie")
+theme_override_font_sizes/normal_font_size = 32
+bbcode_enabled = true
+text = "Red Pandas"
+scroll_active = false
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="NobodyButton" type="Button" parent="." unique_id=1809340408]
+custom_minimum_size = Vector2(300, 75)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -148.0
+offset_top = 391.5
+offset_right = 152.0
+offset_bottom = 466.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_dyhm8")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_qatie")
+theme_override_styles/hover = SubResource("StyleBoxFlat_x8l8d")
+
+[node name="NobodyLabel" type="RichTextLabel" parent="NobodyButton" unique_id=1755901922]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme_override_fonts/normal_font = ExtResource("2_dyy1f")
+theme_override_font_sizes/normal_font_size = 32
+bbcode_enabled = true
+text = "[rainbow freq=0.5 sat=0.8 val=0.8 speed=1.0]No One![/rainbow]"
+scroll_active = false
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="pressed" from="TeamOneButton" to="." method="_on_team_one_button_pressed"]
+[connection signal="pressed" from="TeamTwoButton" to="." method="_on_team_two_button_pressed"]
+[connection signal="pressed" from="NobodyButton" to="." method="_on_nobody_button_pressed"]
