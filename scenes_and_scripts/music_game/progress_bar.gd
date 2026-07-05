@@ -24,9 +24,6 @@ func change_value(slider_value: float) -> void:
 	else:
 		var lerp_weight = (slider_value - low_value) / (high_value - low_value)
 		value = lerp(indices[0], indices[1], lerp_weight)
-	
-	print(value)
-	
 
 
 

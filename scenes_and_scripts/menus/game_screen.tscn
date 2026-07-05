@@ -189,6 +189,22 @@ scroll_active = false
 horizontal_alignment = 1
 vertical_alignment = 1
 
+[node name="GameLimitLabel" type="RichTextLabel" parent="MiniGameScreen" unique_id=822788315]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(600, 100)
+layout_mode = 0
+offset_left = 660.0
+offset_top = 775.0
+offset_right = 1260.0
+offset_bottom = 875.0
+mouse_filter = 2
+theme_override_constants/outline_size = 10
+theme_override_font_sizes/normal_font_size = 48
+bbcode_enabled = true
+text = "Game 1/12"
+horizontal_alignment = 1
+vertical_alignment = 1
+
 [node name="GoToGamesArrow" type="TextureButton" parent="." unique_id=767242089]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(200, 200)

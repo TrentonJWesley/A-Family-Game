@@ -19,11 +19,14 @@ extends Control
 @onready var go_to_portraits_arrow: TextureButton = %GoToPortraitsArrow
 
 @onready var team_picking_label: RichTextLabel = %TeamPickingLabel
+@onready var game_limit_label: RichTextLabel = %GameLimitLabel
 
 var current_team = 1
+var current_game_num = 1
 
 func _ready() -> void:
 	team_picking_label.text = "[color=%s]%s[/color], pick a game!" % [GameData.team_one_color.to_html(), GameData.team_one_name]
+	game_limit_label.text = "Game %s/%s" % [current_game_num, GameData.max_games]
 
 func _on_what_the_horse_card_pressed() -> void:
 	start_transition_sound()
@@ -92,6 +95,12 @@ func update_score(who_won: int) -> void:
 		GameData.team_two_score += 1
 
 func end_game_and_transition(who_won: int, game: Control) -> void:
+	current_game_num += 1
+	if current_game_num <= GameData.max_games:
+		game_limit_label.text = "Game %s/%s" % [current_game_num, GameData.max_games]
+	else:
+		game_limit_label.text = "Game [color=red]%s[/color]/%s" % [current_game_num, GameData.max_games]
+	game_limit_label.text
 	update_score(who_won)
 	game_transition_sound.play()
 	mini_game_transition_screen.play_iris_in(2)
