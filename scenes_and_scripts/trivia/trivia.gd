@@ -46,7 +46,7 @@ func _on_start_button_pressed() -> void:
 	start_screen.modulate.a = 1
 	
 func check_if_out_of_questions() -> void:
-	if questions_dict.size() < GameData.trivia_game_max_rounds:
+	if questions_dict.size() < GameData.trivia_game_max_rounds + 2:
 		GameData.out_of_trivia_questions.emit()
 
 func start_music() -> void:
