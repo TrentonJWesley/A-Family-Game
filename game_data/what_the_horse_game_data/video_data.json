@@ -245,7 +245,7 @@
 			"Dog completely misses the rope and falls. Second dog also completely misses. Why not",
 			"Dog successfully latches onto the white ropes with their jaw. Second dog does the same. Why not",
 			"Dog successfully latches onto the white ropes with their jaw. Second dog completetly misses and knocks the first dog out.",
-			"Both dogs completely miss the rope. A bigger third dog appears and attempts as well, but collapses the table collapses."
+			"Both dogs completely miss the rope. A bigger third dog appears and attempts as well, but collapses the table."
 		],
 		"correct_answer": 2,
 		"settings": {
