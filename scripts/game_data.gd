@@ -39,13 +39,6 @@ var music_game_max_rounds = 4
 
 var max_games = 12
 
-### For testing purposes
-#var horse_game_max_rounds = 2
-#var wordle_game_max_rounds = 2
-#var trivia_game_max_rounds = 2
-#var music_game_max_rounds = 2
-#var max_games = 2
-
 
 signal out_of_horse_cards
 signal out_of_wordle_words

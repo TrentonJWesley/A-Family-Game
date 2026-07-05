@@ -64,7 +64,7 @@ func pick_question(question: String) -> String:
 	# Get answer
 	var answer = questions_dict[question]
 	# Remove question
-	questions_dict.erase("question")
+	questions_dict.erase(question)
 	
 	return answer
 
