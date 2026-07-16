@@ -81,7 +81,7 @@ layout_mode = 2
 mouse_filter = 2
 theme_override_font_sizes/normal_font_size = 28
 bbcode_enabled = true
-text = "Wordle, except each team takes turns making a guess. First to guess the word wins. (4 Rounds)
+text = "Wordle, except each team takes turns making a guess. First to guess the word wins. (2 Rounds)
 "
 scroll_active = false
 horizontal_alignment = 1

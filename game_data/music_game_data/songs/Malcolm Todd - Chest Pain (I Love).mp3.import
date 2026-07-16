@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://bb8c3mn0057ci"
+path="res://.godot/imported/Malcolm Todd - Chest Pain (I Love).mp3-ae2bb4c5144e90bbbffbf5bafff23f51.mp3str"
+
+[deps]
+
+source_file="res://game_data/music_game_data/songs/Malcolm Todd - Chest Pain (I Love).mp3"
+dest_files=["res://.godot/imported/Malcolm Todd - Chest Pain (I Love).mp3-ae2bb4c5144e90bbbffbf5bafff23f51.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

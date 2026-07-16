@@ -33,9 +33,10 @@ var team_two_player_pictures: Dictionary = {
 
 # Minigame specific values
 var horse_game_max_rounds = 6
-var wordle_game_max_rounds = 4
-var trivia_game_max_rounds = 8
+var wordle_game_max_rounds = 2
+var trivia_game_max_rounds = 6
 var music_game_max_rounds = 4
+
 
 var max_games = 12
 

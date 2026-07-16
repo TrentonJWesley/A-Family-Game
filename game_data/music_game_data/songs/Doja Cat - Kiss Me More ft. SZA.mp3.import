@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://diamap4a0ktuc"
+path="res://.godot/imported/Doja Cat - Kiss Me More ft. SZA.mp3-692124c861c9ede6c131e2e06468ce24.mp3str"
+
+[deps]
+
+source_file="res://game_data/music_game_data/songs/Doja Cat - Kiss Me More ft. SZA.mp3"
+dest_files=["res://.godot/imported/Doja Cat - Kiss Me More ft. SZA.mp3-692124c861c9ede6c131e2e06468ce24.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
