@@ -4,7 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://f62f18pr2wpk" path="res://scenes_and_scripts/menus/family_portrait.tscn" id="2_dgqku"]
 [ext_resource type="Script" uid="uid://dobd8hwy4l2st" path="res://scenes_and_scripts/menus/game_screen.gd" id="2_g0b0f"]
 [ext_resource type="FontFile" uid="uid://c3cojw58n10nm" path="res://fonts/ShortBaby-Mg2w.ttf" id="3_wvaqc"]
-[ext_resource type="AudioStream" uid="uid://cc2wukkik3upe" path="res://audio/Clairo - Second Nature (Instrumental).mp3" id="4_xyo3e"]
+[ext_resource type="AudioStream" uid="uid://cc2wukkik3upe" path="res://audio/Dog_Music.mp3" id="4_xyo3e"]
 [ext_resource type="Script" uid="uid://dh037q42hrbfn" path="res://scenes_and_scripts/menus/portrait_team_one_name.gd" id="5_0lk3c"]
 [ext_resource type="Script" uid="uid://dagqyv6jl1l47" path="res://scenes_and_scripts/menus/portrait_team_two_name.gd" id="6_qiv2j"]
 [ext_resource type="Script" uid="uid://bty77cg6jrhar" path="res://scenes_and_scripts/menus/mini_game_screen.gd" id="8_guyxk"]

@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://bfi0kkwc72x3n" path="res://scenes_and_scripts/wordle/wordle.gd" id="1_2s4yw"]
 [ext_resource type="Texture2D" uid="uid://3m3gv674r33v" path="res://game_data/wordle_game_data/images/wordle_background.png" id="1_70of0"]
 [ext_resource type="Script" uid="uid://b42qbs555nw8w" path="res://scenes_and_scripts/wordle/word_screen.gd" id="2_70of0"]
-[ext_resource type="AudioStream" uid="uid://cje0txsid76rl" path="res://game_data/wordle_game_data/audio/CHEK - CRIME (Instrumental).mp3" id="3_fbbba"]
+[ext_resource type="AudioStream" uid="uid://cje0txsid76rl" path="res://game_data/wordle_game_data/audio/Word_Game_Theme.mp3" id="3_fbbba"]
 [ext_resource type="FontFile" uid="uid://c3cojw58n10nm" path="res://fonts/ShortBaby-Mg2w.ttf" id="4_r0rk6"]
 [ext_resource type="AudioStream" uid="uid://c60cjsore1s2l" path="res://game_data/wordle_game_data/audio/success sound effect.mp3" id="6_1txna"]
 

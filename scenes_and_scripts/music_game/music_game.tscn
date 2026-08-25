@@ -6,7 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://bp08hca6b0tdd" path="res://game_data/music_game_data/images/hand_with_cassette.png" id="3_y3rmq"]
 [ext_resource type="AudioStream" uid="uid://b832ajbjrntvb" path="res://game_data/music_game_data/audio/cassette tape sound with fade out.mp3" id="5_v67xn"]
 [ext_resource type="FontFile" uid="uid://b6pjpgsyrejgy" path="res://game_data/music_game_data/fonts/NitroEagle-KVP1W.ttf" id="6_kjdyr"]
-[ext_resource type="AudioStream" uid="uid://cho81fobgjgu3" path="res://game_data/music_game_data/audio/Sugar On My Tongue (Instrumental) - Tyler, The Creator (prod. Tyler, the Creator).mp3" id="7_n17hk"]
+[ext_resource type="AudioStream" uid="uid://cho81fobgjgu3" path="res://game_data/music_game_data/audio/Music_Game_Theme.mp3" id="7_n17hk"]
 [ext_resource type="Script" uid="uid://b2jgq3rns2jh" path="res://scenes_and_scripts/music_game/song_screen.gd" id="7_txeak"]
 [ext_resource type="PackedScene" uid="uid://o2gkmo3u3pxv" path="res://scenes_and_scripts/music_game/play_window.tscn" id="8_n17hk"]
 [ext_resource type="PackedScene" uid="uid://bxhsm7bn3rax1" path="res://scenes_and_scripts/music_game/song_reveal_window.tscn" id="9_3fph6"]

@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://bxhsm7bn3rax1"]
 
-[ext_resource type="Script" uid="uid://dy2odmrfpsps4" path="res://song_reveal_window.gd" id="1_svad6"]
+[ext_resource type="Script" uid="uid://dy2odmrfpsps4" path="res://scenes_and_scripts/music_game/song_reveal_window.gd" id="1_svad6"]
 [ext_resource type="Texture2D" uid="uid://cvdlc5njfl1xn" path="res://game_data/music_game_data/images/display_window.png" id="2_3hf1a"]
 
 [node name="SongRevealWindow" type="Control" unique_id=1983627631]

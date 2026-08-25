@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://pnb2wkyfj01b" path="res://scenes_and_scripts/menus/team_selection_screen.gd" id="1_ylods"]
 [ext_resource type="Script" uid="uid://b302h45bouejx" path="res://scenes_and_scripts/menus/ready_button.gd" id="2_k2q1x"]
-[ext_resource type="AudioStream" uid="uid://bv7shajqptsgx" path="res://audio/the-marias-only-in-my-dreams intro.mp3" id="2_rfsdx"]
+[ext_resource type="AudioStream" uid="uid://bv7shajqptsgx" path="res://audio/team_select_transition_soung.mp3" id="2_rfsdx"]
 [ext_resource type="Texture2D" uid="uid://c2f2nw1f0tmnd" path="res://images/faint_minimal_stars_3840x2160_transparent.png" id="3_ruwkl"]
 [ext_resource type="FontFile" uid="uid://c3cojw58n10nm" path="res://fonts/ShortBaby-Mg2w.ttf" id="5_oxqif"]
 [ext_resource type="Script" uid="uid://bxe8pk2cms05v" path="res://scenes_and_scripts/menus/team_one_name.gd" id="6_gnk5i"]

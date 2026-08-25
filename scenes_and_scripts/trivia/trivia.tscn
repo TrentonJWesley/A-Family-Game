@@ -3,7 +3,7 @@
 [ext_resource type="Shader" uid="uid://cwcuouh7x25vv" path="res://scenes_and_scripts/trivia/trivia.gdshader" id="1_6unwm"]
 [ext_resource type="Script" uid="uid://6lknxqldpjk4" path="res://scenes_and_scripts/trivia/trivia.gd" id="1_8prff"]
 [ext_resource type="Texture2D" uid="uid://c01hvmfq3r4yy" path="res://game_data/pop_culture_trivia_data/images/colorful_spiral_background.jpeg" id="1_sln1v"]
-[ext_resource type="AudioStream" uid="uid://tl0gabl2pf5n" path="res://game_data/pop_culture_trivia_data/audio/Balatro Main Theme.mp3" id="3_6unwm"]
+[ext_resource type="AudioStream" uid="uid://tl0gabl2pf5n" path="res://game_data/pop_culture_trivia_data/audio/Not_Balatro_Music.mp3" id="3_6unwm"]
 [ext_resource type="Script" uid="uid://cs31lwi0sjode" path="res://scenes_and_scripts/trivia/question_screen.gd" id="4_mvgb0"]
 [ext_resource type="FontFile" uid="uid://c3cojw58n10nm" path="res://fonts/ShortBaby-Mg2w.ttf" id="5_l4ds4"]
 [ext_resource type="Texture2D" uid="uid://dy0wwwkwwl1k3" path="res://game_data/pop_culture_trivia_data/images/green_check.png" id="6_w678o"]

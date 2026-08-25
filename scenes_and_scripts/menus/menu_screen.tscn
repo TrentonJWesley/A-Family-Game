@@ -3,7 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://dk8442an46xab" path="res://images/room background.png" id="1_subqg"]
 [ext_resource type="FontFile" uid="uid://bhuq2cmgh30xw" path="res://fonts/LoveDays-2v7Oe.ttf" id="2_lsd10"]
 [ext_resource type="Script" uid="uid://cwdjej4condjr" path="res://scenes_and_scripts/menus/menu_screen.gd" id="2_u4iq5"]
-[ext_resource type="AudioStream" uid="uid://b47d4q10aea8p" path="res://audio/Tyler, The Creator – SAG HARBOR (Instrumental).mp3" id="3_opiqs"]
+[ext_resource type="AudioStream" uid="uid://b47d4q10aea8p" path="res://audio/Main_Menu_Music.mp3" id="3_opiqs"]
 [ext_resource type="Texture2D" uid="uid://dfy1cyym7451v" path="res://images/White Down Arrow.png" id="4_5g4gv"]
 [ext_resource type="AudioStream" uid="uid://cucmr5ggqqtlx" path="res://audio/click sound.mp3" id="4_o7w3d"]
 [ext_resource type="Script" uid="uid://br0hka5d3bu3i" path="res://scenes_and_scripts/menus/start_arrow.gd" id="5_x0nsj"]

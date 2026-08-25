@@ -5,7 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://42gp5bej3qx" path="res://game_data/music_game_data/images/grabber_rect_pink_14x50.png" id="3_t3dui"]
 [ext_resource type="Texture2D" uid="uid://dps1av7355ud3" path="res://game_data/music_game_data/images/invisible_tick_5x50.png" id="4_t3dui"]
 [ext_resource type="Script" uid="uid://p8miwve1kkbd" path="res://scenes_and_scripts/music_game/progress_bar.gd" id="5_34kq5"]
-[ext_resource type="AudioStream" uid="uid://tl0gabl2pf5n" path="res://game_data/pop_culture_trivia_data/audio/Balatro Main Theme.mp3" id="5_fwryn"]
+[ext_resource type="AudioStream" uid="uid://tl0gabl2pf5n" path="res://game_data/pop_culture_trivia_data/audio/Not_Balatro_Music.mp3" id="5_fwryn"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_38425"]
 bg_color = Color(0.60038817, 0.60038817, 0.60038817, 0)
